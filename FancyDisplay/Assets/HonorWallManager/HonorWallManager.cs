@@ -57,7 +57,9 @@ public class HonorWallManager : MonoBehaviour
 
             // 在展示框上添加AVPro视频播放器
             MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, display.transform);
-            string videoPath = $"M:\\FancyDisplay\\FancyDisplay\\Assets\\StreamingAssets\\AVProVideoSamples\\{i + 1}.mp4";
+            ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
+            applyToMaterial.Material = renderer.material;
+            string videoPath = $@"M:\GitHub\Display3D\FancyDisplay\Assets\StreamingAssets\AVProVideoSamples\{i + 1}.mp4";
             mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.AbsolutePathOrURL, videoPath, true);
         }
     }
