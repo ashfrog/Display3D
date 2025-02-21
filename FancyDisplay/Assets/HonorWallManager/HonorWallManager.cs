@@ -88,21 +88,21 @@ public class HonorWallManager : MonoBehaviour
 
     private void ScrollLeft()
     {
-        if (currentIndex < displays.Count - 1)
-        {
-            currentIndex++;
-            targetPosition.x += spacing;
-            targetPosition.z += depth; // 修改为左后方
-        }
-    }
-
-    private void ScrollRight()
-    {
         if (currentIndex > 0)
         {
             currentIndex--;
             targetPosition.x -= spacing;
             targetPosition.z -= depth; // 修改为左后方
+        }
+    }
+
+    private void ScrollRight()
+    {
+        if (currentIndex < displays.Count - 1)
+        {
+            currentIndex++;
+            targetPosition.x += spacing;
+            targetPosition.z += depth; // 修改为左后方
         }
     }
 
@@ -123,7 +123,7 @@ public class HonorWallManager : MonoBehaviour
             if (autoScrollTimer >= autoScrollInterval)
             {
                 autoScrollTimer = 0f;
-                ScrollLeft();
+                ScrollRight();
 
                 // 循环移动展示框
                 if (currentIndex >= displays.Count - 1)
