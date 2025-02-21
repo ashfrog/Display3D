@@ -19,21 +19,23 @@ public class HonorWallManager : MonoBehaviour
 
     public Transform displayContainer;  // 展示框容器
     public MediaPlayer mediaPlayerPrefab; // AVPro视频播放器预制体
+    public Camera mainCamera;           // 主摄像机
 
     private List<GameObject> displays = new List<GameObject>();
-    private Vector2 targetPosition = new Vector2(0, 0);
+    private Vector3 targetPosition = new Vector3(0, 0, -10); // 摄像机初始位置
     private int currentIndex = 0;
     private float autoScrollTimer = 0f;
 
     private void Start()
     {
         InitializeDisplays();
+        displayPrefab.SetActive(false); // 启动程序后将 displayPrefab 设为不可见
     }
 
     private void Update()
     {
         HandleInput();
-        UpdateDisplayPositions();
+        UpdateCameraPosition();
         HandleAutoScroll();
     }
 
@@ -89,8 +91,8 @@ public class HonorWallManager : MonoBehaviour
         if (currentIndex < displays.Count - 1)
         {
             currentIndex++;
-            targetPosition.x -= spacing;
-            targetPosition.y -= depth; // 修改为左后方
+            targetPosition.x += spacing;
+            targetPosition.z += depth; // 修改为左后方
         }
     }
 
@@ -99,18 +101,18 @@ public class HonorWallManager : MonoBehaviour
         if (currentIndex > 0)
         {
             currentIndex--;
-            targetPosition.x += spacing;
-            targetPosition.y += depth; // 修改为左后方
+            targetPosition.x -= spacing;
+            targetPosition.z -= depth; // 修改为左后方
         }
     }
 
-    private void UpdateDisplayPositions()
+    private void UpdateCameraPosition()
     {
-        // 平滑更新展示框位置
-        Vector3 currentPos = displayContainer.localPosition;
+        // 平滑更新摄像机位置
+        Vector3 currentPos = mainCamera.transform.position;
         float newX = Mathf.Lerp(currentPos.x, targetPosition.x, Time.deltaTime * scrollSpeed);
-        float newZ = Mathf.Lerp(currentPos.z, targetPosition.y, Time.deltaTime * scrollSpeed); // 修改为左后方
-        displayContainer.localPosition = new Vector3(newX, currentPos.y, newZ);
+        float newZ = Mathf.Lerp(currentPos.z, targetPosition.z, Time.deltaTime * scrollSpeed); // 修改为左后方
+        mainCamera.transform.position = new Vector3(newX, currentPos.y, newZ);
     }
 
     private void HandleAutoScroll()
@@ -127,8 +129,8 @@ public class HonorWallManager : MonoBehaviour
                 if (currentIndex >= displays.Count - 1)
                 {
                     currentIndex = 0;
-                    displayContainer.localPosition = Vector3.zero;
-                    targetPosition = Vector2.zero;
+                    mainCamera.transform.position = new Vector3(0, mainCamera.transform.position.y, -10);
+                    targetPosition = new Vector3(0, 0, -10);
                 }
             }
         }
