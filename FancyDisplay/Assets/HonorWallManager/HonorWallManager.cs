@@ -54,13 +54,20 @@ public class HonorWallManager : MonoBehaviour
             {
                 renderer.material = new Material(renderer.material);
             }
-
-            // 在展示框上添加AVPro视频播放器
-            MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, display.transform);
-            ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
-            applyToMaterial.Material = renderer.material;
-            string videoPath = $@"M:\GitHub\Display3D\FancyDisplay\Assets\StreamingAssets\AVProVideoSamples\{i + 1}.mp4";
-            mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.AbsolutePathOrURL, videoPath, true);
+            string file = $@"M:\GitHub\Display3D\FancyDisplay\Assets\StreamingAssets\AVProVideoSamples\{i + 1}";
+            // 在展示框上添加AVPro视频播放器或图片
+            if (FileUtils.IsImgFile(file + ".png"))
+            {
+                renderer.material.mainTexture = LoadTexture(file + ".png");
+            }
+            else
+            {
+                MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, display.transform);
+                ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
+                applyToMaterial.Material = renderer.material;
+                string videoPath = file + ".mp4";
+                mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.AbsolutePathOrURL, videoPath, true);
+            }
         }
     }
 
@@ -125,5 +132,13 @@ public class HonorWallManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    private Texture2D LoadTexture(string filePath)
+    {
+        byte[] fileData = System.IO.File.ReadAllBytes(filePath);
+        Texture2D texture = new Texture2D(2, 2);
+        texture.LoadImage(fileData);
+        return texture;
     }
 }
