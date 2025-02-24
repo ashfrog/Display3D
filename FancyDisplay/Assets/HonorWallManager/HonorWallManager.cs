@@ -11,8 +11,6 @@ public class HonorWallManager : MonoBehaviour
     public float depth = 1f;           // 展示框的深度偏移
     public float scrollSpeed = 2f;     // 滑动速度
     public int displayCount = 5;       // 同时显示的展示框数量
-    public bool autoScroll = false;    // 自动循环移动开关
-    public float autoScrollInterval = 2f; // 自动循环移动间隔时间
 
     [Header("References")]
     public GameObject displayPrefab;    // 展示框预制体
