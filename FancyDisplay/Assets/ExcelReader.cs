@@ -60,22 +60,25 @@ public class ExcelReader : MonoBehaviour
             return;
         }
 
-        // 获取第一个工作表
-        DataTable table = dataSet.Tables[0];
-
-        // 遍历所有行
-        foreach (DataRow row in table.Rows)
+        // 遍历所有工作表
+        foreach (DataTable table in dataSet.Tables)
         {
-            // 示例：打印每一行的数据
-            string rowData = "";
-            for (int i = 0; i < table.Columns.Count; i++)
-            {
-                rowData += $"{table.Columns[i].ColumnName}: {row[i]}, ";
-            }
-            Debug.Log(rowData); //姓名: 韩利雄, 学历: 博士, 毕业院校: 中国地质大学, 简介: 重庆国际复合材料,
+            Debug.Log($"处理工作表: {table.TableName}");
 
-            // 在这里处理你的数据
-            // 例如: 创建游戏对象、更新UI等
+            // 遍历所有行
+            foreach (DataRow row in table.Rows)
+            {
+                // 示例：打印每一行的数据
+                string rowData = "";
+                for (int i = 0; i < table.Columns.Count; i++)
+                {
+                    rowData += $"{table.Columns[i].ColumnName}: {row[i]}, ";
+                }
+                Debug.Log(rowData);
+
+                // 在这里处理你的数据
+                // 例如: 创建游戏对象、更新UI等
+            }
         }
     }
 
