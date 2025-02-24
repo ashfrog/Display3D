@@ -76,7 +76,7 @@ public class HonorWallManager : MonoBehaviour
             displays.Add(display);
 
             // 动态生成material
-            Renderer renderer = display.GetComponent<DisplayBox>().renderer;
+            Renderer renderer = display.GetComponent<DisplayBox>().frontRenderer;
             if (renderer != null)
             {
                 renderer.material = new Material(renderer.material);

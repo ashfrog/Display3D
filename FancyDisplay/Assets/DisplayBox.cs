@@ -5,5 +5,5 @@ using UnityEngine;
 public class DisplayBox : MonoBehaviour
 {
     [SerializeField]
-    public Renderer renderer;
+    public Renderer frontRenderer;
 }
