@@ -23,8 +23,8 @@ public class HonorWallManager : MonoBehaviour
 
     private List<GameObject> displays = new List<GameObject>();
     private Vector3 targetPosition = new Vector3(0, 0, -10); // 摄像机初始位置
-    private int currentIndex = 0;
-    private float autoScrollTimer = 0f;
+
+    private bool reSetPos = false;
 
     private void Start()
     {
@@ -32,11 +32,36 @@ public class HonorWallManager : MonoBehaviour
         displayPrefab.SetActive(false); // 启动程序后将 displayPrefab 设为不可见
     }
 
+    private void UpdateCameraPosition()
+    {
+        // 平滑更新摄像机位置
+        Vector3 currentPos = mainCamera.transform.position;
+        float newX = Mathf.Lerp(currentPos.x, targetPosition.x, Time.deltaTime * scrollSpeed);
+        float newZ = Mathf.Lerp(currentPos.z, targetPosition.z, Time.deltaTime * scrollSpeed); // 修改为左后方
+        if (reSetPos)
+        {
+            mainCamera.transform.position = new Vector3(targetPosition.x, currentPos.y, targetPosition.z);
+            reSetPos = false;
+        }
+        else
+        {
+            mainCamera.transform.position = new Vector3(newX, currentPos.y, newZ);
+        }
+
+        // 匀速移动相机
+        targetPosition.x += Time.deltaTime * scrollSpeed * spacing;
+        targetPosition.z += Time.deltaTime * scrollSpeed * depth;
+        if (targetPosition.x >= displays.Count * spacing)
+        {
+            targetPosition.x = 0;
+            targetPosition.z = -10;
+            reSetPos = true;
+        }
+    }
+
     private void Update()
     {
-        HandleInput();
         UpdateCameraPosition();
-        HandleAutoScroll();
     }
 
     private void InitializeDisplays()
@@ -69,69 +94,6 @@ public class HonorWallManager : MonoBehaviour
                 applyToMaterial.Material = renderer.material;
                 string videoPath = file + ".mp4";
                 mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.AbsolutePathOrURL, videoPath, true);
-            }
-        }
-    }
-
-    private void HandleInput()
-    {
-        // 处理输入控制
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            ScrollLeft();
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            ScrollRight();
-        }
-    }
-
-    private void ScrollLeft()
-    {
-        if (currentIndex > 0)
-        {
-            currentIndex--;
-            targetPosition.x -= spacing;
-            targetPosition.z -= depth; // 修改为左后方
-        }
-    }
-
-    private void ScrollRight()
-    {
-        if (currentIndex < displays.Count - 1)
-        {
-            currentIndex++;
-            targetPosition.x += spacing;
-            targetPosition.z += depth; // 修改为左后方
-        }
-    }
-
-    private void UpdateCameraPosition()
-    {
-        // 平滑更新摄像机位置
-        Vector3 currentPos = mainCamera.transform.position;
-        float newX = Mathf.Lerp(currentPos.x, targetPosition.x, Time.deltaTime * scrollSpeed);
-        float newZ = Mathf.Lerp(currentPos.z, targetPosition.z, Time.deltaTime * scrollSpeed); // 修改为左后方
-        mainCamera.transform.position = new Vector3(newX, currentPos.y, newZ);
-    }
-
-    private void HandleAutoScroll()
-    {
-        if (autoScroll)
-        {
-            autoScrollTimer += Time.deltaTime;
-            if (autoScrollTimer >= autoScrollInterval)
-            {
-                autoScrollTimer = 0f;
-                ScrollRight();
-
-                // 循环移动展示框
-                if (currentIndex >= displays.Count - 1)
-                {
-                    currentIndex = 0;
-                    mainCamera.transform.position = new Vector3(0, mainCamera.transform.position.y, -10);
-                    targetPosition = new Vector3(0, 0, -10);
-                }
             }
         }
     }
