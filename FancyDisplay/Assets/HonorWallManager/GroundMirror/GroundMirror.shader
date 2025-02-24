@@ -5,14 +5,22 @@ Shader "Custom/GroundMirror" {
         _Metallic ("Metallic", Range(0,1)) = 0.0
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _ReflectionStrength ("Reflection Strength", Range(0,1)) = 0.5
+        _Transparency ("Transparency", Range(0,1)) = 0.5  // 新增透明度控制
     }
     
     SubShader {
-        Tags { "RenderType"="Opaque" }
+        Tags { 
+            "RenderType" = "Transparent"
+            "Queue" = "Transparent"
+        }
         LOD 200
 
+        // 开启透明混合
+        ZWrite Off
+        Blend SrcAlpha OneMinusSrcAlpha
+
         CGPROGRAM
-        #pragma surface surf Standard fullforwardshadows
+        #pragma surface surf Standard fullforwardshadows alpha:fade
         #pragma target 3.0
 
         sampler2D _MainTex;
@@ -26,6 +34,7 @@ Shader "Custom/GroundMirror" {
         half _Metallic;
         half _Glossiness;
         half _ReflectionStrength;
+        half _Transparency;  // 新增透明度变量
 
         void surf (Input IN, inout SurfaceOutputStandard o) {
             // 基础纹理
@@ -41,9 +50,9 @@ Shader "Custom/GroundMirror" {
             o.Albedo = lerp(c.rgb, refl.rgb, _ReflectionStrength);
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
-            o.Alpha = c.a;
+            o.Alpha = _Transparency;  // 使用透明度参数
         }
         ENDCG
     }
-    FallBack "Diffuse"
+    FallBack "Transparent/Diffuse"
 }
