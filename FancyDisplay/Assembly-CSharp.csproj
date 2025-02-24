@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoInfo.cs" />
+    <Compile Include="Assets\QuadFitter.cs" />
     <Compile Include="Assets\AVProVideo\Scripts\Internal\AudioOutputManager.cs" />
     <Compile Include="Assets\AVProVideo\Scripts\Components\UpdateStereoMaterial.cs" />
     <Compile Include="Assets\AVProVideo\Scripts\Internal\OSXMediaPlayer.cs" />
@@ -100,6 +101,7 @@
     <Compile Include="Assets\HonorWallManager\Scripts\FileUtils.cs" />
     <Compile Include="Assets\AVProVideo\Scripts\Internal\Resampler.cs" />
     <Compile Include="Assets\AVProVideo\Scripts\Internal\AndroidMediaPlayer.cs" />
+    <Compile Include="Assets\DisplayBox.cs" />
     <Compile Include="Assets\HonorWallManager\GroundMirror\GroundMirror.cs" />
     <Compile Include="Assets\HonorWallManager\DisplayFrame.cs" />
     <Compile Include="Assets\HonorWallManager\Scripts\Loom.cs" />

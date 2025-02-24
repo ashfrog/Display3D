@@ -51,7 +51,7 @@ public class HonorWallManager : MonoBehaviour
             displays.Add(display);
 
             // 动态生成material
-            Renderer renderer = display.GetComponent<Renderer>();
+            Renderer renderer = display.GetComponent<DisplayBox>().renderer;
             if (renderer != null)
             {
                 renderer.material = new Material(renderer.material);
@@ -62,7 +62,7 @@ public class HonorWallManager : MonoBehaviour
             {
                 renderer.material.mainTexture = LoadTexture(file + ".png");
             }
-            else
+            else if (FileUtils.IsMovFile(file + ".mp4"))
             {
                 MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, display.transform);
                 ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
