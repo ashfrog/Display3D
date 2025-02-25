@@ -6,27 +6,19 @@ using System.Collections.Generic;
 using ExcelDataReader;
 using System.Text;
 
-public class ExcelReader : MonoBehaviour
+public class ExcelReader
 {
-    [SerializeField]
-    private string excelFileName = "data.xlsx"; // Excel文件名
+    private const string dataFolder = "data"; // Excel文件夹名
+    private const string excelFileName = "data.xlsx"; // Excel文件名
 
-    private string excelPath;
-    private DataSet dataSet;
-
-    private void Start()
+    public static DataSet ReadExcel()
     {
-        // 设置Excel文件路径
-        excelPath = Path.Combine(Application.streamingAssetsPath, excelFileName);
-
-        // 读取Excel文件
-        ReadExcel();
-    }
-
-    private void ReadExcel()
-    {
+        DataSet dataSet = null;
         try
         {
+            // 设置Excel文件路径
+            string excelPath = Path.Combine(Application.streamingAssetsPath, dataFolder, excelFileName);
+
             using (var stream = File.Open(excelPath, FileMode.Open, FileAccess.Read))
             {
                 // 创建Excel读取器
@@ -41,8 +33,7 @@ public class ExcelReader : MonoBehaviour
                         }
                     });
 
-                    // 处理Excel数据
-                    ProcessExcelData();
+                    return dataSet;
                 }
             }
         }
@@ -50,9 +41,10 @@ public class ExcelReader : MonoBehaviour
         {
             Debug.LogError($"读取Excel文件时发生错误: {e.Message}");
         }
+        return dataSet;
     }
 
-    private void ProcessExcelData()
+    protected static void ProcessExcelData(DataSet dataSet)
     {
         if (dataSet == null || dataSet.Tables.Count == 0)
         {
@@ -83,48 +75,48 @@ public class ExcelReader : MonoBehaviour
     }
 
     // 示例：获取指定单元格的值
-    public string GetCellValue(int sheetIndex, int row, int column)
-    {
-        try
-        {
-            if (dataSet != null && dataSet.Tables.Count > sheetIndex)
-            {
-                DataTable table = dataSet.Tables[sheetIndex];
-                if (table.Rows.Count > row && table.Columns.Count > column)
-                {
-                    return table.Rows[row][column].ToString();
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"获取单元格值时发生错误: {e.Message}");
-        }
-        return string.Empty;
-    }
+    //public string GetCellValue(int sheetIndex, int row, int column)
+    //{
+    //    try
+    //    {
+    //        if (dataSet != null && dataSet.Tables.Count > sheetIndex)
+    //        {
+    //            DataTable table = dataSet.Tables[sheetIndex];
+    //            if (table.Rows.Count > row && table.Columns.Count > column)
+    //            {
+    //                return table.Rows[row][column].ToString();
+    //            }
+    //        }
+    //    }
+    //    catch (Exception e)
+    //    {
+    //        Debug.LogError($"获取单元格值时发生错误: {e.Message}");
+    //    }
+    //    return string.Empty;
+    //}
 
-    // 示例：根据列名获取某一列的所有值
-    public List<string> GetColumnData(int sheetIndex, string columnName)
-    {
-        List<string> columnData = new List<string>();
-        try
-        {
-            if (dataSet != null && dataSet.Tables.Count > sheetIndex)
-            {
-                DataTable table = dataSet.Tables[sheetIndex];
-                if (table.Columns.Contains(columnName))
-                {
-                    foreach (DataRow row in table.Rows)
-                    {
-                        columnData.Add(row[columnName].ToString());
-                    }
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            Debug.LogError($"获取列数据时发生错误: {e.Message}");
-        }
-        return columnData;
-    }
+    //// 示例：根据列名获取某一列的所有值
+    //public List<string> GetColumnData(int sheetIndex, string columnName)
+    //{
+    //    List<string> columnData = new List<string>();
+    //    try
+    //    {
+    //        if (dataSet != null && dataSet.Tables.Count > sheetIndex)
+    //        {
+    //            DataTable table = dataSet.Tables[sheetIndex];
+    //            if (table.Columns.Contains(columnName))
+    //            {
+    //                foreach (DataRow row in table.Rows)
+    //                {
+    //                    columnData.Add(row[columnName].ToString());
+    //                }
+    //            }
+    //        }
+    //    }
+    //    catch (Exception e)
+    //    {
+    //        Debug.LogError($"获取列数据时发生错误: {e.Message}");
+    //    }
+    //    return columnData;
+    //}
 }

@@ -1987,7 +1987,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1264637618}
   - component: {fileID: 1264637619}
-  - component: {fileID: 1264637620}
   m_Layer: 0
   m_Name: HonorWallManager
   m_TagString: Untagged
@@ -2030,18 +2029,6 @@ MonoBehaviour:
   displayContainer: {fileID: 1264637618}
   mediaPlayerPrefab: {fileID: 892040566}
   mainCamera: {fileID: 963194227}
---- !u!114 &1264637620
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1264637617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 994c4643d4113f543a959b8d57c0d754, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   excelFileName: data.xlsx
 --- !u!1 &1425361806
 GameObject:

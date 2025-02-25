@@ -2,6 +2,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 using RenderHeads.Media.AVProVideo;
+using System.Data;
+using System.IO;
+using ExcelDataReader;
+using System;
 
 public class HonorWallManager : MonoBehaviour
 {
@@ -23,6 +27,9 @@ public class HonorWallManager : MonoBehaviour
     private Vector3 targetPosition = new Vector3(0, 0, -10); // 摄像机初始位置
 
     private bool reSetPos = false;
+
+    [SerializeField]
+    private string excelFileName = "data.xlsx"; // Excel文件名
 
     private void Start()
     {
@@ -64,6 +71,36 @@ public class HonorWallManager : MonoBehaviour
 
     public void InitializeDisplays()
     {
+        DataSet dataSet = ExcelReader.ReadExcel();
+        if (dataSet == null || dataSet.Tables.Count == 0)
+        {
+            Debug.LogError("没有找到Excel数据");
+            return;
+        }
+
+        // 遍历所有工作表
+        for (int i = 0; i < dataSet.Tables.Count; i++)
+        {
+            DataTable table = dataSet.Tables[i];
+            Debug.Log($"处理工作表: {table.TableName}");
+
+            // 遍历所有行
+            for (int j = 0; j < table.Rows.Count; j++)
+            {
+                DataRow row = table.Rows[j];
+                // 示例：打印每一行的数据
+                string rowData = "";
+                for (int k = 0; k < table.Columns.Count; k++)
+                {
+                    rowData += $"{table.Columns[k].ColumnName}: {row[k]}, ";
+                }
+                Debug.Log(rowData);
+
+                // 在这里处理你的数据
+                // 例如: 创建游戏对象、更新UI等
+            }
+        }
+
         // 初始化展示框
         for (int i = 0; i < displayCount; i++)
         {
@@ -73,8 +110,9 @@ public class HonorWallManager : MonoBehaviour
             display.transform.localPosition = new Vector3(xPos, 0, zPos);
             displays.Add(display);
 
+            DisplayBox displayBox = display.GetComponent<DisplayBox>();
             // 动态生成material
-            Renderer renderer = display.GetComponent<DisplayBox>().frontRenderer;
+            Renderer renderer = displayBox.frontRenderer;
             if (renderer != null)
             {
                 renderer.material = new Material(renderer.material);
