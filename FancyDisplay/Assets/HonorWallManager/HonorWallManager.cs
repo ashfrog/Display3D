@@ -62,7 +62,7 @@ public class HonorWallManager : MonoBehaviour
         UpdateCameraPosition();
     }
 
-    private void InitializeDisplays()
+    public void InitializeDisplays()
     {
         // 初始化展示框
         for (int i = 0; i < displayCount; i++)
