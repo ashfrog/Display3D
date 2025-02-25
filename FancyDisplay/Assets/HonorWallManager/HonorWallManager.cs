@@ -104,33 +104,38 @@ public class HonorWallManager : MonoBehaviour
         // 初始化展示框
         for (int i = 0; i < displayCount; i++)
         {
-            GameObject display = Instantiate(displayPrefab, displayContainer);
-            float xPos = i * spacing;
-            float zPos = i * depth;
-            display.transform.localPosition = new Vector3(xPos, 0, zPos);
-            displays.Add(display);
+            CreateDisplayBox(i, null);
+        }
+    }
 
-            DisplayBox displayBox = display.GetComponent<DisplayBox>();
-            // 动态生成material
-            Renderer renderer = displayBox.frontRenderer;
-            if (renderer != null)
-            {
-                renderer.material = new Material(renderer.material);
-            }
-            string file = $@"M:\GitHub\Display3D\FancyDisplay\Assets\StreamingAssets\AVProVideoSamples\{i + 1}";
-            // 在展示框上添加AVPro视频播放器或图片
-            if (FileUtils.IsImgFile(file + ".png"))
-            {
-                renderer.material.mainTexture = LoadTexture(file + ".png");
-            }
-            else if (FileUtils.IsMovFile(file + ".mp4"))
-            {
-                MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, display.transform);
-                ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
-                applyToMaterial.Material = renderer.material;
-                string videoPath = file + ".mp4";
-                mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.AbsolutePathOrURL, videoPath, true);
-            }
+    private void CreateDisplayBox(int row, DataRow dataRow)
+    {
+        GameObject display = Instantiate(displayPrefab, displayContainer);
+        float xPos = row * spacing;
+        float zPos = row * depth;
+        display.transform.localPosition = new Vector3(xPos, 0, zPos);
+        displays.Add(display);
+
+        DisplayBox displayBox = display.GetComponent<DisplayBox>();
+        // 动态生成material
+        Renderer renderer = displayBox.frontRenderer;
+        if (renderer != null)
+        {
+            renderer.material = new Material(renderer.material);
+        }
+        string file = $@"M:\GitHub\Display3D\FancyDisplay\Assets\StreamingAssets\AVProVideoSamples\{row + 1}";
+        // 在展示框上添加AVPro视频播放器或图片
+        if (FileUtils.IsImgFile(file + ".png"))
+        {
+            renderer.material.mainTexture = LoadTexture(file + ".png");
+        }
+        else if (FileUtils.IsMovFile(file + ".mp4"))
+        {
+            MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, display.transform);
+            ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
+            applyToMaterial.Material = renderer.material;
+            string videoPath = file + ".mp4";
+            mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.AbsolutePathOrURL, videoPath, true);
         }
     }
 
