@@ -28,9 +28,6 @@ public class HonorWallManager : MonoBehaviour
 
     private bool reSetPos = false;
 
-    [SerializeField]
-    private string excelFileName = "data.xlsx"; // Excel文件名
-
     private void Start()
     {
         InitializeDisplays();
@@ -88,6 +85,9 @@ public class HonorWallManager : MonoBehaviour
             for (int j = 0; j < table.Rows.Count; j++)
             {
                 DataRow row = table.Rows[j];
+
+                CreateDisplayBox(j, row);
+
                 // 示例：打印每一行的数据
                 string rowData = "";
                 for (int k = 0; k < table.Columns.Count; k++)
@@ -100,50 +100,20 @@ public class HonorWallManager : MonoBehaviour
                 // 例如: 创建游戏对象、更新UI等
             }
         }
-
-        // 初始化展示框
-        for (int i = 0; i < displayCount; i++)
-        {
-            CreateDisplayBox(i, null);
-        }
     }
 
-    private void CreateDisplayBox(int row, DataRow dataRow)
+    private int curSheetIndex = 0;
+
+    private void CreateDisplayBox(int rowindex, DataRow rowdata)
     {
         GameObject display = Instantiate(displayPrefab, displayContainer);
-        float xPos = row * spacing;
-        float zPos = row * depth;
+        float xPos = rowindex * spacing;
+        float zPos = rowindex * depth;
         display.transform.localPosition = new Vector3(xPos, 0, zPos);
         displays.Add(display);
-
         DisplayBox displayBox = display.GetComponent<DisplayBox>();
-        // 动态生成material
-        Renderer renderer = displayBox.frontRenderer;
-        if (renderer != null)
-        {
-            renderer.material = new Material(renderer.material);
-        }
-        string file = $@"M:\GitHub\Display3D\FancyDisplay\Assets\StreamingAssets\AVProVideoSamples\{row + 1}";
-        // 在展示框上添加AVPro视频播放器或图片
-        if (FileUtils.IsImgFile(file + ".png"))
-        {
-            renderer.material.mainTexture = LoadTexture(file + ".png");
-        }
-        else if (FileUtils.IsMovFile(file + ".mp4"))
-        {
-            MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, display.transform);
-            ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
-            applyToMaterial.Material = renderer.material;
-            string videoPath = file + ".mp4";
-            mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.AbsolutePathOrURL, videoPath, true);
-        }
-    }
-
-    private Texture2D LoadTexture(string filePath)
-    {
-        byte[] fileData = System.IO.File.ReadAllBytes(filePath);
-        Texture2D texture = new Texture2D(2, 2);
-        texture.LoadImage(fileData);
-        return texture;
+        displayBox.SetText(rowdata);
+        string mediafilepath = Path.Combine(Application.streamingAssetsPath, ExcelReader.dataFolder, rowdata[3].ToString());
+        displayBox.SetImgMov(mediaPlayerPrefab, displayBox, mediafilepath);
     }
 }

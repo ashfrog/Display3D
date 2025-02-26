@@ -8,8 +8,8 @@ using System.Text;
 
 public class ExcelReader
 {
-    private const string dataFolder = "data"; // Excel文件夹名
-    private const string excelFileName = "data.xlsx"; // Excel文件名
+    public const string dataFolder = "data"; // Excel文件夹名
+    public const string excelFileName = "data.xlsx"; // Excel文件名
 
     public static DataSet ReadExcel()
     {

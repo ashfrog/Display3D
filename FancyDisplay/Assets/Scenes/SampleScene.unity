@@ -406,24 +406,24 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 8
-  m_fontSizeBase: 8
+  m_fontSize: 5
+  m_fontSizeBase: 5
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 16
+  m_fontStyle: 32
+  m_HorizontalAlignment: 32
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 6
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
+  m_enableWordWrapping: 0
+  m_wordWrappingRatios: 0.471
   m_overflowMode: 0
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
@@ -501,7 +501,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502035495}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.011}
   m_LocalScale: {x: 0.17264451, y: 0.51136446, z: 0.48780587}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -510,8 +510,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.3227, y: -0.013}
-  m_SizeDelta: {x: 1.77711, y: 1.17}
+  m_AnchoredPosition: {x: 0.28968027, y: -0.013}
+  m_SizeDelta: {x: 2.16466, y: 1.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &705507993
 GameObject:
@@ -793,7 +793,7 @@ GameObject:
   - component: {fileID: 801502853}
   - component: {fileID: 801502857}
   m_Layer: 0
-  m_Name: Quad
+  m_Name: "\u80CC\u666F\u89C6\u9891\u9762\u677F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2029,7 +2029,6 @@ MonoBehaviour:
   displayContainer: {fileID: 1264637618}
   mediaPlayerPrefab: {fileID: 892040566}
   mainCamera: {fileID: 963194227}
-  excelFileName: data.xlsx
 --- !u!1 &1425361806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2189,7 +2188,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u6BD5\u4E1A\u9662\u6821 \u59D3\u540D"
+  m_text: "\u6BD5\u4E1A\u9662\u6821"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7c4a01b708a32f4d9923965a8c2b972, type: 2}
   m_sharedMaterial: {fileID: -7499730689491919478, guid: b7c4a01b708a32f4d9923965a8c2b972, type: 2}
