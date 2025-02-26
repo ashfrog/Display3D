@@ -47,10 +47,14 @@ public class HonorWallManager : MonoBehaviour
     private void SetPrefabInactive(GameObject prefab)
     {
         prefab.SetActive(false);
+        // 保持prefab的local position, local rotation和local scale
+        Vector3 position = prefab.transform.localPosition;
+        Quaternion rotation = prefab.transform.localRotation;
+        Vector3 scale = prefab.transform.localScale;
         prefab.transform.SetParent(null);
-        prefab.transform.position = Vector3.zero;
-        prefab.transform.rotation = Quaternion.identity;
-        prefab.transform.localScale = Vector3.one;
+        prefab.transform.localPosition = position;
+        prefab.transform.localRotation = rotation;
+        prefab.transform.localScale = scale;
     }
 
     private void UpdateCameraPosition()
