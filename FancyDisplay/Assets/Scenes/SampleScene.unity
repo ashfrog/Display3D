@@ -1362,7 +1362,7 @@ Transform:
   m_Children:
   - {fileID: 801502856}
   - {fileID: 1058105851}
-  - {fileID: 1022317637}
+  - {fileID: 1304514137}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1390,14 +1390,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022317636}
-  m_LocalRotation: {x: 0, y: -0.39049006, z: 0, w: 0.92060715}
-  m_LocalPosition: {x: -6.66, y: -5.29, z: 10}
-  m_LocalScale: {x: 0.56, y: 0.7, z: 0.7}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 35137337}
-  m_Father: {fileID: 963194228}
-  m_RootOrder: 2
+  m_Father: {fileID: 1304514137}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -45.97, z: 0}
 --- !u!114 &1022317638
 MonoBehaviour:
@@ -2233,9 +2233,93 @@ MonoBehaviour:
   depth: 2
   scrollSpeed: 0.145
   displayPrefab: {fileID: 919132149020124343}
+  displayTitlePrefab: {fileID: 1022317636}
   displayContainer: {fileID: 1264637618}
+  displayTitleContainer: {fileID: 1304514137}
   mediaPlayerPrefab: {fileID: 892040566}
   mainCamera: {fileID: 963194227}
+--- !u!1 &1304514136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1304514137}
+  m_Layer: 0
+  m_Name: DisplayBoxTitleContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1304514137
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304514136}
+  m_LocalRotation: {x: 0, y: -0.39049006, z: 0, w: 0.92060715}
+  m_LocalPosition: {x: -6.66, y: -5.29, z: 10}
+  m_LocalScale: {x: 0.56, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1022317637}
+  m_Father: {fileID: 963194228}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -45.97, z: 0}
+--- !u!1 &1319127706
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1319127708}
+  - component: {fileID: 1319127707}
+  m_Layer: 0
+  m_Name: Seetings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1319127707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319127706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f835688892c2f14d9e7cf7ca5c3db7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPros:
+  - {fileID: 1761998912}
+  - {fileID: 1083674624}
+  - {fileID: 502035496}
+  - {fileID: 1143820335}
+  - {fileID: 1473033331}
+--- !u!4 &1319127708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319127706}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 107.07371, y: 4.348662, z: 17.799084}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425361806
 GameObject:
   m_ObjectHideFlags: 0
@@ -2584,7 +2668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u56E2\u961F\u5C55\u793A"
+  m_text: "\u7814\u53D1\u56E2\u961F"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b7c4a01b708a32f4d9923965a8c2b972, type: 2}
   m_sharedMaterial: {fileID: -7499730689491919478, guid: b7c4a01b708a32f4d9923965a8c2b972, type: 2}
@@ -2611,8 +2695,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.56
-  m_fontSizeBase: 2.56
+  m_fontSize: 1.67
+  m_fontSizeBase: 1.67
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2623,7 +2707,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 6
   m_wordSpacing: 0
-  m_lineSpacing: 6.01
+  m_lineSpacing: 0
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

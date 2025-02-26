@@ -154,6 +154,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoEvent.cs" />
+    <Compile Include="Assets\CodeUtils\ConfigManager\Internal\ConfigManager.cs" />
+    <Compile Include="Assets\CodeUtils\ConfigManager\Demo.cs" />
+    <Compile Include="Assets\CodeUtils\ConfigManager\Internal\IniConfig.cs" />
+    <Compile Include="Assets\CodeUtils\ConfigManager\SettingsManager.cs" />
+    <Compile Include="Assets\FontSizeLoading.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
