@@ -63,7 +63,11 @@ public class GroundMirror : MonoBehaviour
         m_ReflectionCamera.targetTexture = m_ReflectionTexture;
 
         GL.invertCulling = true;
-        m_ReflectionCamera.Render();
+
+        if (!cam.orthographic)
+        {
+            m_ReflectionCamera.Render();
+        }
         GL.invertCulling = false;
 
         m_SharedMaterial.SetTexture("_ReflectionTex", m_ReflectionTexture);
