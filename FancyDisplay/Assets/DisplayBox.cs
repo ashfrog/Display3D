@@ -12,11 +12,18 @@ public class DisplayBox : MonoBehaviour
 
     public TextMeshPro[] xls_Texs;
 
+    private bool needDestroyTexture;
+
     public void SetText(string name, string education, string school)
     {
         xls_Texs[0].text = name;
         xls_Texs[1].text = education;
         xls_Texs[2].text = school;
+    }
+
+    public void SetText(int index, string text)
+    {
+        xls_Texs[index].text = text;
     }
 
     public void SetText(DataRow rowData)
@@ -39,6 +46,7 @@ public class DisplayBox : MonoBehaviour
         if (FileUtils.IsImgFile(file))
         {
             renderer.material.mainTexture = LoadTexture(file);
+            needDestroyTexture = true;
         }
         else if (FileUtils.IsMovFile(file))
         {
@@ -60,7 +68,7 @@ public class DisplayBox : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (frontRenderer != null)
+        if (needDestroyTexture && frontRenderer != null)
         {
             if (frontRenderer.material.mainTexture != null)
             {
