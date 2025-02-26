@@ -971,7 +971,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7468546319567254704, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_Name
-      value: "AVPro Video Media Player (\u80CC\u666F\u89C6\u9891)"
+      value: "AVPro Video Media Player (\u80CC\u666F\u89C6\u9891\u64AD\u653E)"
       objectReference: {fileID: 0}
     - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_VideoPath
@@ -1036,7 +1036,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7468546319567254704, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_Name
-      value: AVPro Video Media Player(Item)
+      value: "AVPro Video Media Player(\u76F8\u6846\u89C6\u9891\u64AD\u653E)"
       objectReference: {fileID: 0}
     - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_AutoOpen
@@ -2231,8 +2231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spacing: 12
   depth: 2
-  scrollSpeed: 0.3
-  displayCount: 8
+  scrollSpeed: 0.145
   displayPrefab: {fileID: 919132149020124343}
   displayContainer: {fileID: 1264637618}
   mediaPlayerPrefab: {fileID: 892040566}

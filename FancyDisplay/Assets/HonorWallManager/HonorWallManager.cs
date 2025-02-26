@@ -14,7 +14,6 @@ public class HonorWallManager : MonoBehaviour
 
     public float depth = 1f;           // 展示框的深度偏移
     public float scrollSpeed = 2f;     // 滑动速度
-    public int displayCount = 5;       // 同时显示的展示框数量
 
     [Header("References")]
     public GameObject displayPrefab;    // 展示框预制体
@@ -27,9 +26,11 @@ public class HonorWallManager : MonoBehaviour
     private Vector3 targetPosition = new Vector3(0, 0, -10); // 摄像机初始位置
 
     private bool reSetPos = false;
+    private DataSet dataSet;//xlsx数据
 
     private void Start()
     {
+        dataSet = ExcelReader.ReadExcel();
         InitializeDisplays();
         displayPrefab.SetActive(false); // 启动程序后将 displayPrefab 设为不可见
     }
@@ -68,7 +69,6 @@ public class HonorWallManager : MonoBehaviour
 
     public void InitializeDisplays()
     {
-        DataSet dataSet = ExcelReader.ReadExcel();
         if (dataSet == null || dataSet.Tables.Count == 0)
         {
             Debug.LogError("没有找到Excel数据");
