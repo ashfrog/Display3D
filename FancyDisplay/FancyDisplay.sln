@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTextEffects", "EasyTextEffects.csproj", "{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{6627EE97-B90D-0B2E-A9DF-F16070224A90}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{E5AFFBA4-9DBA-629A-6A84-C2DAAD720128}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6627EE97-B90D-0B2E-A9DF-F16070224A90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6627EE97-B90D-0B2E-A9DF-F16070224A90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6627EE97-B90D-0B2E-A9DF-F16070224A90}.Release|Any CPU.ActiveCfg = Release|Any CPU

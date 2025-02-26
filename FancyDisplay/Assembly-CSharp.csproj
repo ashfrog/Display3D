@@ -1147,6 +1147,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="EasyTextEffects.csproj">
+      <Project>{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}</Project>
+      <Name>EasyTextEffects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
