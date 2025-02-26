@@ -40,7 +40,7 @@ public class HonorWallManager : MonoBehaviour
         SetPrefabInactive(displayPrefab);
         SetPrefabInactive(displayTitlePrefab);
 
-        //scrollSpeed = Settings.ini.Graphics.ScrollSpeed;
+        scrollSpeed = Settings.ini.Graphics.ScrollSpeed;
         InitializeDisplays(curSheetIndex);
     }
 
@@ -57,8 +57,12 @@ public class HonorWallManager : MonoBehaviour
     {
         // 平滑更新摄像机位置
         Vector3 currentPos = mainCamera.transform.position;
-        float newX = Mathf.Lerp(currentPos.x, targetPosition.x, Time.deltaTime * scrollSpeed);
-        float newZ = Mathf.Lerp(currentPos.z, targetPosition.z, Time.deltaTime * scrollSpeed); // 修改为左后方
+        //float newX = Mathf.Lerp(currentPos.x, targetPosition.x, Time.deltaTime * scrollSpeed); //允许移动不用加lerp
+        //float newZ = Mathf.Lerp(currentPos.z, targetPosition.z, Time.deltaTime * scrollSpeed); // 修改为左后方
+
+        float newX = targetPosition.x;
+        float newZ = targetPosition.z;
+
         if (reSetPos)
         {
             mainCamera.transform.position = new Vector3(targetPosition.x, currentPos.y, targetPosition.z);
