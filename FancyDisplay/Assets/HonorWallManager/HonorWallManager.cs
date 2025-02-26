@@ -162,7 +162,7 @@ public class HonorWallManager : MonoBehaviour
         display.SetActive(true);
         DisplayBox displayBox = display.GetComponent<DisplayBox>();
         displayBox.SetText(0, title);
-        string mediafilepath = Path.Combine(Application.streamingAssetsPath, ExcelReader.dataFolder, title.ToString(), ".jpg");
+        string mediafilepath = Path.Combine(Application.streamingAssetsPath, ExcelReader.dataFolder, title.ToString() + ".jpg");
         if (File.Exists(mediafilepath))
         {
             displayBox.SetImgMov(mediaPlayerPrefab, displayBox, mediafilepath);
