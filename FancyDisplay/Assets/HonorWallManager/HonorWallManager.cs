@@ -6,6 +6,7 @@ using System.Data;
 using System.IO;
 using ExcelDataReader;
 using System;
+using System.Collections;
 
 public class HonorWallManager : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class HonorWallManager : MonoBehaviour
     private bool reSetPos = false;
     private DataSet dataSet;//xlsx数据
     private int curSheetIndex = 0;
+
+    int lastindex = 0;
 
     private void Start()
     {
@@ -80,7 +83,7 @@ public class HonorWallManager : MonoBehaviour
         // 匀速移动相机
         targetPosition.x += Time.deltaTime * scrollSpeed * spacing;
         targetPosition.z += Time.deltaTime * scrollSpeed * depth;
-        if (targetPosition.x >= displayContainer.childCount * spacing)
+        if (dataSet != null && targetPosition.x >= dataSet.Tables[curSheetIndex].Rows.Count * spacing)
         {
             targetPosition.x = 0;
             targetPosition.z = -10;
@@ -93,6 +96,15 @@ public class HonorWallManager : MonoBehaviour
                 InitializeDisplays(curSheetIndex);
             }
         }
+        ////判定当前展示项index
+        //int index = Mathf.FloorToInt(targetPosition.x / spacing);
+        //Debug.Log($"当前展示项index: {index}");
+        ////当前项index改变则移除第一项
+        //if (index > 5 && lastindex != index)
+        //{
+        //    lastindex = index;
+        //    Destroy(displayContainer.GetChild(0).gameObject);
+        //}
     }
 
     private void DestroyChildrens(Transform transform)
@@ -112,36 +124,36 @@ public class HonorWallManager : MonoBehaviour
         }
     }
 
-    public void InitializeDisplays(int sheetindex)
-    {
-        if (dataSet == null || dataSet.Tables.Count == 0)
-        {
-            Debug.LogError("没有找到Excel数据");
-            return;
-        }
+    //public void InitializeDisplays(int sheetindex)
+    //{
+    //    if (dataSet == null || dataSet.Tables.Count == 0)
+    //    {
+    //        Debug.LogError("没有找到Excel数据");
+    //        return;
+    //    }
 
-        DataTable table = dataSet.Tables[sheetindex];
-        Debug.Log($"处理工作表: {table.TableName}");
-        CreateDisplayTitleBox(table.TableName);
-        // 遍历所有行
-        for (int j = 0; j < table.Rows.Count; j++)
-        {
-            DataRow row = table.Rows[j];
+    //    DataTable table = dataSet.Tables[sheetindex];
+    //    Debug.Log($"处理工作表: {table.TableName}");
+    //    CreateDisplayTitleBox(table.TableName);
+    //    // 遍历所有行
+    //    for (int j = 0; j < table.Rows.Count; j++)
+    //    {
+    //        DataRow row = table.Rows[j];
 
-            CreateDisplayBox(j, row);
+    //        CreateDisplayBox(j, row);
 
-            //// 示例：打印每一行的数据
-            //string rowData = "";
-            //for (int k = 0; k < table.Columns.Count; k++)
-            //{
-            //    rowData += $"{table.Columns[k].ColumnName}: {row[k]}, ";
-            //}
-            //Debug.Log(rowData);
+    //        //// 示例：打印每一行的数据
+    //        //string rowData = "";
+    //        //for (int k = 0; k < table.Columns.Count; k++)
+    //        //{
+    //        //    rowData += $"{table.Columns[k].ColumnName}: {row[k]}, ";
+    //        //}
+    //        //Debug.Log(rowData);
 
-            // 在这里处理你的数据
-            // 例如: 创建游戏对象、更新UI等
-        }
-    }
+    //        // 在这里处理你的数据
+    //        // 例如: 创建游戏对象、更新UI等
+    //    }
+    //}
 
     private void CreateDisplayBox(int rowindex, DataRow rowdata)
     {
@@ -171,5 +183,32 @@ public class HonorWallManager : MonoBehaviour
         {
             displayBox.SetImgMov(mediaPlayerPrefab, displayBox, mediafilepath);
         }
+    }
+    private IEnumerator LazyLoadDisplays(int sheetindex)
+    {
+        if (dataSet == null || dataSet.Tables.Count == 0)
+        {
+            Debug.LogError("没有找到Excel数据");
+            yield break;
+        }
+
+        DataTable table = dataSet.Tables[sheetindex];
+        Debug.Log($"处理工作表: {table.TableName}");
+        CreateDisplayTitleBox(table.TableName);
+
+        // 遍历所有行
+        for (int j = 0; j < table.Rows.Count; j++)
+        {
+            DataRow row = table.Rows[j];
+            CreateDisplayBox(j, row);
+
+            // 每创建一个展示框后等待一帧
+            yield return null;
+        }
+    }
+
+    public void InitializeDisplays(int sheetindex)
+    {
+        StartCoroutine(LazyLoadDisplays(sheetindex));
     }
 }
