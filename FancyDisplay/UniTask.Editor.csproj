@@ -498,10 +498,6 @@
       <HintPath>Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="DOTweenUpgradeManager">
-      <HintPath>Assets\Plugins\Demigiant\DOTween\Editor\DOTweenUpgradeManager.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
       <Private>False</Private>

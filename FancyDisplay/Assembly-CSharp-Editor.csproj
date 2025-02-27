@@ -478,6 +478,30 @@
       <HintPath>Assets\Plugins\x86_64\I18N.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DemiEditor">
+      <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTweenPro">
+      <HintPath>Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTweenProEditor">
+      <HintPath>Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
       <Private>False</Private>
@@ -1092,13 +1116,41 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{AC6515A9-171C-986D-6F58-B8B91E88F718}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{6627EE97-B90D-0B2E-A9DF-F16070224A90}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
+    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
+      <Project>{B279553A-6507-EEF2-2A04-B7F331E1AD8B}</Project>
+      <Name>Assembly-CSharp-Editor-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="EasyTextEffects.csproj">
       <Project>{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}</Project>
       <Name>EasyTextEffects</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Addressables.csproj">
+      <Project>{18ADE0D9-8C3D-34EF-668F-A8BC9729F768}</Project>
+      <Name>UniTask.Addressables</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.DOTween.csproj">
+      <Project>{D1099F29-B794-0292-766C-E4045A563647}</Project>
+      <Name>UniTask.DOTween</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.csproj">
+      <Project>{37AC0F78-5B1A-19E3-E85B-436BC27A22FF}</Project>
+      <Name>UniTask</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.TextMeshPro.csproj">
+      <Project>{A21CEC30-3247-2431-23E9-2C27B10E17E7}</Project>
+      <Name>UniTask.TextMeshPro</Name>
+    </ProjectReference>
+    <ProjectReference Include="UniTask.Linq.csproj">
+      <Project>{A7DD83BC-87EE-3438-B643-E0BABF1398B4}</Project>
+      <Name>UniTask.Linq</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
