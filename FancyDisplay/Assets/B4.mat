@@ -10,7 +10,7 @@ Material:
   m_Name: B4
   m_Shader: {fileID: 4800000, guid: 977ce85d64e1849409668a559c7d1c4d, type: 3}
   m_ValidKeywords:
-  - _AD_CUTOUT_STANDARD_SOURCE_TWO_CUSTOM_MAPS
+  - _AD_CUTOUT_STANDARD_SOURCE_CUSTOM_MAP
   - _AD_EDGE_BASE_SOURCE_CUTOUT_STANDARD
   - _AD_STATE_ENABLED
   - _EMISSION
@@ -24,7 +24,7 @@ Material:
   - _AD_EDGE_UV_DISTORTION_SOURCE_DEFAULT
   - _AD_GLOBAL_CONTROL_ID_NONE
   - _DOUBLESIDED_ON
-  m_LightmapFlags: 1
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 1
   m_CustomRenderQueue: -1
@@ -58,15 +58,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AdvancedDissolveCutoutStandardMap1:
-        m_Texture: {fileID: 2800000, guid: 3e3425d888b91a94daf7e3396f3d45a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 2a9fd0fcb9317bd46997cc26d38f2f23, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AdvancedDissolveCutoutStandardMap2:
-        m_Texture: {fileID: 2800000, guid: fdb8ae27123658d4685c459e57f212fa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 81810837cfbbde0488134e76f55f5cff, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AdvancedDissolveCutoutStandardMap3:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d06375c236d59ed4daf50dcdda894283, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AdvancedDissolveEdgeAdditionalColorMap:
@@ -106,7 +106,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: b25bd525c5d7b6a48942ab93db09d881, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8a14fd3f4bb60624886c365ed3a577b5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissiveColorMap:
@@ -213,7 +213,7 @@ Material:
     - _AdvancedDissolveCutoutSimpleMapsScreenSpaceUVScale: 0
     - _AdvancedDissolveCutoutSimpleMapsTriplanarMappingSpace: 0
     - _AdvancedDissolveCutoutStandardBaseInvert: 0
-    - _AdvancedDissolveCutoutStandardClip: 0.5
+    - _AdvancedDissolveCutoutStandardClip: 0
     - _AdvancedDissolveCutoutStandardMap1Channel: 3
     - _AdvancedDissolveCutoutStandardMap1Intensity: 1
     - _AdvancedDissolveCutoutStandardMap1Invert: 0
@@ -254,7 +254,7 @@ Material:
     - _AdvancedDissolveEdgeBaseWidthGeometric: 0.1
     - _AdvancedDissolveEdgeBaseWidthParametric: 0.25
     - _AdvancedDissolveEdgeBaseWidthSimple: 0.15
-    - _AdvancedDissolveEdgeBaseWidthStandard: 0.15
+    - _AdvancedDissolveEdgeBaseWidthStandard: 0.223
     - _AdvancedDissolveEdgeColor2Transparency: 1
     - _AdvancedDissolveEdgeColorTransparency: 1
     - _AdvancedDissolveEdgeGIMetaPassMultiplier: 2
@@ -274,7 +274,7 @@ Material:
     - _AdvancedDissolveKeywordCutoutSimpleSource: 3
     - _AdvancedDissolveKeywordCutoutSource: 2
     - _AdvancedDissolveKeywordCutoutStandardMapsMappingType: 0
-    - _AdvancedDissolveKeywordCutoutStandardSource: 3
+    - _AdvancedDissolveKeywordCutoutStandardSource: 2
     - _AdvancedDissolveKeywordCutoutStandardSourceMapsMappingType: 0
     - _AdvancedDissolveKeywordDynamicMaskCount: 0
     - _AdvancedDissolveKeywordDynamicMaskType: 0
@@ -398,10 +398,10 @@ Material:
     - _AdvancedDissolveCutoutSimpleMap3Tiling: {r: 1, g: 1, b: 1, a: 1}
     - _AdvancedDissolveCutoutStandardMap1Offset: {r: 0, g: 0, b: 0, a: 0}
     - _AdvancedDissolveCutoutStandardMap1Scroll: {r: 0, g: 0, b: 0, a: 0}
-    - _AdvancedDissolveCutoutStandardMap1Tiling: {r: 0.5, g: 0.5, b: 1, a: 0}
+    - _AdvancedDissolveCutoutStandardMap1Tiling: {r: 1, g: 1, b: 1, a: 0}
     - _AdvancedDissolveCutoutStandardMap2Offset: {r: 0, g: 0, b: 0, a: 0}
     - _AdvancedDissolveCutoutStandardMap2Scroll: {r: 0, g: 0, b: 0, a: 0}
-    - _AdvancedDissolveCutoutStandardMap2Tiling: {r: 0.4, g: 0.4, b: 1, a: 0}
+    - _AdvancedDissolveCutoutStandardMap2Tiling: {r: 0, g: 0.19, b: 1, a: 0}
     - _AdvancedDissolveCutoutStandardMap3Offset: {r: 0, g: 0, b: 0, a: 0}
     - _AdvancedDissolveCutoutStandardMap3Scroll: {r: 0, g: 0, b: 0, a: 0}
     - _AdvancedDissolveCutoutStandardMap3Tiling: {r: 1, g: 1, b: 1, a: 0}
@@ -418,7 +418,7 @@ Material:
     - _AdvancedDissolveEdgeAdditionalColorMapOffset: {r: 0, g: 0, b: 0, a: 0}
     - _AdvancedDissolveEdgeAdditionalColorMapScroll: {r: 0, g: 0, b: 0, a: 0}
     - _AdvancedDissolveEdgeAdditionalColorMapTiling: {r: 1, g: 1, b: 1, a: 1}
-    - _AdvancedDissolveEdgeBaseColor: {r: 0, g: 1, b: 1, a: 1}
+    - _AdvancedDissolveEdgeBaseColor: {r: 0.6226415, g: 0.6226415, b: 0.6226415, a: 1}
     - _AdvancedDissolveEdgeBaseColorIntensity: {r: 1.5, g: 3.481689, b: 0, a: 0}
     - _AdvancedDissolveEdgeColor: {r: 0, g: 1, b: 1, a: 1}
     - _AdvancedDissolveEdgeColor2: {r: 1, g: 0, b: 0, a: 1}
@@ -432,9 +432,9 @@ Material:
     - _AdvancedDissolveEdgeUVDistortionMapTiling: {r: 1, g: 1, b: 1, a: 1}
     - _AdvancedDissolveMetaPassObjectPosition: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
-    - _Color: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
-    - _EmissionColor: {r: 0, g: 0, b: 0.007843138, a: 1}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
   m_BuildTextureStacks: []

@@ -1090,6 +1090,18 @@
       <Project>{A7DD83BC-87EE-3438-B643-E0BABF1398B4}</Project>
       <Name>UniTask.Linq</Name>
     </ProjectReference>
+    <ProjectReference Include="AmazingAssets.AdvancedDissolve.Examples.csproj">
+      <Project>{F16A47B9-EBBB-D5D1-8199-3252F85678EF}</Project>
+      <Name>AmazingAssets.AdvancedDissolve.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="AmazingAssets.AdvancedDissolve.csproj">
+      <Project>{2A642DB6-D852-57C2-9E13-D4528DAB8057}</Project>
+      <Name>AmazingAssets.AdvancedDissolve</Name>
+    </ProjectReference>
+    <ProjectReference Include="AmazingAssets.AdvancedDissolve.Editor.csproj">
+      <Project>{6695BED4-F1E2-E2BF-0544-7FCCCCC20D30}</Project>
+      <Name>AmazingAssets.AdvancedDissolve.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
