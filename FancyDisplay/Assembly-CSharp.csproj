@@ -163,54 +163,110 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Nature\SoftOcclusion\TreeSoftOcclusionLeaves.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle Blend.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-Transparent-AndroidOES.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Stereo.shader" />
     <None Include="Assets\HonorWallManager\Texture\UnlitTexture.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreen.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-IMGUI-Transparent.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-Particle-Add.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\AVProVideo\Demos\Materials\UI-Default-ExtraTexture.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-AndroidOES.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Nature\SoftOcclusion\TreeSoftOcclusionBark.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\UnityStandardCore.cginc" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Helper-Transition.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-Particle-Alpha-VertexLit.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Core\Vertex.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-UI-Default-Transparent.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Nature\SoftOcclusion\UnityBuiltin2xTreeLibrary.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\StandardSpecular.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle Anim Alpha Blend.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\cginc\Core.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle AddMultiply.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-Particle-Alpha.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\UnityStandardMeta.cginc" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Lit-Transparent-Diffuse.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-Lightmap-Unlit.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\UnityStandardCoreForward.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Unlit\Unlit.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Lit-Diffuse.shader" />
     <None Include="Assets\AVProVideo\Demos\Materials\UI-DefaultFont-ExtraTexture.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-Transparent.shader" />
     <None Include="Assets\HonorWallManager\Water\WaterReflection.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle Premultiply Blend.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\UnityStandardParticleShadow.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\Standard.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Core\Shadow.cginc" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Skybox-Sphere.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\VertexLit\VertexLit.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle Add.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-VR-InsideSphere-StereoUV.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Background-FullScreenTransparent.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Nature\TreeCreator\TreeCreatorLeaves.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\One Directional Light\OneDirectionalLight.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-Bumped.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle Standard Unlit.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\SpeedTree\SpeedTreeBillboard.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\SpeedTree\SpeedTree8.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Core\Limits.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-UI-AndroidOES.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\UnityStandardInput.cginc" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Skybox-Cube3x2.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Unlit\Unlit.cginc" />
     <None Include="Assets\HonorWallManager\Mirror.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\cginc\Defines.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\UnityStandardParticles.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle Multiply.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-BumpSpec.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\SpeedTree\SpeedTreeBillboardCommon.cginc" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-BumpSpec-1DirectionalLight.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Unlit-AndroidOES.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Unlit.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\One Directional Light\ForwardBase.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-Particle-Multiply.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\VertexLit\VertexLitCutout.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\SpeedTree\SpeedTree8Common.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\cginc\SpaceTransforms.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle MultiplyDouble.shader" />
     <None Include="Assets\HonorWallManager\GroundMirror\GroundMirror.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\UnityStandardShadow.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-Diffuse.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Nature\TreeCreator\TreeCreatorBark.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\UnityStandardConfig.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Nature\TreeCreator\TreeCreatorLeavesFast.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-Unlit-Transparent.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\SpeedTree\SpeedTree.shader" />
     <None Include="Assets\AVProVideo\Resources\Shaders\AVProVideo-BlendFrames.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\cginc\Variables.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle AddSmooth.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Core\VertexLM.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle Standard Surface.shader" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\SpeedTree\SpeedTreeCommon.cginc" />
+    <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle Alpha Blend.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
   </ItemGroup>
@@ -1204,6 +1260,18 @@
     <ProjectReference Include="UniTask.Linq.csproj">
       <Project>{A7DD83BC-87EE-3438-B643-E0BABF1398B4}</Project>
       <Name>UniTask.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="AmazingAssets.AdvancedDissolve.Examples.csproj">
+      <Project>{F16A47B9-EBBB-D5D1-8199-3252F85678EF}</Project>
+      <Name>AmazingAssets.AdvancedDissolve.Examples</Name>
+    </ProjectReference>
+    <ProjectReference Include="AmazingAssets.AdvancedDissolve.csproj">
+      <Project>{2A642DB6-D852-57C2-9E13-D4528DAB8057}</Project>
+      <Name>AmazingAssets.AdvancedDissolve</Name>
+    </ProjectReference>
+    <ProjectReference Include="AmazingAssets.AdvancedDissolve.Editor.csproj">
+      <Project>{6695BED4-F1E2-E2BF-0544-7FCCCCC20D30}</Project>
+      <Name>AmazingAssets.AdvancedDissolve.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
