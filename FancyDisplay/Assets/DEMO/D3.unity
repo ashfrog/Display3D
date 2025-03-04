@@ -324,7 +324,7 @@ MonoBehaviour:
   _media: {fileID: 1848879883}
   _defaultTexture: {fileID: 2800000, guid: 8a14fd3f4bb60624886c365ed3a577b5, type: 3}
   _material: {fileID: 2100000, guid: 13d20cd2b0638104d95b77d93dd65e0e, type: 2}
-  _texturePropertyName: _ShadowTex
+  _texturePropertyName: _FalloffTex
   ignoreFlip: 1
   _offset: {x: 0, y: 0}
   _scale: {x: 1, y: 1}
@@ -625,7 +625,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.38
   m_Range: 10
   m_SpotAngle: 30
