@@ -139,6 +139,7 @@
     <Compile Include="Assets\DisplayBox.cs" />
     <Compile Include="Assets\HonorWallManager\GroundMirror\GroundMirror.cs" />
     <Compile Include="Assets\HonorWallManager\DisplayFrame.cs" />
+    <Compile Include="Assets\TouchSocketTcp\Loom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\Demo\StrTcpClient.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\DTO\MyFixedHeaderCustomDataHandlingAdapter.cs" />
@@ -172,7 +173,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoEvent.cs" />
-    <Compile Include="Assets\TouchSocketTcp\Loom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
