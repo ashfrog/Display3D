@@ -285,15 +285,15 @@ Projector:
   m_Enabled: 1
   serializedVersion: 2
   m_NearClipPlane: 0.1
-  m_FarClipPlane: 31.27
+  m_FarClipPlane: 80
   m_FieldOfView: 60
-  m_AspectRatio: 3.4
+  m_AspectRatio: 6
   m_Orthographic: 0
   m_OrthographicSize: 10
   m_Material: {fileID: 2100000, guid: 13d20cd2b0638104d95b77d93dd65e0e, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 6
 --- !u!4 &641449572
 Transform:
   m_ObjectHideFlags: 0
@@ -302,7 +302,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 641449570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: -46.1}
+  m_LocalPosition: {x: 0, y: 8.2, z: -46.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1044,8 +1044,12 @@ PrefabInstance:
       value: "\u5168\u606F\u5385\u6295\u5F71\u6A21\u578B"
       objectReference: {fileID: 0}
     - target: {fileID: 1391701773453166423, guid: d6345e00165a5b441bc83746d9bf7b0a, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1391701773453166423, guid: d6345e00165a5b441bc83746d9bf7b0a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4482591521289913166, guid: d6345e00165a5b441bc83746d9bf7b0a, type: 3}
       propertyPath: m_Materials.Array.data[0]
