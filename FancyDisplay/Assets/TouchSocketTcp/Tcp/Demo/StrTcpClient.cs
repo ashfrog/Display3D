@@ -10,9 +10,9 @@ using TouchSocket.Core.Plugins;
 using TouchSocket.Core.Dependency;
 using TouchSocket.Core.Log;
 
-public class StrTcpClient
+public class StrTcpClient : MonoBehaviour
 {
-    private TcpClient m_tcpClient = new TcpClient();
+    private TcpClient m_tcpClient;
 
     public Action<String> StrTcpClientReceive;
     public Action<ITcpClient> Connected;
@@ -24,9 +24,17 @@ public class StrTcpClient
     private bool isconnected;
     TouchSocketConfig config = new TouchSocketConfig();
 
+    public string ipHost = "127.0.0.1:4850";
+
+    private void OnEnable()
+    {
+        InitConfig(ipHost);
+        StartConnect();
+    }
 
     public StrTcpClient()
     {
+        m_tcpClient = new TcpClient();
         m_tcpClient.Connecting += (client, e) =>
         {
         };
@@ -36,7 +44,7 @@ public class StrTcpClient
             {
                 Connected.Invoke(client);
             }
-            Debug.Log("成功连接");
+            Debug.Log($@"{client.IP}:{client.Port}成功连接");
         };//成功连接到服务器
         m_tcpClient.Disconnected += (client, e) =>
         {
@@ -49,6 +57,14 @@ public class StrTcpClient
         m_tcpClient.Received += TcpClient_Received;
     }
 
+    private void Update()
+    {
+        if ((Input.GetKeyDown(KeyCode.F2)))
+        {
+            Send("abc");
+        }
+    }
+
     public void InitConfig(string IpPort)
     {
         iplog = IpPort;
@@ -59,7 +75,7 @@ public class StrTcpClient
             .UsePlugin()
             .ConfigurePlugins(a =>
             {
-                a.UseReconnection(-1, false, 1000);
+                //a.UseReconnection(-1, false, 1000); //重连插件unity不支持 会阻塞主线程
             })
             .SetBufferLength(1024 * 10)
             .ConfigureContainer(a =>
@@ -101,13 +117,14 @@ public class StrTcpClient
         isconnected = false;
         this.m_tcpClient.Close();
     }
-
+    private void OnDisable()
+    {
+        Close();
+    }
 
     private void TcpClient_Received(TcpClient client, ByteBlock byteBlock, IRequestInfo requestInfo)
     {
         Debug.Log($"StrTcp从服务器收到消息：{Encoding.UTF8.GetString(byteBlock.ToArray())}");//utf8解码。//无适配器情况接受字符串
-        //DTOInfo dTOInfo = requestInfo as DTOInfo;
-        //print(dTOInfo.DataType + " " + dTOInfo.OrderType + " " + dTOInfo.Body.Length);
         if (StrTcpClientReceive != null)
         {
             StrTcpClientReceive.Invoke(Encoding.UTF8.GetString(byteBlock.ToArray()));
@@ -116,7 +133,6 @@ public class StrTcpClient
 
     public void logmsg(string msg)
     {
-
     }
 
 }
