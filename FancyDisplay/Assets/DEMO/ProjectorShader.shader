@@ -3,7 +3,6 @@ Shader "Projector/Light_Flipped_SelfIllum" {
         _Color ("Main Color", Color) = (1,1,1,1)
         _ShadowTex ("Cookie", 2D) = "" {}
         _FalloffTex ("FallOff", 2D) = "" {}
-        _FlipY ("Flip Y", Float) = 0.0
     }
 
     SubShader {
@@ -35,28 +34,20 @@ Shader "Projector/Light_Flipped_SelfIllum" {
 
             float4x4 unity_Projector;
             float4x4 unity_ProjectorClip;
-            float _FlipY;
 
+            // 顶点着色器，仍然执行投影变换
             v2f vert (float4 vertex : POSITION)
             {
                 v2f o;
                 o.pos = UnityObjectToClipPos(vertex);
 
                 // 计算Projector贴图坐标
-                float4 uvShadow  = mul(unity_Projector, vertex);
-                float4 uvFalloff = mul(unity_ProjectorClip, vertex);
+                o.uvShadow  = mul(unity_Projector, vertex);
+                o.uvFalloff = mul(unity_ProjectorClip, vertex);
 
-                // 默认（_FlipY=0）时使用原有投影公式: y = -y + w
-                // 如果开启翻转（_FlipY=1），则使用原本的 y，不执行反转
-                // 通过线性插值实现可切换：当 _FlipY=0 => -uv.y + uv.w；当 _FlipY=1 => uv.y
-                float flippedShadowY  = -uvShadow.y  + uvShadow.w;
-                float flippedFalloffY = -uvFalloff.y + uvFalloff.w;
-
-                uvShadow.y  = lerp(flippedShadowY,  uvShadow.y,  _FlipY);
-                uvFalloff.y = lerp(flippedFalloffY, uvFalloff.y, _FlipY);
-
-                o.uvShadow  = uvShadow;
-                o.uvFalloff = uvFalloff;
+                // 反转Y坐标
+                o.uvShadow.y  = -o.uvShadow.y  + o.uvShadow.w;
+                o.uvFalloff.y = -o.uvFalloff.y + o.uvFalloff.w;
 
                 UNITY_TRANSFER_FOG(o, o.pos);
                 return o;
