@@ -33,11 +33,6 @@ public class FHClientController : MonoBehaviour
         {
 
         });
-
-        if (offLineStatue != null)
-        {
-            StartCoroutine(OfflineStatueView());
-        }
     }
 
     private static SemaphoreSlim semaphore = new SemaphoreSlim(1); // 限制同时进行的连接数
@@ -66,16 +61,12 @@ public class FHClientController : MonoBehaviour
             }
             // 添加1秒的延迟
             yield return new WaitForSeconds(1);
-        }
-    }
 
-    private IEnumerator OfflineStatueView()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(0.2f);
             bool isonline = fhTcpClient != null && fhTcpClient.IsOnline();
-            offLineStatue.SetActive(!isonline);
+            if (offLineStatue != null)
+            {
+                offLineStatue.SetActive(!isonline);
+            }
         }
     }
 
@@ -112,7 +103,6 @@ public class FHClientController : MonoBehaviour
     }
     private void OnEnable()
     {
-
         exit = false;
         StartCoroutine(LoopReconnect());
     }
