@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 
 public class FHClientController : MonoBehaviour
@@ -26,18 +27,7 @@ public class FHClientController : MonoBehaviour
 
         fhTcpClient.InitConfig(ipHost);
 
-        Loom.RunAsync(() =>
-        {
-            exit = false;
-            while (!exit)
-            {
-                if (!fhTcpClient.IsOnline())
-                {
-                    fhTcpClient.StartConnect();
-                }
-                System.Threading.Thread.Sleep(1000);
-            }
-        });
+        exit = false;
         fhTcpClient.FHTcpClientReceive = ReceiveData;
         fhTcpClient.Connected += ((client) =>
         {
@@ -47,6 +37,35 @@ public class FHClientController : MonoBehaviour
         if (offLineStatue != null)
         {
             StartCoroutine(OfflineStatueView());
+        }
+    }
+
+    private static SemaphoreSlim semaphore = new SemaphoreSlim(1); // 限制同时进行的连接数
+
+    private IEnumerator LoopReconnect()
+    {
+        while (!exit)
+        {
+            //等待一帧
+            yield return new WaitForEndOfFrame();
+
+            if (fhTcpClient != null && !fhTcpClient.IsOnline())
+            {
+                ThreadPool.QueueUserWorkItem(async state =>
+                {
+                    await semaphore.WaitAsync();
+                    try
+                    {
+                        fhTcpClient.StartConnect();
+                    }
+                    finally
+                    {
+                        semaphore.Release();
+                    }
+                });
+            }
+            // 添加1秒的延迟
+            yield return new WaitForSeconds(1);
         }
     }
 
@@ -91,6 +110,12 @@ public class FHClientController : MonoBehaviour
     {
         fhTcpClient.SendHexStr(dataTypeEnum, orderTypeEnum, obj);
     }
+    private void OnEnable()
+    {
+
+        exit = false;
+        StartCoroutine(LoopReconnect());
+    }
 
     private void OnDisable()
     {
@@ -99,6 +124,5 @@ public class FHClientController : MonoBehaviour
         {
             fhTcpClient.Close();
         }
-
     }
 }

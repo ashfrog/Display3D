@@ -92,17 +92,19 @@ public class FHTcpClient
         m_tcpClient.Setup(config);
     }
 
-    public void StartConnect()
+    public ITcpClient StartConnect()
     {
+        ITcpClient tcpClient = null;
         try
         {
-            m_tcpClient.Connect();
+            tcpClient = m_tcpClient.Connect();
         }
         catch (Exception ex)
         {
             isconnected = false;
             Debug.Log($"连接失败: {iplog} {ex.Message}");
         }
+        return tcpClient;
     }
 
     public void Send(string msg)

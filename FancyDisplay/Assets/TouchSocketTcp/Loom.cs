@@ -59,6 +59,12 @@ public class Loom : MonoBehaviour
     }
     public static void QueueOnMainThread(Action action, float time)
     {
+        if (Current == null)
+        {
+            Debug.Log("Loom null");
+            return;
+        }
+
         if (time != 0)
         {
             lock (Current._delayed)
@@ -93,6 +99,10 @@ public class Loom : MonoBehaviour
         {
             ((Action)action)();
         }
+        catch (ThreadAbortException)
+        {
+            // Handle thread abort exception if needed
+        }
         catch (Exception ex)
         {
             Debug.LogException(ex);
@@ -101,7 +111,6 @@ public class Loom : MonoBehaviour
         {
             Interlocked.Decrement(ref numThreads);
         }
-
     }
 
 
@@ -109,8 +118,20 @@ public class Loom : MonoBehaviour
     {
         if (_current == this)
         {
-
+            lock (_actions)
+            {
+                _actions.Clear();
+            }
+            lock (_delayed)
+            {
+                _delayed.Clear();
+            }
             _current = null;
+
+            // 强制退出线程池中所有线程
+            ThreadPool.GetMaxThreads(out int workerThreads, out int completionPortThreads);
+            ThreadPool.SetMaxThreads(0, completionPortThreads);
+            ThreadPool.SetMaxThreads(workerThreads, completionPortThreads);
         }
     }
 
