@@ -35,7 +35,7 @@ public class FHClientController : MonoBehaviour
         });
     }
 
-    private static SemaphoreSlim semaphore = new SemaphoreSlim(1); // 限制同时进行的连接数
+    private static SemaphoreSlim semaphore = new SemaphoreSlim(1); // 限制异步线程同时进行的连接数 推荐1连接最稳定
 
     private IEnumerator LoopReconnect()
     {
@@ -51,7 +51,10 @@ public class FHClientController : MonoBehaviour
                     await semaphore.WaitAsync();
                     try
                     {
-                        fhTcpClient.StartConnect();
+                        if (!exit) // 检查是否已退出
+                        {
+                            fhTcpClient.StartConnect();
+                        }
                     }
                     finally
                     {
