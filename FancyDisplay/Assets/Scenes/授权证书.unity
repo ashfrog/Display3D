@@ -158,6 +158,17 @@ Transform:
   m_Father: {fileID: 1022317637}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109138354 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
+  m_PrefabInstance: {fileID: 841692045}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 638c870cac4da414fba921606d504407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &161854823
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,6 +480,7 @@ GameObject:
   - component: {fileID: 493681443}
   - component: {fileID: 493681444}
   - component: {fileID: 493681445}
+  - component: {fileID: 493681446}
   m_Layer: 0
   m_Name: "\u5C55\u793A\u5757"
   m_TagString: Untagged
@@ -542,6 +554,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &493681446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493681441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0567fc2c90c2014abee1410cad23129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mediaPlayer: {fileID: 109138354}
+  currentTime: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +755,7 @@ Transform:
   m_GameObject: {fileID: 801502852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 233.64261, y: 115.470055, z: 1}
+  m_LocalScale: {x: 205.2801, y: 115.470055, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963194228}
@@ -766,7 +792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_VideoPath
-      value: "AVProVideoSamples/\u6388\u6743\u8BC1\u4E66.mp4"
+      value: bg.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 7468546319567254706, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: _material
@@ -818,6 +844,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
+--- !u!1 &867777535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 867777537}
+  - component: {fileID: 867777536}
+  m_Layer: 0
+  m_Name: "\u52A8\u753B\u89C6\u9891\u540C\u6B65"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &867777536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867777535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f8848836da6cb74e9dec5eb5177983e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mediaPlayer: {fileID: 109138354}
+  animator: {fileID: 493681445}
+  animationStateName: "\u5956\u724C\u52A8\u753B"
+  offset: 0
+--- !u!4 &867777537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867777535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5541295, y: 14.881035, z: -54.58855}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,6 +1996,7 @@ MonoBehaviour:
   _defaultTexture: {fileID: 0}
   _material: {fileID: 0}
   _texturePropertyName: _MainTex
+  ignoreFlip: 1
   _offset: {x: 0, y: 0}
   _scale: {x: 1, y: 1}
 --- !u!23 &1993937416
