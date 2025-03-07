@@ -35,12 +35,11 @@ public class FHTcpClient
                 {
                     Loom.QueueOnMainThread(() => { Connected.Invoke(client); });
                 }
-                Debug.Log($"FHTcp {iplog} 成功连接");
             }
         };//成功连接到服务器
         m_tcpClient.Disconnected += (client, e) =>
         {
-            Debug.Log($"断开连接，信息：{e.Message}");
+            logmsg($"断开连接，信息：{e.Message}");
             if (DisConnected != null)
             {
                 Loom.QueueOnMainThread(() => { DisConnected.Invoke(); });
@@ -58,7 +57,7 @@ public class FHTcpClient
                     }
                     catch (Exception ex)
                     {
-                        Debug.Log(ex.Message);
+                        logmsg(ex.Message);
                     }
                 });
             }
@@ -102,7 +101,7 @@ public class FHTcpClient
         catch (Exception ex)
         {
             isconnected = false;
-            Debug.Log($"连接失败: {iplog} {ex.Message}");
+            logmsg($"连接失败: {iplog} {ex.Message}");
         }
         return tcpClient;
     }
@@ -134,7 +133,7 @@ public class FHTcpClient
         }
         catch (Exception ex)
         {
-            Debug.Log("Send<T> fail:" + ex.Message);
+            logmsg("Send<T> fail:" + ex.Message);
         }
     }
 
@@ -148,7 +147,7 @@ public class FHTcpClient
         }
         catch (Exception ex)
         {
-            Debug.Log("Send<T> fail:" + ex.Message);
+            logmsg("Send<T> fail:" + ex.Message);
         }
     }
 
@@ -169,7 +168,7 @@ public class FHTcpClient
         }
         catch (Exception ex)
         {
-            Debug.Log(ex.Message);
+            logmsg(ex.Message);
         }
     }
 
@@ -182,7 +181,7 @@ public class FHTcpClient
         }
         catch (Exception ex)
         {
-            Debug.Log(ex.Message);
+            logmsg(ex.Message);
         }
     }
 
@@ -202,7 +201,7 @@ public class FHTcpClient
         }
         catch (Exception ex)
         {
-            Debug.Log(ex.Message);
+            logmsg(ex.Message);
         }
     }
 
@@ -229,5 +228,6 @@ public class FHTcpClient
 
     public void logmsg(string msg)
     {
+        Debug.Log(msg);
     }
 }

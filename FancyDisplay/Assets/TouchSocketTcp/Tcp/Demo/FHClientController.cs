@@ -31,7 +31,7 @@ public class FHClientController : MonoBehaviour
         fhTcpClient.FHTcpClientReceive = ReceiveData;
         fhTcpClient.Connected += ((client) =>
         {
-
+            Debug.Log($"FHTcp {client.IP}:{client.Port} 成功连接");
         });
     }
 
