@@ -35,6 +35,8 @@ public class CertificateDisplay : MonoBehaviour
     MeshRenderer meshRenderer;
 
     [SerializeField] int index;
+    [SerializeField]
+    float revealSpeed = 0.1f;
 
     private void Start()
     {
@@ -56,6 +58,8 @@ public class CertificateDisplay : MonoBehaviour
                 Debug.Log(file + "不存在");
             }
         }
+        //第一次加载
+        SetBoxDisplay();
     }
 
     private Texture2D LoadTexture(string filePath)
@@ -88,9 +92,14 @@ public class CertificateDisplay : MonoBehaviour
                 }
 
                 // meshRenderer材质的Emission贴图 展示证书
-                meshRenderer.material.SetTexture("_EmissionMap", texture2Ds[index]);
-                textMesh.text = texts[index];
+                SetBoxDisplay();
             }
         }
+    }
+
+    private void SetBoxDisplay()
+    {
+        meshRenderer.material.SetTexture("_EmissionMap", texture2Ds[index]);
+        textMesh.text = texts[index];
     }
 }
