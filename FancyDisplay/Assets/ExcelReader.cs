@@ -5,14 +5,16 @@ using System.Data;
 using System.Collections.Generic;
 using ExcelDataReader;
 using System.Text;
+using Unity.VisualScripting;
 
 public class ExcelReader
 {
     public const string dataFolder = "data"; // Excel文件夹名
-    public const string excelFileName = "data.xlsx"; // Excel文件名
+    public static string excelFileName; // Excel文件名
 
-    public static DataSet ReadExcel()
+    public static DataSet ReadExcel(string xlsFileName = "data.xlsx")
     {
+        excelFileName = xlsFileName;
         DataSet dataSet = null;
         try
         {
@@ -44,35 +46,35 @@ public class ExcelReader
         return dataSet;
     }
 
-    protected static void ProcessExcelData(DataSet dataSet)
-    {
-        if (dataSet == null || dataSet.Tables.Count == 0)
-        {
-            Debug.LogError("没有找到Excel数据");
-            return;
-        }
+    //protected static void ProcessExcelData(DataSet dataSet)
+    //{
+    //    if (dataSet == null || dataSet.Tables.Count == 0)
+    //    {
+    //        Debug.LogError("没有找到Excel数据");
+    //        return;
+    //    }
 
-        // 遍历所有工作表
-        foreach (DataTable table in dataSet.Tables)
-        {
-            Debug.Log($"处理工作表: {table.TableName}");
+    //    // 遍历所有工作表
+    //    foreach (DataTable table in dataSet.Tables)
+    //    {
+    //        Debug.Log($"处理工作表: {table.TableName}");
 
-            // 遍历所有行
-            foreach (DataRow row in table.Rows)
-            {
-                // 示例：打印每一行的数据
-                string rowData = "";
-                for (int i = 0; i < table.Columns.Count; i++)
-                {
-                    rowData += $"{table.Columns[i].ColumnName}: {row[i]}, ";
-                }
-                Debug.Log(rowData);
+    //        // 遍历所有行
+    //        foreach (DataRow row in table.Rows)
+    //        {
+    //            // 示例：打印每一行的数据
+    //            string rowData = "";
+    //            for (int i = 0; i < table.Columns.Count; i++)
+    //            {
+    //                rowData += $"{table.Columns[i].ColumnName}: {row[i]}, ";
+    //            }
+    //            Debug.Log(rowData);
 
-                // 在这里处理你的数据
-                // 例如: 创建游戏对象、更新UI等
-            }
-        }
-    }
+    //            // 在这里处理你的数据
+    //            // 例如: 创建游戏对象、更新UI等
+    //        }
+    //    }
+    //}
 
     // 示例：获取指定单元格的值
     //public string GetCellValue(int sheetIndex, int row, int column)

@@ -175,6 +175,7 @@
     <Compile Include="Assets\AVProVideo\Scripts\Components\Support\PlayMaker\Actions\AVProVideoEvent.cs" />
     <Compile Include="Assets\HonorWallManager\Scripts\授权证书脚本\SyncVideoAnimation.cs" />
     <Compile Include="Assets\MediaTime.cs" />
+    <Compile Include="Assets\CertificateDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

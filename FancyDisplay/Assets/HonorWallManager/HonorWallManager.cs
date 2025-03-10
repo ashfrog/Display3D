@@ -38,7 +38,7 @@ public class HonorWallManager : MonoBehaviour
     private void Start()
     {
         Debug.Log("Start");
-        dataSet = ExcelReader.ReadExcel();
+        dataSet = ExcelReader.ReadExcel("团队展示.xlsx");
 
         SetPrefabInactive(displayPrefab);
         SetPrefabInactive(displayTitlePrefab);
