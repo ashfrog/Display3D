@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 根据视频时间调节动画
+/// </summary>
 public class MediaTime : MonoBehaviour
 {
     public MediaPlayer mediaPlayer;

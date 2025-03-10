@@ -103,7 +103,7 @@ Material:
     - _AdvancedDissolveCutoutGeometricXYZSpace: 0
     - _AdvancedDissolveCutoutGeometricXYZStyle: 0
     - _AdvancedDissolveCutoutStandardBaseInvert: 0
-    - _AdvancedDissolveCutoutStandardClip: 0
+    - _AdvancedDissolveCutoutStandardClip: 0.824
     - _AdvancedDissolveCutoutStandardMap1Channel: 3
     - _AdvancedDissolveCutoutStandardMap1Intensity: 0.824
     - _AdvancedDissolveCutoutStandardMap1Invert: 0
