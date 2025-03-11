@@ -75,7 +75,7 @@ public class CertificateDisplay : MonoBehaviour
     {
         if (mediaPlayer != null && mediaPlayer.Control != null)
         {
-            if (mediaPlayer.Control.GetCurrentTimeMs() >= mediaPlayer.Info.GetDurationMs())
+            if (mediaPlayer.Control.GetCurrentTime() >= mediaPlayer.Info.GetDuration())
             {
                 if (Time.time - lastCheckTime < debounceTime)
                 {

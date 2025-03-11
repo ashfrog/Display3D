@@ -17,10 +17,10 @@ public class SyncVideoAnimation : MonoBehaviour
     {
         if (mediaPlayer == null || animator == null || mediaPlayer.Info == null) return;
 
-        float duration = mediaPlayer.Info.GetDurationMs();
+        float duration = (float)mediaPlayer.Info.GetDuration();
         if (duration <= 0) return;
 
-        float normalized = Mathf.Repeat((float)(mediaPlayer.Control.GetCurrentTimeMs() / duration) + offset, 1f);
+        float normalized = Mathf.Repeat(((float)mediaPlayer.Control.GetCurrentTime() / duration) + offset, 1f);
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName(animationStateName))
         {

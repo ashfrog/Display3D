@@ -54,7 +54,7 @@ public class DisplayBox : MonoBehaviour
             ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
             applyToMaterial.Material = renderer.material;
             string videoPath = file;
-            mediaPlayer.OpenVideoFromFile(MediaPlayer.FileLocation.AbsolutePathOrURL, videoPath, true);
+            mediaPlayer.OpenMedia(new MediaPath(videoPath, MediaPathType.AbsolutePathOrURL), true);
         }
     }
 
