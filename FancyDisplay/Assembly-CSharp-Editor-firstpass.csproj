@@ -422,60 +422,8 @@
       <HintPath>U:\UnityEditor\2021.3.44f1c1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Plastic.Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>Assets\TouchSocketTcp\Plugins\websocket-sharp.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DemiLib">
-      <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="ExcelDataReader.DataSet">
-      <HintPath>Assets\Plugins\ExcelDataReader.DataSet.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="I18N.West">
       <HintPath>Assets\Plugins\x86_64\I18N.West.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Plastic.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.YamlDotNet">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DOTweenProEditor">
-      <HintPath>Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="I18N">
-      <HintPath>Assets\Plugins\x86_64\I18N.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DOTweenEditor">
-      <HintPath>Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DemiEditor">
-      <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="TouchSocket">
-      <HintPath>Assets\TouchSocketTcp\Plugins\TouchSocket.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="log4netPlastic">
@@ -486,20 +434,52 @@
       <HintPath>Assets\Plugins\Demigiant\DOTween\DOTween.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="ExcelDataReader">
       <HintPath>Assets\Plugins\ExcelDataReader.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Plastic.Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="websocket-sharp">
+      <HintPath>Assets\TouchSocketTcp\Plugins\websocket-sharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet">
+      <HintPath>Assets\Plugins\ExcelDataReader.DataSet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Plastic.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="I18N">
+      <HintPath>Assets\Plugins\x86_64\I18N.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DemiEditor">
+      <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@2.5.1\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="I18N.CJK">
@@ -512,6 +492,26 @@
     </Reference>
     <Reference Include="DOTweenPro">
       <HintPath>Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DemiLib">
+      <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.YamlDotNet">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTweenProEditor">
+      <HintPath>Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenProEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DOTweenEditor">
+      <HintPath>Assets\Plugins\Demigiant\DOTween\Editor\DOTweenEditor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="TouchSocket">
+      <HintPath>Assets\TouchSocketTcp\Plugins\TouchSocket.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">
@@ -1132,6 +1132,10 @@
       <Project>{AC6515A9-171C-986D-6F58-B8B91E88F718}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
+    <ProjectReference Include="AVProVideo.Editor.csproj">
+      <Project>{43BACAED-FA40-B65A-B7F5-F5D02E999223}</Project>
+      <Name>AVProVideo.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="AmazingAssets.AdvancedDissolve.Examples.csproj">
       <Project>{F16A47B9-EBBB-D5D1-8199-3252F85678EF}</Project>
       <Name>AmazingAssets.AdvancedDissolve.Examples</Name>
@@ -1140,9 +1144,25 @@
       <Project>{D1099F29-B794-0292-766C-E4045A563647}</Project>
       <Name>UniTask.DOTween</Name>
     </ProjectReference>
+    <ProjectReference Include="AVProVideo.Demos.csproj">
+      <Project>{9178C6B0-1EA8-4E92-CBBC-935F21710112}</Project>
+      <Name>AVProVideo.Demos</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.UnityUI.csproj">
+      <Project>{9824C3A8-21E6-8BF4-473A-4DA56CF543B0}</Project>
+      <Name>AVProVideo.Extensions.UnityUI</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.Linq.csproj">
       <Project>{A7DD83BC-87EE-3438-B643-E0BABF1398B4}</Project>
       <Name>UniTask.Linq</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.UnityUI.Editor.csproj">
+      <Project>{F74001F7-EF07-77CD-9149-312FCA03C022}</Project>
+      <Name>AVProVideo.Extensions.UnityUI.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="AVProVideo.Runtime.csproj">
+      <Project>{DCD8568D-14E0-F336-CE2E-3434F169BE8F}</Project>
+      <Name>AVProVideo.Runtime</Name>
     </ProjectReference>
     <ProjectReference Include="UniTask.TextMeshPro.csproj">
       <Project>{A21CEC30-3247-2431-23E9-2C27B10E17E7}</Project>
@@ -1152,6 +1172,10 @@
       <Project>{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}</Project>
       <Name>EasyTextEffects</Name>
     </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.VisualEffectGraph.csproj">
+      <Project>{1B15E164-EFAA-3EA5-484D-F7FB0846D5DC}</Project>
+      <Name>AVProVideo.Extensions.VisualEffectGraph</Name>
+    </ProjectReference>
     <ProjectReference Include="AmazingAssets.AdvancedDissolve.csproj">
       <Project>{2A642DB6-D852-57C2-9E13-D4528DAB8057}</Project>
       <Name>AmazingAssets.AdvancedDissolve</Name>
@@ -1160,6 +1184,10 @@
       <Project>{37AC0F78-5B1A-19E3-E85B-436BC27A22FF}</Project>
       <Name>UniTask</Name>
     </ProjectReference>
+    <ProjectReference Include="AVProVideo.Extensions.Timeline.csproj">
+      <Project>{F082AE22-E835-6DCF-C463-83B8AC906FD7}</Project>
+      <Name>AVProVideo.Extensions.Timeline</Name>
+    </ProjectReference>
     <ProjectReference Include="AmazingAssets.AdvancedDissolve.Editor.csproj">
       <Project>{6695BED4-F1E2-E2BF-0544-7FCCCCC20D30}</Project>
       <Name>AmazingAssets.AdvancedDissolve.Editor</Name>
@@ -1167,34 +1195,6 @@
     <ProjectReference Include="UniTask.Addressables.csproj">
       <Project>{18ADE0D9-8C3D-34EF-668F-A8BC9729F768}</Project>
       <Name>UniTask.Addressables</Name>
-    </ProjectReference>
-    <ProjectReference Include="AVProVideo.Editor.csproj">
-      <Project>{43BACAED-FA40-B65A-B7F5-F5D02E999223}</Project>
-      <Name>AVProVideo.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="AVProVideo.Extensions.UnityUI.Editor.csproj">
-      <Project>{F74001F7-EF07-77CD-9149-312FCA03C022}</Project>
-      <Name>AVProVideo.Extensions.UnityUI.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="AVProVideo.Extensions.Timeline.csproj">
-      <Project>{F082AE22-E835-6DCF-C463-83B8AC906FD7}</Project>
-      <Name>AVProVideo.Extensions.Timeline</Name>
-    </ProjectReference>
-    <ProjectReference Include="AVProVideo.Extensions.UnityUI.csproj">
-      <Project>{9824C3A8-21E6-8BF4-473A-4DA56CF543B0}</Project>
-      <Name>AVProVideo.Extensions.UnityUI</Name>
-    </ProjectReference>
-    <ProjectReference Include="AVProVideo.Extensions.VisualEffectGraph.csproj">
-      <Project>{1B15E164-EFAA-3EA5-484D-F7FB0846D5DC}</Project>
-      <Name>AVProVideo.Extensions.VisualEffectGraph</Name>
-    </ProjectReference>
-    <ProjectReference Include="AVProVideo.Demos.csproj">
-      <Project>{9178C6B0-1EA8-4E92-CBBC-935F21710112}</Project>
-      <Name>AVProVideo.Demos</Name>
-    </ProjectReference>
-    <ProjectReference Include="AVProVideo.Runtime.csproj">
-      <Project>{DCD8568D-14E0-F336-CE2E-3434F169BE8F}</Project>
-      <Name>AVProVideo.Runtime</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
