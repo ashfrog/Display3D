@@ -1049,7 +1049,7 @@ Transform:
   m_GameObject: {fileID: 801502852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 207.54839, y: 115.470055, z: 1}
+  m_LocalScale: {x: 577.3503, y: 115.470055, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963194228}
@@ -1094,11 +1094,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_VideoPath
-      value: bg.mp4
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_Persistent
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
+      propertyPath: _resampleMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_PlaybackRate
@@ -1107,6 +1111,10 @@ PrefabInstance:
     - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: m_ResampleMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468546319567254705, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
+      propertyPath: _mediaPath._path
+      value: bg.mp4
       objectReference: {fileID: 0}
     - target: {fileID: 7468546319567254706, guid: 2032f82a9a40dad4f8d2cdd42b141a14, type: 3}
       propertyPath: _material
@@ -2686,10 +2694,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _media: {fileID: 0}
+  _automaticStereoPacking: 1
+  _overrideStereoPacking: 0
+  _stereoRedGreenTint: 0
   _defaultTexture: {fileID: 0}
   _material: {fileID: 0}
   _texturePropertyName: _MainTex
-  ignoreFlip: 1
   _offset: {x: 0, y: 0}
   _scale: {x: 1, y: 1}
 --- !u!23 &1993937416
