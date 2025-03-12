@@ -381,7 +381,7 @@ Projector:
   m_NearClipPlane: 0.1
   m_FarClipPlane: 80
   m_FieldOfView: 60
-  m_AspectRatio: 5.7
+  m_AspectRatio: 6.34
   m_Orthographic: 0
   m_OrthographicSize: 10
   m_Material: {fileID: 2100000, guid: 13d20cd2b0638104d95b77d93dd65e0e, type: 2}
