@@ -70,13 +70,12 @@
     <Compile Include="Assets\MediaTime.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\TouchSocketTcp\Plugins\SkipUnityLogo.cs" />
-    <Compile Include="Assets\CertificateShowcase.cs" />
+    <Compile Include="Assets\证书展示脚本\CertificateShowcase.cs" />
     <Compile Include="Assets\HonorWallManager\Scripts\授权证书脚本\SyncVideoAnimation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\HonorWallManager\HonorWallManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
-    <Compile Include="Assets\Circle3D.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\DTO\DataTypes\OrderTypeEnum.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -117,7 +116,7 @@
     <Compile Include="Assets\HonorWallManager\Scripts\SDCardPath.cs" />
     <Compile Include="Assets\CodeUtils\ConfigManager\SettingsManager.cs" />
     <Compile Include="Assets\CodeUtils\ConfigManager\Demo.cs" />
-    <Compile Include="Assets\CertificateDisplay.cs" />
+    <Compile Include="Assets\证书展示脚本\CertificateDisplay.cs" />
     <Compile Include="Assets\BindTexture.cs" />
     <Compile Include="Assets\ExcelReader.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />

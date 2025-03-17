@@ -16,6 +16,12 @@ public class TextFlyInEffect : MonoBehaviour
     [SerializeField] private float randomDelayMax = 0.5f;
     [SerializeField][Range(0f, 1f)] private float randomnessIntensity = 0.5f;
 
+    [Header("Timing Control")]
+    [SerializeField] private bool useFixedTotalDuration = false;
+    [SerializeField] private float totalDuration = 2.0f;
+    [SerializeField] private bool useMaxSimultaneousChars = false;
+    [SerializeField][Min(1)] private int maxSimultaneousCharacters = 5;
+
     private string fullText;
     private Vector3[] originalPositions;
     private Color[] originalColors;
@@ -25,6 +31,15 @@ public class TextFlyInEffect : MonoBehaviour
     {
         if (playOnStart)
         {
+            StartFlyInEffect();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StopEffect();
             StartFlyInEffect();
         }
     }
@@ -45,6 +60,22 @@ public class TextFlyInEffect : MonoBehaviour
         // Store original character positions and set alpha to 0
         TMP_TextInfo textInfo = targetText.textInfo;
         int characterCount = textInfo.characterCount;
+
+        // Calculate adaptive character delay based on timing control settings
+        float effectiveCharDelay = characterDelay;
+
+        if (useFixedTotalDuration && characterCount > 0)
+        {
+            // Calculate delay to fit all characters within the total duration
+            // Taking into account the flyInDuration for the last character
+            float availableDuration = Mathf.Max(totalDuration - flyInDuration, 0.1f);
+            effectiveCharDelay = characterCount > 1 ? availableDuration / (characterCount - 1) : 0f;
+        }
+        else if (useMaxSimultaneousChars && maxSimultaneousCharacters > 0)
+        {
+            // Calculate delay to ensure no more than max chars are animating at once
+            effectiveCharDelay = flyInDuration / Mathf.Max(maxSimultaneousCharacters, 1);
+        }
 
         originalPositions = new Vector3[characterCount];
         originalColors = new Color[characterCount];
@@ -78,7 +109,7 @@ public class TextFlyInEffect : MonoBehaviour
         // Update the mesh
         targetText.UpdateVertexData(TMP_VertexDataUpdateFlags.All);
 
-        // Animate characters one by one from left to right with randomness
+        // Animate characters with applied timing controls
         System.Random random = new System.Random();
         float[] randomDelays = new float[characterCount];
 
@@ -87,6 +118,12 @@ public class TextFlyInEffect : MonoBehaviour
         {
             randomDelays[i] = (float)random.NextDouble() * randomDelayMax * randomnessIntensity;
         }
+
+        // Calculate total animation time for logging
+        float totalAnimationTime = characterCount > 0 ?
+            (effectiveCharDelay * (characterCount - 1) + flyInDuration + randomDelays[characterCount - 1]) : 0f;
+
+        Debug.Log($"Text animation will take approximately {totalAnimationTime} seconds to complete.");
 
         for (int i = 0; i < characterCount; i++)
         {
@@ -114,7 +151,8 @@ public class TextFlyInEffect : MonoBehaviour
             ).SetEase(easeType));
 
             // Add this character's sequence to the main sequence with a delay based on character index + random delay
-            mainSequence.Insert(characterDelay * i + randomDelays[i], charSequence);
+            float charDelay = effectiveCharDelay * i + randomDelays[i];
+            mainSequence.Insert(charDelay, charSequence);
         }
 
         // Play the sequence
