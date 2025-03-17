@@ -2,7 +2,9 @@ using AmazingAssets.AdvancedDissolve;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 通过指定clip控制shader渐变进度
+/// </summary>
 public class AniClip : MonoBehaviour
 {
     [SerializeField]
