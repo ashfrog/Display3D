@@ -12,7 +12,7 @@ using UnityEngine;
 public class CertificateDisplay : MonoBehaviour
 {
     [SerializeField]
-    MediaPlayer mediaPlayer;
+    PlaylistMediaPlayer playlistMediaPlayer;
     [SerializeField]
     TextMeshPro textMesh;
 
@@ -73,9 +73,9 @@ public class CertificateDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (mediaPlayer != null && mediaPlayer.Control != null)
+        if (playlistMediaPlayer != null && playlistMediaPlayer.Control != null)
         {
-            if (mediaPlayer.Control.GetCurrentTime() >= mediaPlayer.Info.GetDuration())
+            if (playlistMediaPlayer.Control.GetCurrentTime() >= playlistMediaPlayer.Info.GetDuration())
             {
                 if (Time.time - lastCheckTime < debounceTime)
                 {
@@ -96,6 +96,8 @@ public class CertificateDisplay : MonoBehaviour
             }
         }
     }
+
+
 
     private void SetBoxDisplay()
     {

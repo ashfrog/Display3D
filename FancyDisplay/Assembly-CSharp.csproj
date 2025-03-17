@@ -70,7 +70,6 @@
     <Compile Include="Assets\MediaTime.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\TouchSocketTcp\Plugins\SkipUnityLogo.cs" />
-    <Compile Include="Assets\证书展示脚本\CertificateShowcase.cs" />
     <Compile Include="Assets\HonorWallManager\Scripts\授权证书脚本\SyncVideoAnimation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\HonorWallManager\HonorWallManager.cs" />
@@ -84,6 +83,7 @@
     <Compile Include="Assets\HonorWallManager\Water\WaterSurface.cs" />
     <Compile Include="Assets\TouchSocketTcp\AdvertisementKiosk.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\DTO\FHTcpClient.cs" />
+    <Compile Include="Assets\TextFlyInEffect.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\Demo\FHTcpService.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
@@ -124,7 +124,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\TextFlyInEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
