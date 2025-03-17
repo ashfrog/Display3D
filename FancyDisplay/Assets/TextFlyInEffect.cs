@@ -29,16 +29,6 @@ public class TextFlyInEffect : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            targetText.text = "时维九月，序属三秋。潦水尽而寒潭清，烟光凝而暮山紫。俨骖騑于上路，访风景于崇阿；临帝子之长洲，得天人之旧馆。层峦耸翠，上出重霄；飞阁流丹，下临无地。鹤汀凫渚，穷岛屿之萦回；桂殿兰宫，即冈峦之体势。\r\n\r\n披绣闼，俯雕甍，山原旷其盈视，川泽纡其骇瞩。闾阎扑地，钟鸣鼎食之家；舸舰弥津，青雀黄龙之舳。云销雨霁，彩彻区明。落霞与孤鹜齐飞，秋水共长天一色。渔舟唱晚，响穷彭蠡之滨；雁阵惊寒，声断衡阳之浦。\r\n\r\n遥襟甫畅，逸兴遄飞。爽籁发而清风生，纤歌凝而白云遏。睢园绿竹，气凌彭泽之樽；邺水朱华，光照临川之笔。四美具，二难并。穷睇眄于中天，极娱游于暇日。天高地迥，觉宇宙之无穷；兴尽悲来，识盈虚之有数。望长安于日下，目吴会于云间。地势极而南溟深，天柱高而北辰远。关山难越，谁悲失路之人？萍水相逢，尽是他乡之客。怀帝阍而不见，奉宣室以何年？";
-            StartFlyInEffect();
-        }
-    }
-
     public void StartFlyInEffect()
     {
         if (targetText == null)
@@ -107,9 +97,13 @@ public class TextFlyInEffect : MonoBehaviour
 
             int charIndex = i; // Need to capture the current index for the closure
 
-            // Animate character alpha
-            charSequence.Append(DOTween.To(() => 0f, value => SetCharacterAlpha(charIndex, value), 1f, flyInDuration)
-                        .SetEase(easeType));
+            // Animate character alpha - start invisible and fade in during flight
+            charSequence.Join(DOTween.To(
+                () => 0f,
+                value => SetCharacterAlpha(charIndex, value),
+                1f,
+                flyInDuration
+            ).SetEase(easeType));
 
             // Animate character position from front to original (only Z axis)
             charSequence.Join(DOTween.To(
