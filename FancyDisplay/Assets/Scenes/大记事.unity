@@ -2066,7 +2066,7 @@ Transform:
   m_GameObject: {fileID: 801502852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 577.3503, y: 115.470055, z: 1}
+  m_LocalScale: {x: 205.2801, y: 115.470055, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963194228}
@@ -3359,7 +3359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1493a564a3988a244b2ecd109dbb39e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mediaPlayer: {fileID: 658495270}
+  playlistMediaPlayer: {fileID: 0}
   textMesh: {fileID: 65049892}
   texture2Ds: []
   meshRenderer: {fileID: 8319502009888238488}

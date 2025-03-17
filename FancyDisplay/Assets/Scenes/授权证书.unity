@@ -1112,8 +1112,8 @@ MonoBehaviour:
       textureDuration: 0
       loop: 0
       startMode: 0
-      progressMode: 1
-      progressTimeSeconds: 0.2
+      progressMode: 0
+      progressTimeSeconds: 1
       isOverrideTransition: 0
       overrideTransition: 0
       overrideTransitionDuration: 0
@@ -1127,15 +1127,15 @@ MonoBehaviour:
       textureDuration: 0
       loop: 0
       startMode: 0
-      progressMode: 1
-      progressTimeSeconds: 0.2
+      progressMode: 0
+      progressTimeSeconds: 1
       isOverrideTransition: 0
       overrideTransition: 0
       overrideTransitionDuration: 0
       overrideTransitionEasing: 0
   _pausePreviousOnTransition: 0
   _defaultTransition: 1
-  _defaultTransitionDuration: 0.2
+  _defaultTransitionDuration: 0.5
   _defaultTransitionEasing: 1
   _playlistAudioVolume: 1
   _playlistAudioMuted: 0
