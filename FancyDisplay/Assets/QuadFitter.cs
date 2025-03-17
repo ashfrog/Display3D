@@ -1,5 +1,7 @@
 using UnityEngine;
-
+/// <summary>
+/// Quad背景片 垂直于相机 根据距离自动调节适配宽高比例
+/// </summary>
 [ExecuteAlways]
 public class QuadFitter : MonoBehaviour
 {

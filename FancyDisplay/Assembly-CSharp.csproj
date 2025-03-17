@@ -89,7 +89,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\FontSizeLoading.cs" />
+    <Compile Include="Assets\团队展示脚本\FontSizeLoading.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\HonorWallManager\ReflectionPlane.cs" />
@@ -108,7 +108,7 @@
     <Compile Include="Assets\TouchSocketTcp\Tcp\Demo\StrTcpClient.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\DTO\MyFixedHeaderCustomDataHandlingAdapter.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\AniClip.cs" />
+    <Compile Include="Assets\证书展示脚本\AniClip.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\Demo\FHClientController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />

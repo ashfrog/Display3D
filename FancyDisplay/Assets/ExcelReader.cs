@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using ExcelDataReader;
 using System.Text;
 using Unity.VisualScripting;
-
+/// <summary>
+/// 将Excel文件读取为DataSet
+/// </summary>
 public class ExcelReader
 {
     public const string dataFolder = "data"; // Excel文件夹名
