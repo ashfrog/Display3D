@@ -1103,7 +1103,7 @@ MonoBehaviour:
   _playlistLoopMode: 1
   _playlist:
     _items:
-    - name: INTRO
+    - name: 1
       sourceType: 0
       mediaPath:
         _pathType: 2
@@ -1113,12 +1113,12 @@ MonoBehaviour:
       loop: 0
       startMode: 0
       progressMode: 1
-      progressTimeSeconds: 0.5
+      progressTimeSeconds: 0.2
       isOverrideTransition: 0
       overrideTransition: 0
       overrideTransitionDuration: 0
-      overrideTransitionEasing: 1
-    - name: OUTRO
+      overrideTransitionEasing: 0
+    - name: 2
       sourceType: 0
       mediaPath:
         _pathType: 2
@@ -1128,14 +1128,14 @@ MonoBehaviour:
       loop: 0
       startMode: 0
       progressMode: 1
-      progressTimeSeconds: 0.5
+      progressTimeSeconds: 0.2
       isOverrideTransition: 0
       overrideTransition: 0
       overrideTransitionDuration: 0
-      overrideTransitionEasing: 1
+      overrideTransitionEasing: 0
   _pausePreviousOnTransition: 0
   _defaultTransition: 1
-  _defaultTransitionDuration: 1
+  _defaultTransitionDuration: 0.2
   _defaultTransitionEasing: 1
   _playlistAudioVolume: 1
   _playlistAudioMuted: 0
@@ -1343,7 +1343,7 @@ Transform:
   m_GameObject: {fileID: 801502852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 100}
-  m_LocalScale: {x: 577.3503, y: 115.470055, z: 1}
+  m_LocalScale: {x: 205.2801, y: 115.470055, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 963194228}

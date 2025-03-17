@@ -16,16 +16,15 @@ public class CertificateDisplay : MonoBehaviour
     [SerializeField]
     TextMeshPro textMesh;
 
-    private float lastCheckTime = -1f;
-    private float debounceTime = 0.5f; // 防抖时间间隔，单位为秒
-
     DataSet dataSet;
     DataTable dataTable;
+
     /// <summary>
     /// 证书文件
     /// </summary>
     [SerializeField]
     List<Texture2D> texture2Ds = new List<Texture2D>();
+
     /// <summary>
     /// 证书文字
     /// </summary>
@@ -34,15 +33,19 @@ public class CertificateDisplay : MonoBehaviour
     [SerializeField]
     MeshRenderer meshRenderer;
 
-    [SerializeField] int index;
+    [SerializeField]
+    int index;
+
     [SerializeField]
     float revealSpeed = 0.1f;
+
+    // 跟踪当前正在播放的媒体项
+    private int currentPlayingItemIndex = -1;
 
     private void Start()
     {
         dataSet = ExcelReader.ReadExcel("授权证书.xlsx");
         dataTable = dataSet.Tables[0];
-
         foreach (DataRow row in dataTable.Rows)
         {
             string file = Path.Combine(Application.streamingAssetsPath, ExcelReader.dataFolder, row[0].ToString());
@@ -50,7 +53,6 @@ public class CertificateDisplay : MonoBehaviour
             {
                 Texture2D texture2D = LoadTexture(file);
                 texture2Ds.Add(texture2D);
-
                 texts.Add(row[1].ToString());
             }
             else
@@ -58,8 +60,9 @@ public class CertificateDisplay : MonoBehaviour
                 Debug.Log(file + "不存在");
             }
         }
-        //第一次加载
-        SetBoxDisplay();
+
+        // 开始检查视频变化的协程
+        StartCoroutine(CheckPlaylistItemChange());
     }
 
     private Texture2D LoadTexture(string filePath)
@@ -70,38 +73,48 @@ public class CertificateDisplay : MonoBehaviour
         return texture;
     }
 
-    // Update is called once per frame
-    void Update()
+    // 持续检查播放列表项目是否发生变化的协程
+    private IEnumerator CheckPlaylistItemChange()
     {
-        if (playlistMediaPlayer != null && playlistMediaPlayer.Control != null)
+        while (true)
         {
-            if (playlistMediaPlayer.Control.GetCurrentTime() >= playlistMediaPlayer.Info.GetDuration())
+            if (playlistMediaPlayer != null && playlistMediaPlayer.Playlist != null)
             {
-                if (Time.time - lastCheckTime < debounceTime)
-                {
-                    return; // 如果距离上次检查的时间小于防抖时间间隔，则直接返回
-                }
-                lastCheckTime = Time.time; // 更新上次检查时间
-                Debug.Log("循环视频开始播放");
+                int playingItemIndex = playlistMediaPlayer.PlaylistIndex;
 
-                index++;
-                //限制index范围
-                if (index >= texture2Ds.Count)
+                // 如果播放项目发生变化
+                if (playingItemIndex != currentPlayingItemIndex)
                 {
-                    index = 0;
+                    currentPlayingItemIndex = playingItemIndex;
+                    // 更新到下一个证书
+                    AdvanceCertificate();
                 }
-
-                // meshRenderer材质的Emission贴图 展示证书
-                SetBoxDisplay();
             }
+
+            // 等待一小段时间再检查
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
-
-
-    private void SetBoxDisplay()
+    private void AdvanceCertificate()
     {
-        meshRenderer.material.SetTexture("_EmissionMap", texture2Ds[index]);
-        textMesh.text = texts[index];
+        // 更新显示
+        SetBoxDisplay(index);
+        index++;
+        // 限制index范围
+        if (index >= texture2Ds.Count)
+        {
+            index = 0;
+        }
+    }
+
+    private void SetBoxDisplay(int curindex)
+    {
+        if (curindex < 0 || curindex >= texture2Ds.Count)
+        {
+            return;
+        }
+        meshRenderer.material.SetTexture("_EmissionMap", texture2Ds[curindex]);
+        textMesh.text = texts[curindex];
     }
 }
