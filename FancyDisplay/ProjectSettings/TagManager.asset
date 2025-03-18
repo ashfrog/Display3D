@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - VideoBackground
   - 
   - 
   - 
@@ -38,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: VideoBackground
+    uniqueID: 4055215749
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

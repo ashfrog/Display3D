@@ -74,36 +74,21 @@
     <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenDeUnityExtended.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\Plugins\WSA\UWP\ARM64\AVProVideo.dll" />
-    <None Include="Assets\Plugins\WSA\UWP\x86_64\AVProVideoWinRT.dll" />
-    <None Include="Assets\Plugins\x86\Audio360.dll" />
-    <None Include="Assets\Plugins\Android\libsamplerate-License.txt" />
     <None Include="Assets\Plugins\x86_64\I18N.West.dll" />
     <None Include="Assets\Plugins\ExcelDataReader.dll" />
     <None Include="Assets\Plugins\Demigiant\readme_DOTweenPro.txt" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.XML" />
     <None Include="Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.dll" />
-    <None Include="Assets\Plugins\WSA\UWP\x86\AVProVideo.dll" />
-    <None Include="Assets\Plugins\WSA\UWP\x86\Audio360.dll" />
-    <None Include="Assets\Plugins\WSA\UWP\ARM\AVProVideo.dll" />
-    <None Include="Assets\Plugins\Android\proguard-avprovideo.txt" />
     <None Include="Assets\Plugins\x86_64\I18N.CJK.dll" />
     <None Include="Assets\Plugins\x86_64\AVProVideoWinRT.dll" />
     <None Include="Assets\Plugins\x86_64\AVProVideo.dll" />
     <None Include="Assets\Plugins\ExcelDataReader.DataSet.xml" />
-    <None Include="Assets\Plugins\x86\AVProVideoWinRT.dll" />
-    <None Include="Assets\Plugins\x86\AVProVideo.dll" />
     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween.dll" />
     <None Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.dll" />
     <None Include="Assets\Plugins\Demigiant\DOTweenPro\readme.txt" />
-    <None Include="Assets\Plugins\WSA\UWP\x86_64\AVProVideo.dll" />
     <None Include="Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.xml" />
-    <None Include="Assets\Plugins\WSA\UWP\x86_64\Audio360.dll" />
     <None Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenPro.XML" />
     <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
-    <None Include="Assets\Plugins\WSA\UWP\ARM\AVProVideoWinRT.dll" />
-    <None Include="Assets\Plugins\WSA\UWP\ARM64\AVProVideoWinRT.dll" />
-    <None Include="Assets\Plugins\WSA\UWP\x86\AVProVideoWinRT.dll" />
     <None Include="Assets\Plugins\x86_64\I18N.dll" />
     <None Include="Assets\Plugins\x86_64\Audio360.dll" />
     <None Include="Assets\Plugins\ExcelDataReader.DataSet.dll" />

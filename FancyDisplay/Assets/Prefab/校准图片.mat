@@ -8,10 +8,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "\u6821\u51C6\u56FE\u7247"
-  m_Shader: {fileID: 4800000, guid: 751148eda67f7b34fbd51bfb7951084f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 06b0cff0150d7eb41b3d269f7e11daa3, type: 3}
   m_ValidKeywords:
+  - MONOSCOPIC
+  m_InvalidKeywords:
   - ALPHAPACK_NONE
-  m_InvalidKeywords: []
+  - STEREO_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -46,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 18fa726c7c3dc0743b8d6a5eb1f30ffc, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -64,6 +66,7 @@ Material:
     m_Ints: []
     m_Floats:
     - AlphaPack: 0
+    - Stereo: 0
     - _ApplyGamma: 0
     - _BumpScale: 1
     - _Cutoff: 0.5
@@ -79,6 +82,7 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _StereoDebug: 0
     - _UVSec: 0
     - _UseYpCbCr: 0
     - _ZWrite: 1
