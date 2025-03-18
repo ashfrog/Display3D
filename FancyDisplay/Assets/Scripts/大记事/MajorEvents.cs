@@ -18,6 +18,9 @@ public class MajorEvents : MonoBehaviour
     [SerializeField]
     TMP_Text tmpText;
 
+    [SerializeField]
+    TextFlyInEffect textFlyInEffect;
+
     DataSet dataSet;
     DataTable dataTable;
 
@@ -31,11 +34,9 @@ public class MajorEvents : MonoBehaviour
     /// 大记事 年 月 日
     /// </summary>
     [SerializeField]
-    List<string> texts_Y = new List<string>();
+    List<DateTime> textsDate = new List<DateTime>();
     [SerializeField]
-    List<string> texts_M = new List<string>();
-    [SerializeField]
-    List<string> texts_D = new List<string>();
+    List<string> textsInfo = new List<string>();
 
     [SerializeField]
     MeshRenderer meshRenderer;
@@ -61,7 +62,16 @@ public class MajorEvents : MonoBehaviour
                 Texture2D texture2D = LoadTexture(file);
                 texture2Ds.Add(texture2D);
                 DateTime? dtime = ExcelReader.TryParseExcelDate(row[1]);
-                texts_Y.Add(dtime?.ToString("yyyy年MM月dd日", CultureInfo.GetCultureInfo("zh-CN")));
+                string row2 = row[2].ToString();
+                textsInfo.Add(row2);
+                if (dtime.HasValue)
+                {
+                    textsDate.Add(dtime.Value);
+                }
+                else
+                {
+                    Debug.Log("日期解析失败: " + row[1].ToString());
+                }
             }
             else
             {
@@ -123,6 +133,17 @@ public class MajorEvents : MonoBehaviour
             return;
         }
         meshRenderer.material.SetTexture("_EmissionMap", texture2Ds[curindex]);
-        tmpText.text = texts_Y[curindex];
+        int year = textsDate[curindex].Year;
+        int month = textsDate[curindex].Month;
+        int day = textsDate[curindex].Day;
+        float size = tmpText.fontSize;
+        float bigsize = size * 3f;
+        float normalsize = size * 2.6f;
+        float minsize = size * 1.6f;
+        tmpText.text = $"<size={bigsize}>{year}</size><size={normalsize}>年</size>" +
+            $"<size={minsize}>{month}</size><size={minsize}>月</size>" +
+            $"<size={minsize}>{day}</size><size={minsize}>日</size>" +
+            $"<br>{textsInfo[curindex]}";
+        textFlyInEffect.StartFlyInEffect();
     }
 }
