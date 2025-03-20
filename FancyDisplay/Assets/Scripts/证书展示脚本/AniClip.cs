@@ -13,6 +13,8 @@ public class AniClip : MonoBehaviour
 
     public float clip = 0f;
 
+    public float A = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,12 @@ public class AniClip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //应用溶解进度
         AdvancedDissolveProperties.Cutout.Standard.UpdateLocalProperty(material, AdvancedDissolveProperties.Cutout.Standard.Property.Clip, clip);
+
+        // 应用透明度
+        Color color = material.color;
+        color.a = A;
+        material.color = color;
     }
 }
