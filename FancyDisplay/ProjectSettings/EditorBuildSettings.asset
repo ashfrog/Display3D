@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: "Assets/Scenes/\u56E2\u961F\u5C55\u793A.unity"
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 0
@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/AVProVideo/Demos/Scenes/1Demo_Playlist 1.unity
     guid: 2bf430ba83cd81547bc9e36d3dc08207
-  - enabled: 0
+  - enabled: 1
     path: "Assets/Scenes/\u5927\u8BB0\u4E8B.unity"
     guid: 16aea7d6c95482445872f640bbc9b815
   m_configObjects: {}
