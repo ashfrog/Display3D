@@ -125,6 +125,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\CubeQuadAdapter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -1268,6 +1269,30 @@
     <ProjectReference Include="UniTask.Addressables.csproj">
       <Project>{18ADE0D9-8C3D-34EF-668F-A8BC9729F768}</Project>
       <Name>UniTask.Addressables</Name>
+    </ProjectReference>
+    <ProjectReference Include="Febucci.TextAnimator.Demo.Runtime.csproj">
+      <Project>{DB1D97EA-8F2C-C2A0-F6FF-CDAE5486E662}</Project>
+      <Name>Febucci.TextAnimator.Demo.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Febucci.TextAnimator.Runtime.csproj">
+      <Project>{6AB11CEB-E503-6DC2-44E7-FC7999976B79}</Project>
+      <Name>Febucci.TextAnimator.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Febucci.Attributes.Runtime.csproj">
+      <Project>{46D47C09-7E09-31BA-CD7E-00FE15DA18F8}</Project>
+      <Name>Febucci.Attributes.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Febucci.TextAnimator.TMP.Runtime.csproj">
+      <Project>{556315C1-083E-FB2C-BE6B-9893664A6D0A}</Project>
+      <Name>Febucci.TextAnimator.TMP.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Febucci.TextAnimator.Editor.csproj">
+      <Project>{CE2E0A50-E071-34EC-C0D2-1DAC4DBB7199}</Project>
+      <Name>Febucci.TextAnimator.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Febucci.Attributes.Editor.csproj">
+      <Project>{101A9741-FE6A-9359-707D-91117F8B5EC9}</Project>
+      <Name>Febucci.Attributes.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
