@@ -1242,10 +1242,6 @@
       <Project>{A21CEC30-3247-2431-23E9-2C27B10E17E7}</Project>
       <Name>UniTask.TextMeshPro</Name>
     </ProjectReference>
-    <ProjectReference Include="EasyTextEffects.csproj">
-      <Project>{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}</Project>
-      <Name>EasyTextEffects</Name>
-    </ProjectReference>
     <ProjectReference Include="AVProVideo.Extensions.VisualEffectGraph.csproj">
       <Project>{1B15E164-EFAA-3EA5-484D-F7FB0846D5DC}</Project>
       <Name>AVProVideo.Extensions.VisualEffectGraph</Name>

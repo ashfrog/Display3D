@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniTask", "UniTask.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AVProVideo.Demos", "AVProVideo.Demos.csproj", "{9178C6B0-1EA8-4E92-CBBC-935F21710112}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EasyTextEffects", "EasyTextEffects.csproj", "{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{AC6515A9-171C-986D-6F58-B8B91E88F718}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniTask.Linq", "UniTask.Linq.csproj", "{A7DD83BC-87EE-3438-B643-E0BABF1398B4}"
@@ -67,10 +65,6 @@ Global
 		{9178C6B0-1EA8-4E92-CBBC-935F21710112}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9178C6B0-1EA8-4E92-CBBC-935F21710112}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9178C6B0-1EA8-4E92-CBBC-935F21710112}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E9F3D7AA-1A54-8E21-3A60-F6F3F54A8A31}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AC6515A9-171C-986D-6F58-B8B91E88F718}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AC6515A9-171C-986D-6F58-B8B91E88F718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC6515A9-171C-986D-6F58-B8B91E88F718}.Release|Any CPU.ActiveCfg = Release|Any CPU
