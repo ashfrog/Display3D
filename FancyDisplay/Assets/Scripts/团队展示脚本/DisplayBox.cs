@@ -14,6 +14,8 @@ public class DisplayBox : MonoBehaviour
 
     private bool needDestroyTexture;
 
+    public bool keepAspectRatio = false;
+
     public void SetText(string name, string education, string school)
     {
         xls_Texs[0].text = name;
@@ -45,7 +47,17 @@ public class DisplayBox : MonoBehaviour
         // 在展示框上添加AVPro视频播放器或图片
         if (FileUtils.IsImgFile(file))
         {
-            renderer.material.mainTexture = LoadTexture(file);
+            Texture2D texture = LoadTexture(file);
+            if (keepAspectRatio)
+            {
+                // 调整Quad子物体的比例以保持图片的原始比例
+                float aspectRatio = (float)texture.width / texture.height;
+                Vector3 parentScale = transform.localScale;
+                renderer.transform.localScale = new Vector3(aspectRatio / parentScale.x, 1 / parentScale.y, 1 / parentScale.z);
+            }
+
+            renderer.material.mainTexture = texture;
+
             needDestroyTexture = true;
         }
         else if (FileUtils.IsMovFile(file))
