@@ -24,8 +24,6 @@ public class DisplayBox : MonoBehaviour
 
     private bool setScalebyUpdate;
 
-    [SerializeField]
-    private float colorAlpha;
 
     private void OnEnable()
     {
@@ -168,7 +166,7 @@ public class DisplayBox : MonoBehaviour
             frontRenderer.gameObject.transform.localScale = localScaleSize;
             Debug.Log(frontRenderer.gameObject.transform.localScale);
         }
-        if (frontRenderer.material != null && colorAlpha < 1)
+        if (frontRenderer.material != null && frontRenderer.material.color.a < 1)
         {
             Material material = frontRenderer.material;
 
