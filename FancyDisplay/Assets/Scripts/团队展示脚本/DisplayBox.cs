@@ -1,4 +1,5 @@
 using RenderHeads.Media.AVProVideo;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,8 @@ public class DisplayBox : MonoBehaviour
     private bool needDestroyTexture;
 
     public bool keepAspectRatio = false;
+
+    public float borderPadding = 0.8f; //预留padding
 
     public void SetText(string name, string education, string school)
     {
@@ -36,7 +39,7 @@ public class DisplayBox : MonoBehaviour
         }
     }
 
-    public void SetImgMov(MediaPlayer mediaPlayerPrefab, DisplayBox displayBox, string file)
+    public void SetImgMov(DisplayBox displayBox, string file, MediaPlayer mediaPlayerPrefab = null)
     {
         // 动态生成material
         Renderer renderer = frontRenderer;
@@ -48,19 +51,9 @@ public class DisplayBox : MonoBehaviour
         if (FileUtils.IsImgFile(file))
         {
             Texture2D texture = LoadTexture(file);
-            if (keepAspectRatio)
-            {
-                // 调整Quad子物体的比例以保持图片的原始比例
-                float aspectRatio = (float)texture.width / texture.height;
-                Vector3 parentScale = transform.localScale;
-                renderer.transform.localScale = new Vector3(aspectRatio / parentScale.x, 1 / parentScale.y, 1 / parentScale.z);
-            }
-
-            renderer.material.mainTexture = texture;
-
-            needDestroyTexture = true;
+            SetImg(displayBox, texture, keepAspectRatio);
         }
-        else if (FileUtils.IsMovFile(file))
+        else if (mediaPlayerPrefab != null && FileUtils.IsMovFile(file))
         {
             MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, displayBox.transform);
             ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
@@ -68,6 +61,75 @@ public class DisplayBox : MonoBehaviour
             string videoPath = file;
             mediaPlayer.OpenMedia(new MediaPath(videoPath, MediaPathType.AbsolutePathOrURL), true);
         }
+    }
+
+    public void SetImg(DisplayBox displayBox, Texture2D texture, bool keepAspectRatio = false)
+    {
+        // 动态生成material
+        Renderer renderer = frontRenderer;
+        if (renderer != null)
+        {
+            renderer.material = new Material(renderer.material);
+        }
+        if (keepAspectRatio)
+        {
+            SetlocalScale(displayBox, texture);
+        }
+        if (texture != null)
+        {
+            if (renderer.material.mainTexture != null)
+            {
+                //Destroy(renderer.material.mainTexture);
+                Resources.UnloadAsset(renderer.material.mainTexture);
+            }
+            renderer.material.mainTexture = texture;
+            needDestroyTexture = true;
+        }
+    }
+
+    private void SetlocalScale(DisplayBox displayBox, Texture2D texture)
+    {
+        displayBox.frontRenderer.gameObject.SetActive(true);
+
+        Texture2D imageTexture = texture;
+        displayBox.frontRenderer.material.SetTexture("_MainTex", imageTexture);
+
+        // Get the parent's scale in world space
+        Vector3 parentScale = displayBox.frontRenderer.transform.parent.transform.lossyScale;
+        float parentWidth = parentScale.x;
+        float parentHeight = parentScale.y;
+
+        // Get image dimensions and aspect ratio
+        float imageWidth = imageTexture.width;
+        float imageHeight = imageTexture.height;
+        float imageAspect = imageWidth / imageHeight;
+
+        // Calculate new dimensions to fit inside parent
+        float newWidth, newHeight;
+        float parentAspect = parentWidth / parentHeight;
+
+        if (imageAspect > parentAspect)
+        {
+            // Image is wider than parent (relative to height)
+            newWidth = parentWidth;
+            newHeight = newWidth / imageAspect;
+        }
+        else
+        {
+            // Image is taller than parent (relative to width)
+            newHeight = parentHeight;
+            newWidth = newHeight * imageAspect;
+        }
+
+
+        // Apply local scale with respect to parent's scale
+        Vector3 localScale = new Vector3(
+            newWidth / parentScale.x * borderPadding,
+            newHeight / parentScale.y * borderPadding,
+            1.0f
+        );
+
+        displayBox.frontRenderer.transform.localScale = localScale;
     }
 
     private Texture2D LoadTexture(string filePath)

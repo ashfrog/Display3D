@@ -131,44 +131,8 @@ public class SchoolEnterpriseCooperation : MonoBehaviour
                 displayBox.frontRenderer.gameObject.SetActive(true);
 
                 Texture2D imageTexture = texture2Ds[index];
-                displayBox.frontRenderer.material.SetTexture("_MainTex", imageTexture);
 
-                // Get the parent's scale in world space
-                Vector3 parentScale = displayBox.frontRenderer.transform.parent.transform.lossyScale;
-                float parentWidth = parentScale.x;
-                float parentHeight = parentScale.y;
-
-                // Get image dimensions and aspect ratio
-                float imageWidth = imageTexture.width;
-                float imageHeight = imageTexture.height;
-                float imageAspect = imageWidth / imageHeight;
-
-                // Calculate new dimensions to fit inside parent
-                float newWidth, newHeight;
-                float parentAspect = parentWidth / parentHeight;
-
-                if (imageAspect > parentAspect)
-                {
-                    // Image is wider than parent (relative to height)
-                    newWidth = parentWidth;
-                    newHeight = newWidth / imageAspect;
-                }
-                else
-                {
-                    // Image is taller than parent (relative to width)
-                    newHeight = parentHeight;
-                    newWidth = newHeight * imageAspect;
-                }
-
-                float borderscale = 0.8f; //预留padding
-                // Apply local scale with respect to parent's scale
-                Vector3 localScale = new Vector3(
-                    newWidth / parentScale.x * borderscale,
-                    newHeight / parentScale.y * borderscale,
-                    1.0f
-                );
-
-                displayBox.frontRenderer.transform.localScale = localScale;
+                displayBox.SetImg(displayBox, imageTexture, true);
 
             }
             else
