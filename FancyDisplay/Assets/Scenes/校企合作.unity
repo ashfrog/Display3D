@@ -143,7 +143,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &8918344
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +849,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &259370295 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4570328293901113476, guid: 21596b9282002cd438e9255f44b3098e, type: 3}
@@ -872,7 +870,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &356733901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1029,7 +1026,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &506838556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1402,7 +1398,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &542893196 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7327174007946341371, guid: 21596b9282002cd438e9255f44b3098e, type: 3}
@@ -1424,7 +1419,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &579812490
 GameObject:
   m_ObjectHideFlags: 0
@@ -1544,7 +1538,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &658495269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -1959,7 +1952,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 1
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!114 &737138644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2590,7 +2582,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &1180105304 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2894866187571909796, guid: 21596b9282002cd438e9255f44b3098e, type: 3}
@@ -2612,7 +2603,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &1367454062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3333842638493532058, guid: 21596b9282002cd438e9255f44b3098e, type: 3}
@@ -2634,7 +2624,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &1511845876
 GameObject:
   m_ObjectHideFlags: 0
@@ -2727,7 +2716,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &1596611518
 GameObject:
   m_ObjectHideFlags: 0
@@ -2936,7 +2924,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 1
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &1647598010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3028,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &1839074589
 GameObject:
   m_ObjectHideFlags: 0
@@ -3259,7 +3245,6 @@ MonoBehaviour:
   xls_Texs: []
   keepAspectRatio: 0
   borderPadding: 0.8
-  colorAlpha: 0
 --- !u!1 &2084210407
 GameObject:
   m_ObjectHideFlags: 0
