@@ -19,6 +19,14 @@ public class DisplayBox : MonoBehaviour
 
     public float borderPadding = 0.8f; //预留padding
 
+    private void OnEnable()
+    {
+        if (frontRenderer == null)
+        {
+            frontRenderer = GetComponentInChildren<Renderer>();
+        }
+    }
+
     public void SetText(string name, string education, string school)
     {
         xls_Texs[0].text = name;
@@ -65,25 +73,33 @@ public class DisplayBox : MonoBehaviour
 
     public void SetImg(DisplayBox displayBox, Texture2D texture, bool keepAspectRatio = false)
     {
-        // 动态生成material
         Renderer renderer = frontRenderer;
         if (renderer != null)
         {
-            renderer.material = new Material(renderer.material);
-        }
-        if (keepAspectRatio)
-        {
-            SetlocalScale(displayBox, texture);
-        }
-        if (texture != null)
-        {
+            // 建议先置空并销毁旧贴图，避免残留引用
             if (renderer.material.mainTexture != null)
             {
-                //Destroy(renderer.material.mainTexture);
-                Resources.UnloadAsset(renderer.material.mainTexture);
+                Destroy(renderer.material.mainTexture);
+                renderer.material.mainTexture = null;
             }
-            renderer.material.mainTexture = texture;
-            needDestroyTexture = true;
+
+            // 如有需要也可以先销毁旧材质再重新创建材质
+            // Destroy(renderer.material);
+            // renderer.material = new Material(Shader.Find("Standard"));
+
+            // 动态生成新的材质
+            renderer.material = new Material(renderer.material);
+
+            if (keepAspectRatio && texture != null)
+            {
+                SetlocalScale(displayBox, texture);
+            }
+
+            // 指定新的贴图给材质
+            if (texture != null)
+            {
+                renderer.material.mainTexture = texture;
+            }
         }
     }
 
