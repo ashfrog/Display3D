@@ -4,20 +4,28 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DisplayBox : MonoBehaviour
 {
     [SerializeField]
-    public Renderer frontRenderer;
-
-    public TextMeshPro[] xls_Texs;
+    private Renderer frontRenderer;
+    [SerializeField]
+    private TextMeshPro[] xls_Texs;
 
     private bool needDestroyTexture;
+    [SerializeField]
+    private bool keepAspectRatio = false;
+    [SerializeField]
+    private float borderPadding = 0.8f; //预留padding
 
-    public bool keepAspectRatio = false;
+    private Vector3 localScaleSize;
 
-    public float borderPadding = 0.8f; //预留padding
+    private bool setScalebyUpdate;
+
+    [SerializeField]
+    private float colorAlpha;
 
     private void OnEnable()
     {
@@ -47,7 +55,7 @@ public class DisplayBox : MonoBehaviour
         }
     }
 
-    public void SetImgMov(DisplayBox displayBox, string file, MediaPlayer mediaPlayerPrefab = null)
+    public void SetImgMov(string file, MediaPlayer mediaPlayerPrefab = null)
     {
         // 动态生成material
         Renderer renderer = frontRenderer;
@@ -59,11 +67,11 @@ public class DisplayBox : MonoBehaviour
         if (FileUtils.IsImgFile(file))
         {
             Texture2D texture = LoadTexture(file);
-            SetImg(displayBox, texture, keepAspectRatio);
+            SetImg(texture, keepAspectRatio);
         }
         else if (mediaPlayerPrefab != null && FileUtils.IsMovFile(file))
         {
-            MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, displayBox.transform);
+            MediaPlayer mediaPlayer = Instantiate(mediaPlayerPrefab, transform);
             ApplyToMaterial applyToMaterial = mediaPlayer.GetComponent<ApplyToMaterial>();
             applyToMaterial.Material = renderer.material;
             string videoPath = file;
@@ -71,17 +79,17 @@ public class DisplayBox : MonoBehaviour
         }
     }
 
-    public void SetImg(DisplayBox displayBox, Texture2D texture, bool keepAspectRatio = false)
+    public void SetImg(Texture2D texture, bool keepAspectRatio = true)
     {
         Renderer renderer = frontRenderer;
         if (renderer != null)
         {
             // 建议先置空并销毁旧贴图，避免残留引用
-            if (renderer.material.mainTexture != null)
-            {
-                Destroy(renderer.material.mainTexture);
-                renderer.material.mainTexture = null;
-            }
+            //if (renderer.material.mainTexture != null)
+            //{
+            //    Destroy(renderer.material.mainTexture);
+            //    renderer.material.mainTexture = null;
+            //}
 
             // 如有需要也可以先销毁旧材质再重新创建材质
             // Destroy(renderer.material);
@@ -90,9 +98,12 @@ public class DisplayBox : MonoBehaviour
             // 动态生成新的材质
             renderer.material = new Material(renderer.material);
 
+            frontRenderer = renderer;
+
             if (keepAspectRatio && texture != null)
             {
-                SetlocalScale(displayBox, texture);
+                renderer.material.color = new Color(1, 1, 1, 0);
+                SetlocalScale(texture);
             }
 
             // 指定新的贴图给材质
@@ -103,15 +114,15 @@ public class DisplayBox : MonoBehaviour
         }
     }
 
-    private void SetlocalScale(DisplayBox displayBox, Texture2D texture)
+    private void SetlocalScale(Texture2D texture)
     {
-        displayBox.frontRenderer.gameObject.SetActive(true);
+        frontRenderer.gameObject.SetActive(true);
 
         Texture2D imageTexture = texture;
-        displayBox.frontRenderer.material.SetTexture("_MainTex", imageTexture);
+        frontRenderer.material.SetTexture("_MainTex", imageTexture);
 
         // Get the parent's scale in world space
-        Vector3 parentScale = displayBox.frontRenderer.transform.parent.transform.lossyScale;
+        Vector3 parentScale = frontRenderer.transform.parent.transform.lossyScale;
         float parentWidth = parentScale.x;
         float parentHeight = parentScale.y;
 
@@ -145,7 +156,30 @@ public class DisplayBox : MonoBehaviour
             1.0f
         );
 
-        displayBox.frontRenderer.transform.localScale = localScale;
+        localScaleSize = localScale;
+        setScalebyUpdate = true; //只能在update中设置scale 在此处设置值改变了 但是面板中值没变
+    }
+
+    private void Update()
+    {
+        if (setScalebyUpdate && !frontRenderer.gameObject.transform.localScale.Equals(localScaleSize))
+        {
+            setScalebyUpdate = false;
+            frontRenderer.gameObject.transform.localScale = localScaleSize;
+            Debug.Log(frontRenderer.gameObject.transform.localScale);
+        }
+        if (frontRenderer.material != null && colorAlpha < 1)
+        {
+            Material material = frontRenderer.material;
+
+            Color color = material.color;
+
+            //Color color = material.GetColor("_Color");
+            color.a = color.a + Time.deltaTime;
+            //material.SetColor("_Color", color);
+            material.color = color;
+            Debug.Log(material.color);
+        }
     }
 
     private Texture2D LoadTexture(string filePath)

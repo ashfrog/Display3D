@@ -8,10 +8,11 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: FrontQuad
-  m_Shader: {fileID: 10750, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 924660f6fad980b4d9e5eb4ee93c2549, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords:
   - STEREO_NONE
+  - UI_CIRCLE
   - _AD_CUTOUT_GEOMETRIC_COUNT_ONE
   - _AD_CUTOUT_GEOMETRIC_TYPE_NONE
   - _AD_CUTOUT_STANDARD_SOURCE_MAPS_MAPPING_TYPE_DEFAULT
@@ -76,7 +77,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0ee0b44b8c03546a392c57dc59d85589, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -94,6 +95,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Stereo: 0
+    - UI: 0
     - _AdvancedDissolveCutoutGeometric1Height: 1
     - _AdvancedDissolveCutoutGeometric1Radius: 1
     - _AdvancedDissolveCutoutGeometric2Height: 1
@@ -145,22 +147,35 @@ Material:
     - _AdvancedDissolveKeywordState: 0
     - _ApplyGamma: 0
     - _BumpScale: 1
+    - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DrawOutline: 0
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _Morph: 0
+    - _Mute: 0
     - _OcclusionStrength: 1
+    - _OutlineOpacity: 0.25
+    - _OutlineSize: 0.05
+    - _OutlineSoftness: 0
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
     - _StereoDebug: 0
     - _UVSec: 0
     - _UseYpCbCr: 0
+    - _Volume: 1
     - _ZWrite: 1
     m_Colors:
     - _AdvancedDissolveBakedKeywords: {r: 0, g: 0, b: 0, a: 0}

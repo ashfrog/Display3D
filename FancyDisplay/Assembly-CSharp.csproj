@@ -114,7 +114,6 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\Demo\FHClientController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\SchoolEnterpriseCooperation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
     <Compile Include="Assets\HonorWallManager\Scripts\SDCardPath.cs" />
     <Compile Include="Assets\CodeUtils\ConfigManager\SettingsManager.cs" />
@@ -141,6 +140,7 @@
     <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Mobile\Mobile-Particle-Add.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\AVProVideo\Licenses\Hap-3rdParty.txt" />
+    <None Include="Assets\fbx\mat\校企合作\UnlitTransparentWithAlpha.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
     <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Nature\SoftOcclusion\TreeSoftOcclusionBark.shader" />
     <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\UnityStandardCore.cginc" />

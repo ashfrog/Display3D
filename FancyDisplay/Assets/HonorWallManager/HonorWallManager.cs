@@ -165,7 +165,7 @@ public class HonorWallManager : MonoBehaviour
         DisplayBox displayBox = display.GetComponent<DisplayBox>();
         displayBox.SetText(rowdata);
         string mediafilepath = Path.Combine(Application.streamingAssetsPath, ExcelReader.dataFolder, rowdata[3].ToString());
-        displayBox.SetImgMov(displayBox, mediafilepath, mediaPlayerPrefab);
+        displayBox.SetImgMov(mediafilepath, mediaPlayerPrefab);
     }
 
     /// <summary>
@@ -181,7 +181,7 @@ public class HonorWallManager : MonoBehaviour
         string mediafilepath = Path.Combine(Application.streamingAssetsPath, ExcelReader.dataFolder, title.ToString() + ".jpg");
         if (File.Exists(mediafilepath))
         {
-            displayBox.SetImgMov(displayBox, mediafilepath, mediaPlayerPrefab);
+            displayBox.SetImgMov(mediafilepath, mediaPlayerPrefab);
         }
     }
     private IEnumerator LazyLoadDisplays(int sheetindex)
