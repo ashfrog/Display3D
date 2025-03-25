@@ -5,7 +5,7 @@ using UnityEditor;
 public class CubeQuadAdapter : MonoBehaviour
 {
     [Tooltip("Quad与Cube前表面之间的距离")]
-    [Range(0.001f, 0.1f)]
+    [Range(-1f, 1f)]
     public float offset = 0.01f;
     [Tooltip("使Quad在Cube前方而不是后方")]
     public bool isFrontFacing = true;
