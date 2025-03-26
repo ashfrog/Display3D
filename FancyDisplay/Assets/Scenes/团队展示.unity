@@ -1380,6 +1380,8 @@ MonoBehaviour:
   frontRenderer: {fileID: 1993937416}
   xls_Texs:
   - {fileID: 1761998912}
+  keepAspectRatio: 0
+  borderPadding: 0.8
 --- !u!1 &1058105847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2590,6 +2592,8 @@ MonoBehaviour:
   - {fileID: 502035496}
   - {fileID: 1143820335}
   - {fileID: 1473033331}
+  keepAspectRatio: 0
+  borderPadding: 0.8
 --- !u!1 &1761998910
 GameObject:
   m_ObjectHideFlags: 0

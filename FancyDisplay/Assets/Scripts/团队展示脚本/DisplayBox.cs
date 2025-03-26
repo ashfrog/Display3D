@@ -24,7 +24,6 @@ public class DisplayBox : MonoBehaviour
 
     private bool setScalebyUpdate;
 
-
     private void OnEnable()
     {
         if (frontRenderer == null)
