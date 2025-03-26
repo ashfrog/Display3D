@@ -127,6 +127,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\AsteroidSpawner.cs" />
+    <Compile Include="Assets\MaintainMargin.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -204,6 +205,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\SpeedTree\SpeedTree8Common.cginc" />
     <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\cginc\SpaceTransforms.cginc" />
+    <None Include="Assets\fbx\mat\荣誉展示\PreciseNineSliceScaler.shader" />
     <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Particles\Particle MultiplyDouble.shader" />
     <None Include="Assets\HonorWallManager\GroundMirror\GroundMirror.shader" />
     <None Include="Assets\Amazing Assets\Advanced Dissolve\Shaders\Built-in\Standard\UnityStandardShadow.cginc" />
