@@ -89,7 +89,7 @@ public class AsteroidSpawner : MonoBehaviour
                 generateIndex = 0;
             }
             //展示图片
-            asteroid.SetImg(texture2Ds[generateIndex]);
+            asteroid.SetImg(texture2Ds[generateIndex], true);
             generateIndex++;
             // 随机给陨石设置一个速度
             float speed = Random.Range(minSpeed, maxSpeed);
