@@ -28,15 +28,20 @@ public class HornorShow : MonoBehaviour
     /// 证书文件
     /// </summary>
     [SerializeField]
-    List<Texture2D> texture2Ds = new List<Texture2D>();
+    List<Texture2D> texture2Ds_0 = new List<Texture2D>();
 
     /// <summary>
-    /// 大记事 年 月 日
+    /// 年
     /// </summary>
     [SerializeField]
-    List<DateTime> textsDate = new List<DateTime>();
+    List<DateTime> textsDate_1 = new List<DateTime>();
     [SerializeField]
-    List<string> textsInfo = new List<string>();
+    List<string> textsInfo_2 = new List<string>();
+
+    [SerializeField]
+    List<string> textsInfo_3 = new List<string>();
+
+
 
     [SerializeField]
     DisplayBox displayBox;
@@ -60,13 +65,15 @@ public class HornorShow : MonoBehaviour
             if (FileUtils.IsImgFile(file))
             {
                 Texture2D texture2D = LoadTexture(file);
-                texture2Ds.Add(texture2D);
+                texture2Ds_0.Add(texture2D);
                 DateTime? dtime = ExcelReader.TryParseExcelDate(row[1]);
                 string row2 = row[2].ToString();
-                textsInfo.Add(row2);
+                textsInfo_2.Add(row2);
+                string row3 = row[3].ToString();
+                textsInfo_3.Add(row3);
                 if (dtime.HasValue)
                 {
-                    textsDate.Add(dtime.Value);
+                    textsDate_1.Add(dtime.Value);
                 }
                 else
                 {
@@ -120,7 +127,7 @@ public class HornorShow : MonoBehaviour
         SetBoxDisplay(index);
         index++;
         // 限制index范围
-        if (index >= texture2Ds.Count)
+        if (index >= texture2Ds_0.Count)
         {
             index = 0;
         }
@@ -128,24 +135,21 @@ public class HornorShow : MonoBehaviour
 
     private void SetBoxDisplay(int curindex)
     {
-        if (curindex < 0 || curindex >= texture2Ds.Count)
+        if (curindex < 0 || curindex >= texture2Ds_0.Count)
         {
             return;
         }
-        //meshRenderer.material.SetTexture("_EmissionMap", texture2Ds[curindex]);
-        displayBox.SetImg(texture2Ds[curindex], true);
+        displayBox.SetImg(texture2Ds_0[curindex], true);
 
-        int year = textsDate[curindex].Year;
-        int month = textsDate[curindex].Month;
-        int day = textsDate[curindex].Day;
+        int year = textsDate_1[curindex].Year;
         float size = tmpText.fontSize;
-        float bigsize = size * 3f;
-        float normalsize = size * 2.6f;
-        float minsize = size * 1.6f;
-        tmpText.text = $"<size={bigsize}>{year}</size><size={normalsize}>年</size>" +
-            $"<size={minsize}>{month}</size><size={minsize}>月</size>" +
-            $"<size={minsize}>{day}</size><size={minsize}>日</size>" +
-            $"<br>{textsInfo[curindex]}";
+        float size_1 = size * 2.6f;
+        float size_2 = size * 1f;
+        float size_3 = size * 3f;
+
+        tmpText.text = $"<size={size_1}>{year}</size><size={size_1}>年</size>" +
+            $" >>> <size={size_2}>{textsInfo_2[curindex]}</size>" +
+            $"<br><size={size_3}>{textsInfo_3[curindex]}</size>";
         textFlyInEffect.StartFlyInEffect();
     }
 }
