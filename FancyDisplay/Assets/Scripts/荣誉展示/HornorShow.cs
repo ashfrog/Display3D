@@ -133,7 +133,7 @@ public class HornorShow : MonoBehaviour
             return;
         }
         //meshRenderer.material.SetTexture("_EmissionMap", texture2Ds[curindex]);
-        displayBox.SetImg(texture2Ds[curindex]);
+        displayBox.SetImg(texture2Ds[curindex], true);
 
         int year = textsDate[curindex].Year;
         int month = textsDate[curindex].Month;
