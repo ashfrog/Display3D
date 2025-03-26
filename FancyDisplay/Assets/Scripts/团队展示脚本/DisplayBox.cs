@@ -18,7 +18,7 @@ public class DisplayBox : MonoBehaviour
     [SerializeField]
     private bool keepAspectRatio = false;
     [SerializeField]
-    private float borderPadding = 0.8f; //预留padding
+    private float borderPadding = 1f; //预留padding比例 1为无padding 
 
     private Vector3 localScaleSize;
 
@@ -76,7 +76,7 @@ public class DisplayBox : MonoBehaviour
         }
     }
 
-    public void SetImg(Texture2D texture, bool keepAspectRatio = true)
+    public void SetImg(Texture2D texture, bool keepAspectRatio = false)
     {
         Renderer renderer = frontRenderer;
         if (renderer != null)
