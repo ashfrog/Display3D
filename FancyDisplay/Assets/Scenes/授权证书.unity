@@ -931,6 +931,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontRenderer: {fileID: 2055793424}
   xls_Texs: []
+  keepAspectRatio: 0
+  borderPadding: 1
 --- !u!114 &493681444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -945,6 +947,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontRender: {fileID: 2055793424}
   clip: 0
+  A: 1
 --- !u!95 &493681445
 Animator:
   serializedVersion: 5
@@ -2229,6 +2232,14 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 03dbaf781192f6d4683c7fd5c0cbc6f5, type: 3}
       propertyPath: m_Name
       value: "\u5956\u724C"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1522206001254798990, guid: 03dbaf781192f6d4683c7fd5c0cbc6f5, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e47c5548ce2011e4c847954b5d3d450b, type: 2}
+    - target: {fileID: 8569841457371072943, guid: 03dbaf781192f6d4683c7fd5c0cbc6f5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9178386188333412950, guid: 03dbaf781192f6d4683c7fd5c0cbc6f5, type: 3}
       propertyPath: m_LocalScale.z
