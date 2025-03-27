@@ -661,13 +661,13 @@ MonoBehaviour:
   targetText: {fileID: 33492100}
   characterDelay: 0.05
   flyInDuration: 0.5
-  flyInDistance: 100
+  flyInDistance: 50
   easeType: 6
   playOnStart: 1
-  randomDelayMax: 0.5
+  randomDelayMax: 1
   randomnessIntensity: 0.5
-  useFixedTotalDuration: 0
-  totalDuration: 2
+  useFixedTotalDuration: 1
+  totalDuration: 1
   useMaxSimultaneousChars: 0
   maxSimultaneousCharacters: 5
 --- !u!1 &55883282
@@ -1792,13 +1792,13 @@ MonoBehaviour:
   targetText: {fileID: 672395169}
   characterDelay: 0.05
   flyInDuration: 0.5
-  flyInDistance: 100
+  flyInDistance: 50
   easeType: 6
   playOnStart: 1
-  randomDelayMax: 0.5
+  randomDelayMax: 1
   randomnessIntensity: 0.5
-  useFixedTotalDuration: 0
-  totalDuration: 2
+  useFixedTotalDuration: 1
+  totalDuration: 1
   useMaxSimultaneousChars: 0
   maxSimultaneousCharacters: 5
 --- !u!1 &705507993
@@ -2353,7 +2353,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <incr>>>> >>></incr>
+  m_text: <speed=.1><wave>>>>>>></wave>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cfcc9bbb23301334c8980705bb356c6c, type: 2}
   m_sharedMaterial: {fileID: 5582839908526585440, guid: cfcc9bbb23301334c8980705bb356c6c, type: 2}
@@ -2511,7 +2511,7 @@ MonoBehaviour:
   waitForLastCharacter: 1
   useTypewriterWaitForDisappearances: 1
   disappearanceWaitTime: 0.015
-  disappearanceSpeedMultiplier: 0.2
+  disappearanceSpeedMultiplier: 0.1
 --- !u!114 &1175288263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2529,7 +2529,7 @@ MonoBehaviour:
   timeScale: 0
   _text: '>>> >>>'
   useDynamicScaling: 1
-  referenceFontSize: 10
+  referenceFontSize: 5
   isResettingTimeOnNewText: 1
   useDefaultDatabases: 1
   databaseBehaviors: {fileID: 11400000, guid: 09233a0ba72840449b97ec4795653ed8, type: 2}
@@ -2537,8 +2537,7 @@ MonoBehaviour:
   useDefaultStyleSheet: 1
   styleSheet: {fileID: 0}
   databaseActions: {fileID: 11400000, guid: d78efd943891c714e8dccb8dbfb02173, type: 2}
-  defaultAppearancesTags:
-  - size
+  defaultAppearancesTags: []
   defaultDisappearancesTags:
   - fade
   defaultBehaviorsTags: []
@@ -2959,15 +2958,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetText: {fileID: 1870436102}
-  characterDelay: 0.05
+  characterDelay: 0.5
   flyInDuration: 0.5
-  flyInDistance: 100
+  flyInDistance: 50
   easeType: 6
   playOnStart: 1
-  randomDelayMax: 0.5
+  randomDelayMax: 1
   randomnessIntensity: 0.5
-  useFixedTotalDuration: 0
-  totalDuration: 2
+  useFixedTotalDuration: 1
+  totalDuration: 1
   useMaxSimultaneousChars: 0
   maxSimultaneousCharacters: 5
 --- !u!1 &1953855467
