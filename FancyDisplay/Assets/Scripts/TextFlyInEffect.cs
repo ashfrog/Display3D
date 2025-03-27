@@ -39,12 +39,6 @@ public class TextFlyInEffect : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            targetText.text = "思源黑体（Source Han Sans）- 由 Adobe 和 Google 合作开发的开源字体，涵盖简体中文、繁体中文、日文和韩文。设计现代、清晰，适合各种商业用途。\r\n思源宋体（Source Han Serif）- 与思源黑体同属于一个系列，提供了传统宋体的风格，同样支持完全免费商用。";
-            StopEffect();
-            StartFlyInEffect();
-        }
     }
 
     public void StartFlyInEffect()
