@@ -147,7 +147,7 @@ public class HornorShow : MonoBehaviour
 
         foreach (TextFlyInEffect effect in textFlyInEffects)
         {
-            effect.StartFlyInEffect();
+            effect.StartFlyInEffect(true);
         }
     }
 }

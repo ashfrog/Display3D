@@ -663,13 +663,15 @@ MonoBehaviour:
   flyInDuration: 0.5
   flyInDistance: 50
   easeType: 6
-  playOnStart: 1
+  playOnStart: 0
   randomDelayMax: 1
   randomnessIntensity: 0.5
   useFixedTotalDuration: 1
   totalDuration: 1
   useMaxSimultaneousChars: 0
   maxSimultaneousCharacters: 5
+  useExecutionDelay: 1
+  executionDelay: 2
 --- !u!1 &55883282
 GameObject:
   m_ObjectHideFlags: 0
@@ -1794,13 +1796,15 @@ MonoBehaviour:
   flyInDuration: 0.5
   flyInDistance: 50
   easeType: 6
-  playOnStart: 1
+  playOnStart: 0
   randomDelayMax: 1
   randomnessIntensity: 0.5
   useFixedTotalDuration: 1
   totalDuration: 1
   useMaxSimultaneousChars: 0
   maxSimultaneousCharacters: 5
+  useExecutionDelay: 1
+  executionDelay: 0.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,13 +2966,15 @@ MonoBehaviour:
   flyInDuration: 0.5
   flyInDistance: 50
   easeType: 6
-  playOnStart: 1
+  playOnStart: 0
   randomDelayMax: 1
   randomnessIntensity: 0.5
   useFixedTotalDuration: 1
   totalDuration: 1
   useMaxSimultaneousChars: 0
   maxSimultaneousCharacters: 5
+  useExecutionDelay: 0
+  executionDelay: 1
 --- !u!1 &1953855467
 GameObject:
   m_ObjectHideFlags: 0

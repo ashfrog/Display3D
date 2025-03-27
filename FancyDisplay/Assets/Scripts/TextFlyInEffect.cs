@@ -4,8 +4,9 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using System;
+
 /// <summary>
-/// 添加文字飞入效果
+/// 添加文字飞入效果（带延迟执行参数）
 /// </summary>
 public class TextFlyInEffect : MonoBehaviour
 {
@@ -24,6 +25,10 @@ public class TextFlyInEffect : MonoBehaviour
     [SerializeField] private bool useMaxSimultaneousChars = false;
     [SerializeField][Min(1)] private int maxSimultaneousCharacters = 5;
 
+    [Header("Execution Delay")]
+    [SerializeField] private bool useExecutionDelay = false;
+    [SerializeField] private float executionDelay = 1.0f;
+
     private string fullText;
     private Vector3[] originalPositions;
     private Color[] originalColors;
@@ -33,12 +38,32 @@ public class TextFlyInEffect : MonoBehaviour
     {
         if (playOnStart)
         {
-            StartFlyInEffect();
+            // If execution delay is enabled, use Invoke to delay the start
+            if (useExecutionDelay)
+            {
+                Invoke("StartFlyInEffect", executionDelay);
+            }
+            else
+            {
+                StartFlyInEffect();
+            }
         }
     }
 
     private void Update()
     {
+    }
+
+    public void StartFlyInEffect(bool useExecutionDelay)
+    {
+        if (useExecutionDelay)
+        {
+            Invoke("StartFlyInEffect", executionDelay);
+        }
+        else
+        {
+            StartFlyInEffect();
+        }
     }
 
     public void StartFlyInEffect()
@@ -155,6 +180,9 @@ public class TextFlyInEffect : MonoBehaviour
         // Play the sequence
         mainSequence.Play();
     }
+
+    // 其余方法保持不变（SetCharacterAlpha, OffsetCharacter, StopEffect, OnDestroy）
+    // 与原脚本相同，此处省略以节省空间
 
     private void SetCharacterAlpha(int charIndex, float alpha)
     {
