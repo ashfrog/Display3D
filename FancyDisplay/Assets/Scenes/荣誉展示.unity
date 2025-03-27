@@ -1953,6 +1953,7 @@ MonoBehaviour:
   - {fileID: 1870436104}
   - {fileID: 672395171}
   - {fileID: 33492102}
+  textAnimator_TMP: {fileID: 1175288263}
   displayBox: {fileID: 2063003986}
   index: 0
   revealSpeed: 0.1
@@ -2357,7 +2358,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <speed=.1><wave>>>>>>></wave>
+  m_text: '>>>>>>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: cfcc9bbb23301334c8980705bb356c6c, type: 2}
   m_sharedMaterial: {fileID: 5582839908526585440, guid: cfcc9bbb23301334c8980705bb356c6c, type: 2}
@@ -2531,7 +2532,7 @@ MonoBehaviour:
   typewriterStartsAutomatically: 1
   animationLoop: 0
   timeScale: 0
-  _text: '>>> >>>'
+  _text: <speed=.1><wave>>>>>>></wave>
   useDynamicScaling: 1
   referenceFontSize: 5
   isResettingTimeOnNewText: 1
@@ -2962,12 +2963,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetText: {fileID: 1870436102}
-  characterDelay: 0.5
-  flyInDuration: 0.5
-  flyInDistance: 50
+  characterDelay: 0.1
+  flyInDuration: 0.3
+  flyInDistance: 5
   easeType: 6
   playOnStart: 0
-  randomDelayMax: 1
+  randomDelayMax: 0.2
   randomnessIntensity: 0.5
   useFixedTotalDuration: 0
   totalDuration: 1

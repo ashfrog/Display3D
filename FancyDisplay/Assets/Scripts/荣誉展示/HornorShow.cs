@@ -1,3 +1,4 @@
+using Febucci.UI;
 using RenderHeads.Media.AVProVideo;
 using System;
 using System.Collections;
@@ -5,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.IO;
+using TinyGiantStudio.Text.Example;
 using TMPro;
 using UnityEngine;
 
@@ -28,6 +30,8 @@ public class HornorShow : MonoBehaviour
     /// 证书文件
     /// </summary>
     List<Texture2D> texture2Ds_0 = new List<Texture2D>();
+    [SerializeField]
+    TextAnimator_TMP textAnimator_TMP;
 
     /// <summary>
     /// 年
@@ -149,5 +153,9 @@ public class HornorShow : MonoBehaviour
         {
             effect.StartFlyInEffect(true);
         }
+
+        textAnimator_TMP.SetText("<speed=.1><wave>>>>>>></wave>");
+        var typewriter = textAnimator_TMP.GetComponent<TypewriterByCharacter>();
+        typewriter.ShowText(textAnimator_TMP.textFull);
     }
 }
