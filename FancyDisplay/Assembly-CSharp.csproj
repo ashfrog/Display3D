@@ -71,6 +71,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\MediaTime.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\AsteroidSpawner.cs" />
     <Compile Include="Assets\TouchSocketTcp\Plugins\SkipUnityLogo.cs" />
     <Compile Include="Assets\HonorWallManager\Scripts\授权证书脚本\SyncVideoAnimation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
@@ -120,14 +121,13 @@
     <Compile Include="Assets\CodeUtils\ConfigManager\Demo.cs" />
     <Compile Include="Assets\Scripts\证书展示脚本\CertificateDisplay.cs" />
     <Compile Include="Assets\Scripts\ExcelReader.cs" />
+    <Compile Include="Assets\Scripts\荣誉展示\HornorShow.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\AsteroidSpawner.cs" />
-    <Compile Include="Assets\Scripts\荣誉展示\HornorShow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -597,6 +597,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="M3D Font Creator - Runtime Only">
+      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="I18N.CJK">
       <HintPath>Assets\Plugins\x86_64\I18N.CJK.dll</HintPath>
       <Private>False</Private>
@@ -615,10 +619,6 @@
     </Reference>
     <Reference Include="TouchSocket">
       <HintPath>Assets\TouchSocketTcp\Plugins\TouchSocket.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="M3D Font Creator - Runtime Only">
-      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1231,6 +1231,10 @@
       <Project>{F16A47B9-EBBB-D5D1-8199-3252F85678EF}</Project>
       <Name>AmazingAssets.AdvancedDissolve.Examples</Name>
     </ProjectReference>
+    <ProjectReference Include="TGS_PackageImporter.csproj">
+      <Project>{9DD9FCE8-ADB6-B8CB-FEED-4512647477C7}</Project>
+      <Name>TGS_PackageImporter</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.DOTween.csproj">
       <Project>{D1099F29-B794-0292-766C-E4045A563647}</Project>
       <Name>UniTask.DOTween</Name>
@@ -1298,10 +1302,6 @@
     <ProjectReference Include="UniTask.Addressables.csproj">
       <Project>{18ADE0D9-8C3D-34EF-668F-A8BC9729F768}</Project>
       <Name>UniTask.Addressables</Name>
-    </ProjectReference>
-    <ProjectReference Include="TGS_PackageImporter.csproj">
-      <Project>{9DD9FCE8-ADB6-B8CB-FEED-4512647477C7}</Project>
-      <Name>TGS_PackageImporter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

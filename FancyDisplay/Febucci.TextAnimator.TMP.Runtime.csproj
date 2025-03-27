@@ -429,6 +429,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="M3D Font Creator - Runtime Only">
+      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="I18N.CJK">
       <HintPath>Assets\Plugins\x86_64\I18N.CJK.dll</HintPath>
       <Private>False</Private>
@@ -447,10 +451,6 @@
     </Reference>
     <Reference Include="TouchSocket">
       <HintPath>Assets\TouchSocketTcp\Plugins\TouchSocket.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="M3D Font Creator - Runtime Only">
-      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">

@@ -765,13 +765,15 @@ MonoBehaviour:
   flyInDuration: 0.5
   flyInDistance: 1
   easeType: 6
-  playOnStart: 1
+  playOnStart: 0
   randomDelayMax: 1
   randomnessIntensity: 1
   useFixedTotalDuration: 1
   totalDuration: 1.5
   useMaxSimultaneousChars: 0
   maxSimultaneousCharacters: 10
+  useExecutionDelay: 0
+  executionDelay: 1
 --- !u!1 &75971222
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,24 +805,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9840f87219df84505803024c796e739d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  usePreset: 1
-  preset: {fileID: 11400000, guid: 4ce9908ccf7134c95bb64f24bc3ab9c9, type: 2}
-  tagEffects: []
-  globalEffects:
-  - triggerWhen: 0
-    effect: {fileID: 11400000, guid: 4e002acd0b5ac4d8188b4ed4b45dc9f0, type: 2}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-    overrideTagEffects: 1
-  - triggerWhen: 1
-    effect: {fileID: 11400000, guid: 415c717fe36b6424f9674111f2a16121, type: 2}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-    overrideTagEffects: 1
-  updatesPerSecond: 30
 --- !u!224 &75971225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1122,6 +1106,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontRenderer: {fileID: 8319502009888238488}
   xls_Texs: []
+  keepAspectRatio: 0
+  borderPadding: 1
 --- !u!114 &493681444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,6 +1122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   frontRender: {fileID: 8319502009888238488}
   clip: 0
+  A: 1
 --- !u!95 &493681445
 Animator:
   serializedVersion: 5

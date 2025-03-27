@@ -483,6 +483,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="M3D Font Creator - Runtime Only">
+      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="DemiEditor">
       <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
       <Private>False</Private>
@@ -525,10 +529,6 @@
     </Reference>
     <Reference Include="TouchSocket">
       <HintPath>Assets\TouchSocketTcp\Plugins\TouchSocket.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="M3D Font Creator - Runtime Only">
-      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">

@@ -59,11 +59,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\Editor\TGS_AssetDatabaseHandler.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\Editor\TGS_PackageImporterWindow.cs" />
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\Editor\TGS_Package.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\Editor\TGS_ImporterStaticMethods.cs" />
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\Editor\TGS_PackageManagerAgent.cs" />
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\TGS_Asset.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\Editor\TGS_ImporterStaticMethods.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\Editor\TGS_PackageImporterWindow.cs" />
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Package Importer\Editor\TGS_AssetEditor.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -470,6 +470,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="M3D Font Creator - Runtime Only">
+      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="DemiEditor">
       <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
       <Private>False</Private>
@@ -512,10 +516,6 @@
     </Reference>
     <Reference Include="TouchSocket">
       <HintPath>Assets\TouchSocketTcp\Plugins\TouchSocket.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="M3D Font Creator - Runtime Only">
-      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">

@@ -39,14 +39,7 @@ public class TextFlyInEffect : MonoBehaviour
         if (playOnStart)
         {
             // If execution delay is enabled, use Invoke to delay the start
-            if (useExecutionDelay)
-            {
-                Invoke("StartFlyInEffect", executionDelay);
-            }
-            else
-            {
-                StartFlyInEffect();
-            }
+            StartFlyInEffect(useExecutionDelay);
         }
     }
 
@@ -54,10 +47,21 @@ public class TextFlyInEffect : MonoBehaviour
     {
     }
 
-    public void StartFlyInEffect(bool useExecutionDelay)
+    public void StartFlyInEffect(bool useExecutionDelay = false)
     {
+        if (targetText == null)
+        {
+            Debug.LogError("TextMeshPro component is not assigned!");
+            return;
+        }
+
         if (useExecutionDelay)
         {
+            var renderer = targetText.transform.GetComponent<MeshRenderer>();
+            if (renderer != null)
+            {
+                renderer.enabled = false;
+            }
             Invoke("StartFlyInEffect", executionDelay);
         }
         else
@@ -66,14 +70,13 @@ public class TextFlyInEffect : MonoBehaviour
         }
     }
 
-    public void StartFlyInEffect()
+    private void StartFlyInEffect()
     {
-        if (targetText == null)
+        var renderer = targetText.transform.GetComponent<MeshRenderer>();
+        if (renderer != null)
         {
-            Debug.LogError("TextMeshPro component is not assigned!");
-            return;
+            renderer.enabled = true;
         }
-
         // Store original text and clear it
         fullText = targetText.text;
         targetText.text = fullText;

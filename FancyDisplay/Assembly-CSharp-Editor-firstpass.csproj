@@ -58,42 +58,42 @@
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenPreviewManager.cs" />
-    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\Font Creator\MText_MeshAssetExporter.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\HorizontalSelectorEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\FontInstanceUpdater.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\UI Elements\ToggleEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\SliderEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Input\RaycastSelectorEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\LayoutsMenuItem.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\ScriptDefineManager.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Common\EditorThemeManager.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Examples\LoopAnimationEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\ButtonEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Common Scripts\Editor\MText_Editor_Methods.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\VolumeLayoutGroupEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Common\MaterialPreviewManager.cs" />
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Core Text\Modular3DTextEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\LayoutElementEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\SliderEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\LayoutsMenuItem.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\FontEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\GridLayoutGroupEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Input\RaycastSelectorEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Examples\LoopAnimationEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\LinearLayoutGroupEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\Font Creator\MText_ObjExporter.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Input\ButtonInputSystemGlobalEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\ScriptDefineManager.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Input\RaycastSelectorInputProcessorEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modules\Scripts\Editor\ModuleDrawer.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\ButtonEditor.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenPreviewManager.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Input\ButtonInputProcessorEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modules\Scripts\Editor\ModuleApplierEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\ListEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\UI Elements\ToggleEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modules\Scripts\Editor\ModuleEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\InputFieldEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\Font Creator\MText_MeshAssetExporter.cs" />
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\CircularLayoutGroupEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\FontInstanceUpdater.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Asset Window\ModularTextEditorWindow.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\LayoutElementEditor.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\HorizontalSelectorEditor.cs" />
+    <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\Editor\DOTweenAnimationInspector.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Common\EditorThemeManager.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Common Scripts\Editor\MText_Editor_Methods.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Common Scripts\Editor\MText_Editor_Classes.cs" />
+    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\Font Creator\NewFontCharacterRange.cs" />
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\Font Creator\MText_FontExporter.cs" />
     <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\CharacterDrawer.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modules\Scripts\Editor\ModuleEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Input\ButtonInputProcessorEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modules\Scripts\Editor\ModuleDrawer.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Common Scripts\Editor\MText_Editor_Classes.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\InputFieldEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\GridLayoutGroupEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\LinearLayoutGroupEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\Font Creator\NewFontCharacterRange.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modules\Scripts\Editor\ModuleApplierEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\Font Creator\MText_ObjExporter.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Layouts\Scripts\Editor\VolumeLayoutGroupEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Asset Window\ModularTextEditorWindow.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Input\RaycastSelectorInputProcessorEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Common\MaterialPreviewManager.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Font\FontEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\Input\ButtonInputSystemGlobalEditor.cs" />
-    <Compile Include="Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Editor\ListEditor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll" />
@@ -515,6 +515,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="M3D Font Creator - Runtime Only">
+      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="DemiEditor">
       <HintPath>Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.dll</HintPath>
       <Private>False</Private>
@@ -557,10 +561,6 @@
     </Reference>
     <Reference Include="TouchSocket">
       <HintPath>Assets\TouchSocketTcp\Plugins\TouchSocket.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="M3D Font Creator - Runtime Only">
-      <HintPath>Assets\Plugins\Tiny Giant Studio\Modular 3D Text\Scripts\Font\M3D Font Creator - Runtime Only.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">
@@ -1197,6 +1197,10 @@
       <Project>{F16A47B9-EBBB-D5D1-8199-3252F85678EF}</Project>
       <Name>AmazingAssets.AdvancedDissolve.Examples</Name>
     </ProjectReference>
+    <ProjectReference Include="TGS_PackageImporter.csproj">
+      <Project>{9DD9FCE8-ADB6-B8CB-FEED-4512647477C7}</Project>
+      <Name>TGS_PackageImporter</Name>
+    </ProjectReference>
     <ProjectReference Include="UniTask.DOTween.csproj">
       <Project>{D1099F29-B794-0292-766C-E4045A563647}</Project>
       <Name>UniTask.DOTween</Name>
@@ -1264,10 +1268,6 @@
     <ProjectReference Include="UniTask.Addressables.csproj">
       <Project>{18ADE0D9-8C3D-34EF-668F-A8BC9729F768}</Project>
       <Name>UniTask.Addressables</Name>
-    </ProjectReference>
-    <ProjectReference Include="TGS_PackageImporter.csproj">
-      <Project>{9DD9FCE8-ADB6-B8CB-FEED-4512647477C7}</Project>
-      <Name>TGS_PackageImporter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

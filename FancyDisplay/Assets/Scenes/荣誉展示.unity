@@ -671,7 +671,7 @@ MonoBehaviour:
   useMaxSimultaneousChars: 0
   maxSimultaneousCharacters: 5
   useExecutionDelay: 1
-  executionDelay: 2
+  executionDelay: 1
 --- !u!1 &55883282
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,12 +2969,12 @@ MonoBehaviour:
   playOnStart: 0
   randomDelayMax: 1
   randomnessIntensity: 0.5
-  useFixedTotalDuration: 1
+  useFixedTotalDuration: 0
   totalDuration: 1
-  useMaxSimultaneousChars: 0
-  maxSimultaneousCharacters: 5
+  useMaxSimultaneousChars: 1
+  maxSimultaneousCharacters: 1
   useExecutionDelay: 0
-  executionDelay: 1
+  executionDelay: 0.1
 --- !u!1 &1953855467
 GameObject:
   m_ObjectHideFlags: 0
