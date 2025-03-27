@@ -16,10 +16,10 @@ public class HornorShow : MonoBehaviour
     [SerializeField]
     PlaylistMediaPlayer playlistMediaPlayer;
     [SerializeField]
-    TMP_Text tmpText;
+    TMP_Text[] tmpTexts;
 
     [SerializeField]
-    TextFlyInEffect textFlyInEffect;
+    TextFlyInEffect[] textFlyInEffects;
 
     DataSet dataSet;
     DataTable dataTable;
@@ -27,18 +27,19 @@ public class HornorShow : MonoBehaviour
     /// <summary>
     /// 证书文件
     /// </summary>
-    [SerializeField]
     List<Texture2D> texture2Ds_0 = new List<Texture2D>();
 
     /// <summary>
     /// 年
     /// </summary>
-    [SerializeField]
     List<DateTime> textsDate_1 = new List<DateTime>();
-    [SerializeField]
+    /// <summary>
+    /// 荣获国家认定
+    /// </summary>
     List<string> textsInfo_2 = new List<string>();
-
-    [SerializeField]
+    /// <summary>
+    /// 企业技术中心
+    /// </summary>
     List<string> textsInfo_3 = new List<string>();
 
 
@@ -139,17 +140,14 @@ public class HornorShow : MonoBehaviour
         {
             return;
         }
-        displayBox.SetImg(texture2Ds_0[curindex], true);
+        displayBox.SetImg(texture2Ds_0[curindex], true); //表第0个项的 证书文件
+        tmpTexts[0].SetText($"{textsDate_1[curindex].Year}年"); //表第1个项的 年份
+        tmpTexts[2].SetText(textsInfo_2[curindex]); //表第二项的 荣获国家认定
+        tmpTexts[3].SetText(textsInfo_3[curindex]); //表第三项的 企业技术中心
 
-        int year = textsDate_1[curindex].Year;
-        float size = tmpText.fontSize;
-        float size_1 = size * 2.6f;
-        float size_2 = size * 1f;
-        float size_3 = size * 3f;
-
-        tmpText.text = $"<size={size_1}>{year}</size><size={size_1}>年</size>" +
-            $" >>> <size={size_2}>{textsInfo_2[curindex]}</size>" +
-            $"<br><size={size_3}>{textsInfo_3[curindex]}</size>";
-        textFlyInEffect.StartFlyInEffect();
+        foreach (TextFlyInEffect effect in textFlyInEffects)
+        {
+            effect.StartFlyInEffect();
+        }
     }
 }

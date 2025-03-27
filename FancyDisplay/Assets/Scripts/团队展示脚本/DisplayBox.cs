@@ -175,7 +175,6 @@ public class DisplayBox : MonoBehaviour
             color.a = color.a + Time.deltaTime;
             //material.SetColor("_Color", color);
             material.color = color;
-            Debug.Log(material.color);
         }
     }
 
