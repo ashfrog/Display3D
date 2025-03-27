@@ -1107,7 +1107,7 @@ MonoBehaviour:
   frontRenderer: {fileID: 8319502009888238488}
   xls_Texs: []
   keepAspectRatio: 0
-  borderPadding: 1
+  borderPadding: 0.98
 --- !u!114 &493681444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2802,7 +2802,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9110865147845808374}
-  - {fileID: 3563390739904732371}
+  - {fileID: 9178386187426204484}
   m_Father: {fileID: 493681442}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -0.269, y: 180, z: 0}
@@ -2829,7 +2829,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8191083348957037913}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2887,14 +2887,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8191083348957037913}
-  m_LocalRotation: {x: 0.00000006657903, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.53, y: 0.01, z: 0.11}
-  m_LocalScale: {x: 23.87, y: 9.889, z: 9.023867}
+  m_LocalRotation: {x: -0, y: -0, z: 1.1419048e-21, w: 1}
+  m_LocalPosition: {x: -0.00191, y: -0.00136, z: -0.01}
+  m_LocalScale: {x: 0.96244663, y: 0.99761665, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 9178386187426204484}
-  m_Father: {fileID: 543450652256214777}
-  m_RootOrder: 1
+  m_Children: []
+  m_Father: {fileID: 9178386187426204484}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &3732193789988553814
 MeshRenderer:
@@ -3064,11 +3063,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8569841458815054013}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.00000006682239, y: -1.7088656e-14, z: 7.275937e-12, w: 1}
+  m_LocalPosition: {x: -1.53, y: 0.010000053, z: 0}
+  m_LocalScale: {x: 23.87, y: 9.889001, z: 9.023867}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3563390739904732371}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 3563390739904732371}
+  m_Father: {fileID: 543450652256214777}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
