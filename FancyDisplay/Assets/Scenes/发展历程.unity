@@ -1457,7 +1457,7 @@ MonoBehaviour:
       sourceType: 0
       mediaPath:
         _pathType: 2
-        _path: "\u8363\u8A89\u5C55\u793A\u80CC\u666F\u89C6\u9891.mp4"
+        _path: "\u53D1\u5C55\u5386\u7A0B.mp4"
       texture: {fileID: 0}
       textureDuration: 0
       loop: 0
@@ -1472,7 +1472,7 @@ MonoBehaviour:
       sourceType: 0
       mediaPath:
         _pathType: 2
-        _path: "\u8363\u8A89\u5C55\u793A\u80CC\u666F\u89C6\u9891.mp4"
+        _path: "\u53D1\u5C55\u5386\u7A0B.mp4"
       texture: {fileID: 0}
       textureDuration: 0
       loop: 0
