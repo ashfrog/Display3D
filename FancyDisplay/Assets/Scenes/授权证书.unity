@@ -325,24 +325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9840f87219df84505803024c796e739d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  usePreset: 1
-  preset: {fileID: 11400000, guid: 4ce9908ccf7134c95bb64f24bc3ab9c9, type: 2}
-  tagEffects: []
-  globalEffects:
-  - triggerWhen: 0
-    effect: {fileID: 11400000, guid: 4e002acd0b5ac4d8188b4ed4b45dc9f0, type: 2}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-    overrideTagEffects: 1
-  - triggerWhen: 1
-    effect: {fileID: 11400000, guid: 415c717fe36b6424f9674111f2a16121, type: 2}
-    onEffectCompleted:
-      m_PersistentCalls:
-        m_Calls: []
-    overrideTagEffects: 1
-  updatesPerSecond: 30
 --- !u!224 &75971225
 RectTransform:
   m_ObjectHideFlags: 0
@@ -755,7 +737,7 @@ MonoBehaviour:
       loop: 0
       startMode: 0
       progressMode: 1
-      progressTimeSeconds: 0.5
+      progressTimeSeconds: 0.2
       isOverrideTransition: 0
       overrideTransition: 0
       overrideTransitionDuration: 0
@@ -770,14 +752,14 @@ MonoBehaviour:
       loop: 0
       startMode: 0
       progressMode: 1
-      progressTimeSeconds: 0.5
+      progressTimeSeconds: 0.2
       isOverrideTransition: 0
       overrideTransition: 0
       overrideTransitionDuration: 0
       overrideTransitionEasing: 1
   _pausePreviousOnTransition: 0
   _defaultTransition: 1
-  _defaultTransitionDuration: 1
+  _defaultTransitionDuration: 0.2
   _defaultTransitionEasing: 1
   _playlistAudioVolume: 1
   _playlistAudioMuted: 0
