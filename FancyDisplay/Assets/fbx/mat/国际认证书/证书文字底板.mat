@@ -8,8 +8,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: "\u8BC1\u4E66\u6587\u5B57\u5E95\u677F"
-  m_Shader: {fileID: 4800000, guid: 924660f6fad980b4d9e5eb4ee93c2549, type: 3}
-  m_ValidKeywords: []
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ValidKeywords:
+  - _ALPHAPREMULTIPLY_ON
   m_InvalidKeywords:
   - _AD_CUTOUT_GEOMETRIC_COUNT_ONE
   - _AD_CUTOUT_GEOMETRIC_TYPE_NONE
@@ -20,12 +21,12 @@ Material:
   - _AD_EDGE_UV_DISTORTION_SOURCE_DEFAULT
   - _AD_GLOBAL_CONTROL_ID_NONE
   - _AD_STATE_DISABLED
-  - _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
