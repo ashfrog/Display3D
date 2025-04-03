@@ -84,17 +84,6 @@ public class DisplayBox : MonoBehaviour
         Renderer renderer = frontRenderer;
         if (renderer != null)
         {
-            // 建议先置空并销毁旧贴图，避免残留引用
-            //if (renderer.material.mainTexture != null)
-            //{
-            //    Destroy(renderer.material.mainTexture);
-            //    renderer.material.mainTexture = null;
-            //}
-
-            // 如有需要也可以先销毁旧材质再重新创建材质
-            // Destroy(renderer.material);
-            // renderer.material = new Material(Shader.Find("Standard"));
-
             // 动态生成新的材质
             renderer.material = new Material(renderer.material);
 
