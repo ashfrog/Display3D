@@ -11,11 +11,11 @@ using UnityEngine.UI;
 public class DisplayBox : MonoBehaviour
 {
     [SerializeField]
-    private Renderer frontRenderer;
+    public Renderer frontRenderer;
     [SerializeField]
     private RawImage rawImage;
     [SerializeField]
-    private TextMeshPro[] xls_Texs;
+    private TMP_Text[] xls_Texs;
 
     private bool needDestroyTexture;
     [SerializeField]
