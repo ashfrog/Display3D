@@ -6,11 +6,14 @@ using System.Data;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DisplayBox : MonoBehaviour
 {
     [SerializeField]
     private Renderer frontRenderer;
+    [SerializeField]
+    private RawImage rawImage;
     [SerializeField]
     private TextMeshPro[] xls_Texs;
 
@@ -100,7 +103,10 @@ public class DisplayBox : MonoBehaviour
             if (keepAspectRatio && texture != null)
             {
                 renderer.material.color = new Color(1, 1, 1, 0);
-                SetlocalScale(texture);
+                if (frontRenderer != null)
+                {
+                    SetlocalScale(texture);
+                }
             }
 
             // 指定新的贴图给材质
@@ -108,6 +114,13 @@ public class DisplayBox : MonoBehaviour
             {
                 renderer.material.mainTexture = texture;
             }
+        }
+        if (rawImage != null)
+        {
+            //rawImage.texture = texture;
+            rawImage.gameObject.SetActive(true);
+            rawImage.texture = texture;
+            rawImage.color = new Color(1, 1, 1, 1);
         }
     }
 
@@ -159,13 +172,13 @@ public class DisplayBox : MonoBehaviour
 
     private void Update()
     {
-        if (setScalebyUpdate && !frontRenderer.gameObject.transform.localScale.Equals(localScaleSize))
+        if (frontRenderer != null && setScalebyUpdate && !frontRenderer.gameObject.transform.localScale.Equals(localScaleSize))
         {
             setScalebyUpdate = false;
             frontRenderer.gameObject.transform.localScale = localScaleSize;
             Debug.Log(frontRenderer.gameObject.transform.localScale);
         }
-        if (frontRenderer.material != null && frontRenderer.material.color.a < 1)
+        if (frontRenderer != null && frontRenderer.material != null && frontRenderer.material.color.a < 1)
         {
             Material material = frontRenderer.material;
 
@@ -193,6 +206,13 @@ public class DisplayBox : MonoBehaviour
             if (frontRenderer.material.mainTexture != null)
             {
                 Destroy(frontRenderer.material.mainTexture);
+            }
+        }
+        if (needDestroyTexture && rawImage != null)
+        {
+            if (rawImage.texture != null)
+            {
+                Destroy(rawImage.texture);
             }
         }
     }

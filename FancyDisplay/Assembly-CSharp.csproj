@@ -71,11 +71,11 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
     <Compile Include="Assets\Scripts\MediaTime.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\AsteroidSpawner.cs" />
+    <Compile Include="Assets\Scripts\校企合作\AsteroidSpawner.cs" />
     <Compile Include="Assets\TouchSocketTcp\Plugins\SkipUnityLogo.cs" />
     <Compile Include="Assets\HonorWallManager\Scripts\授权证书脚本\SyncVideoAnimation.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\HonorWallManager\HonorWallManager.cs" />
+    <Compile Include="Assets\Scripts\团队展示脚本\HonorWallManager.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\TouchSocketTcp\Tcp\DTO\DataTypes\OrderTypeEnum.cs" />
@@ -129,6 +129,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\Scripts\发展历程脚本\DevHistory.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
