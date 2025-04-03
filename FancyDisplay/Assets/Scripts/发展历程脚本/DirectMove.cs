@@ -10,7 +10,6 @@ public class DirectMove : MonoBehaviour
 
     public float destroyx = -100f;
 
-    public DisplayBox displayBox;
 
     private void Start()
     {
@@ -21,11 +20,6 @@ public class DirectMove : MonoBehaviour
     {
         transform.Translate(direct * moveSpeed * Time.deltaTime);
         CheckIfOffScreen();
-
-        if (displayBox != null)
-        {
-
-        }
     }
 
     private void CheckIfOffScreen()
