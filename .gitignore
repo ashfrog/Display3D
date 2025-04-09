@@ -13,3 +13,6 @@ FancyDisplay/Assets/Fonts/SIMKAI SDF.asset.meta
 FancyDisplay_URP
 /FancyDisplay/UserSettings
 /FancyDisplay/Assets/序列帧
+/FancyDisplay/UserSettings/Layouts
+FancyDisplay/Assembly-CSharp.csproj
+FancyDisplay/UserSettings/EditorUserSettings.asset
