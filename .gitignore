@@ -17,3 +17,5 @@ FancyDisplay_URP
 FancyDisplay/Assembly-CSharp.csproj
 FancyDisplay/UserSettings/EditorUserSettings.asset
 FancyDisplay/UserSettings/Layouts/default-2021.dwlt
+*/obj
+*/logs

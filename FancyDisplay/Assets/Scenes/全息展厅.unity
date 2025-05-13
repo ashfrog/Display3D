@@ -421,7 +421,7 @@ MonoBehaviour:
   _stereoRedGreenTint: 0
   _defaultTexture: {fileID: 2800000, guid: 8a14fd3f4bb60624886c365ed3a577b5, type: 3}
   _material: {fileID: 2100000, guid: 13d20cd2b0638104d95b77d93dd65e0e, type: 2}
-  _texturePropertyName: _ShadowTex
+  _texturePropertyName: _ShadowTex2
   _offset: {x: 0, y: 0}
   _scale: {x: 1, y: 1}
 --- !u!1 &734729382
