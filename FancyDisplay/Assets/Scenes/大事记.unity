@@ -2050,12 +2050,14 @@ MonoBehaviour:
   playlistMediaPlayer: {fileID: 658495270}
   tmpText: {fileID: 65049892}
   textFlyInEffect: {fileID: 65049894}
-  texture2Ds: []
+  defaultTexture: {fileID: 0}
   textsInfo: []
   meshRenderer: {fileID: 8319502009888238488}
   index: 0
   revealSpeed: 0.1
   audioSource: {fileID: 300090670}
+  cacheSize: 5
+  preloadDistance: 5
 --- !u!4 &731341354
 Transform:
   m_ObjectHideFlags: 0
