@@ -105,6 +105,7 @@
     <Compile Include="Assets\TouchSocketTcp\Tcp\CRC16\ConvertUtil.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\MoveObjectToCameraEdge.cs" />
     <Compile Include="Assets\HonorWallManager\Scripts\FileUtils.cs" />
     <Compile Include="Assets\Scripts\团队展示脚本\DisplayBox.cs" />
     <Compile Include="Assets\HonorWallManager\GroundMirror\GroundMirror.cs" />

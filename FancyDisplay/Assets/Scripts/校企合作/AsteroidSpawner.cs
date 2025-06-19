@@ -29,7 +29,11 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField]
     List<Texture2D> texture2Ds = new List<Texture2D>();
 
+    [SerializeField]
+    AudioSource audioSource;
     int generateIndex;
+
+
     private void Start()
     {
         dataSet = ExcelReader.ReadExcel("校企合作.xlsx");
@@ -68,10 +72,12 @@ public class AsteroidSpawner : MonoBehaviour
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
-            SpawnAsteroids();
             timer = 0f;
+            SpawnAsteroids();
         }
     }
+
+    int c = 0;
 
     void SpawnAsteroids()
     {

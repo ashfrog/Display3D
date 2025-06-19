@@ -17,6 +17,9 @@ public class DevHistory : MonoBehaviour
     [SerializeField]
     TextFlyInEffect textFlyInEffect;
 
+    [SerializeField]
+    AudioSource audioSource;
+
     DataSet dataSet;
     DataTable dataTable;
 
@@ -94,6 +97,7 @@ public class DevHistory : MonoBehaviour
         if (curt >= waitt)
         {
             curt = 0;
+            audioSource.Play();
             DisplayBox displayBox = Instantiate(displayBoxPrefab, prefabV3, Quaternion.identity);
             displayBox.gameObject.SetActive(true);
             displayBox.SetImg(texture2Ds[index], true);

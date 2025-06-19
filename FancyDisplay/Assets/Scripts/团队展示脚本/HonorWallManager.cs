@@ -85,16 +85,7 @@ public class HonorWallManager : MonoBehaviour
         targetPosition.z += Time.deltaTime * scrollSpeed * depth;
         if (dataSet != null && targetPosition.x >= dataSet.Tables[curSheetIndex].Rows.Count * spacing)
         {
-            targetPosition.x = 0;
-            targetPosition.z = -10;
-            reSetPos = true;
-            curSheetIndex = (curSheetIndex + 1) % dataSet.Tables.Count;
-            if (curSheetIndex < dataSet.Tables.Count)
-            {
-                DestroyChildrens(displayTitleContainer);
-                DestroyChildrens(displayContainer);
-                InitializeDisplays(curSheetIndex);
-            }
+            NextSheet(curSheetIndex);
         }
         ////判定当前展示项index
         //int index = Mathf.FloorToInt(targetPosition.x / spacing);
@@ -105,6 +96,20 @@ public class HonorWallManager : MonoBehaviour
         //    lastindex = index;
         //    Destroy(displayContainer.GetChild(0).gameObject);
         //}
+    }
+
+    private void NextSheet(int CurSheetIndex)
+    {
+        targetPosition.x = 0;
+        targetPosition.z = -10;
+        reSetPos = true;
+        curSheetIndex = (CurSheetIndex + 1) % dataSet.Tables.Count;
+        if (curSheetIndex < dataSet.Tables.Count)
+        {
+            DestroyChildrens(displayTitleContainer);
+            DestroyChildrens(displayContainer);
+            InitializeDisplays(curSheetIndex);
+        }
     }
 
     private void DestroyChildrens(Transform transform)
@@ -121,6 +126,11 @@ public class HonorWallManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F12))
         {
             Settings.ini.Graphics.ScrollSpeed = scrollSpeed;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            NextSheet(curSheetIndex);
         }
     }
 

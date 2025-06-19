@@ -39,6 +39,8 @@ public class CertificateDisplay : MonoBehaviour
     [SerializeField]
     float revealSpeed = 0.1f;
 
+    [SerializeField]
+    AudioSource audioSource;
     // 跟踪当前正在播放的媒体项
     private int currentPlayingItemIndex = -1;
 
@@ -85,6 +87,7 @@ public class CertificateDisplay : MonoBehaviour
                 // 如果播放项目发生变化
                 if (playingItemIndex != currentPlayingItemIndex)
                 {
+                    audioSource.Play();
                     currentPlayingItemIndex = playingItemIndex;
                     // 更新到下一个证书
                     AdvanceCertificate();

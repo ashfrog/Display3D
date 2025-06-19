@@ -12,12 +12,6 @@ EditorBuildSettings:
     path: "Assets/Scenes/\u6388\u6743\u8BC1\u4E66.unity"
     guid: dca3d80c7f06bef4dbffed991f56e4cc
   - enabled: 0
-    path: Assets/AVProVideo/Demos/Scenes/Demo_Playlist.unity
-    guid: 0317dfde9ab745b4e9ef01be5f43c7ce
-  - enabled: 0
-    path: Assets/AVProVideo/Demos/Scenes/1Demo_Playlist 1.unity
-    guid: 2bf430ba83cd81547bc9e36d3dc08207
-  - enabled: 0
     path: "Assets/Scenes/\u5927\u8BB0\u4E8B.unity"
     guid: 16aea7d6c95482445872f640bbc9b815
   - enabled: 0

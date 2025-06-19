@@ -57,6 +57,8 @@ public class HornorShow : MonoBehaviour
     [SerializeField]
     float revealSpeed = 0.1f;
 
+    [SerializeField]
+    AudioSource audioSource;
     // 跟踪当前正在播放的媒体项
     private int currentPlayingItemIndex = -1;
 
@@ -118,6 +120,7 @@ public class HornorShow : MonoBehaviour
                     currentPlayingItemIndex = playingItemIndex;
                     // 更新到下一个证书
                     AdvanceCertificate();
+                    audioSource.Play();
                 }
             }
 
