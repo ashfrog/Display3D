@@ -55,7 +55,7 @@ public class MajorEvents : MonoBehaviour
 
     private void Start()
     {
-        dataSet = ExcelReader.ReadExcel("大记事.xlsx");
+        dataSet = ExcelReader.ReadExcel("大事记.xlsx");
         dataTable = dataSet.Tables[0];
         foreach (DataRow row in dataTable.Rows)
         {

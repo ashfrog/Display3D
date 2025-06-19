@@ -90,23 +90,38 @@ public class DevHistory : MonoBehaviour
 
     float curt = 3f;
     float waitt = 6f;
+    public float waitAfterCycle = 10f; // 循环结束后的等待时间
+    private bool isWaitingAfterCycle = false;
+
     private void Update()
     {
         curt += Time.deltaTime;
-        //每隔3秒实例化一个displayBoxPrefab
-        if (curt >= waitt)
+
+        float currentWaitTime = isWaitingAfterCycle ? waitAfterCycle : waitt;
+
+        if (curt >= currentWaitTime)
         {
             curt = 0;
+
+            if (isWaitingAfterCycle)
+            {
+                // 结束等待，重新开始循环
+                isWaitingAfterCycle = false;
+                return;
+            }
+
             audioSource.Play();
             DisplayBox displayBox = Instantiate(displayBoxPrefab, prefabV3, Quaternion.identity);
             displayBox.gameObject.SetActive(true);
             displayBox.SetImg(texture2Ds[index], true);
             displayBox.SetText(0, textsInfo[index]);
             index++;
-            // 限制index范围
+
+            // 检查是否到达数组末尾
             if (index >= texture2Ds.Count)
             {
                 index = 0;
+                isWaitingAfterCycle = true; // 设置为等待状态
             }
         }
     }

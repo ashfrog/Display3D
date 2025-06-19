@@ -2029,7 +2029,7 @@ GameObject:
   - component: {fileID: 731341354}
   - component: {fileID: 731341353}
   m_Layer: 0
-  m_Name: "MainController\u5927\u8BB0\u4E8B"
+  m_Name: "MainController\u5927\u4E8B\u8BB0"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2771,6 +2771,7 @@ MonoBehaviour:
   meshRenderer: {fileID: 8319502009888238488}
   index: 0
   revealSpeed: 0.05
+  audioSource: {fileID: 0}
 --- !u!1 &1900617001
 GameObject:
   m_ObjectHideFlags: 0
