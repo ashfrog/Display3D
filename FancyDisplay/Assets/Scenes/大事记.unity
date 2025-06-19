@@ -2056,8 +2056,8 @@ MonoBehaviour:
   index: 0
   revealSpeed: 0.1
   audioSource: {fileID: 300090670}
-  cacheSize: 5
-  preloadDistance: 5
+  cacheSize: 60
+  preloadDistance: 1
 --- !u!4 &731341354
 Transform:
   m_ObjectHideFlags: 0
