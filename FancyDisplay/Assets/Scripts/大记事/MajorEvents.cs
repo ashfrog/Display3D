@@ -31,6 +31,12 @@ public class MajorEvents : MonoBehaviour
     List<Texture2D> texture2Ds = new List<Texture2D>();
 
     /// <summary>
+    /// 默认图片（当指定图片不存在时使用）
+    /// </summary>
+    [SerializeField]
+    Texture2D defaultTexture;
+
+    /// <summary>
     /// 大记事 年 月 日
     /// </summary>
     [SerializeField]
@@ -60,25 +66,35 @@ public class MajorEvents : MonoBehaviour
         foreach (DataRow row in dataTable.Rows)
         {
             string file = Path.Combine(Application.streamingAssetsPath, ExcelReader.dataFolder, row[0].ToString());
-            if (FileUtils.IsImgFile(file))
+            Texture2D texture2D;
+
+            if (FileUtils.IsImgFile(file) && File.Exists(file))
             {
-                Texture2D texture2D = LoadTexture(file);
-                texture2Ds.Add(texture2D);
-                DateTime? dtime = ExcelReader.TryParseExcelDate(row[1]);
-                string row2 = row[2].ToString();
-                textsInfo.Add(row2);
-                if (dtime.HasValue)
-                {
-                    textsDate.Add(dtime.Value);
-                }
-                else
-                {
-                    Debug.Log("日期解析失败: " + row[1].ToString());
-                }
+                // 文件存在，加载实际图片
+                texture2D = LoadTexture(file);
             }
             else
             {
-                Debug.Log(file + "不存在");
+                // 文件不存在或不是有效图片文件，使用默认图片
+                Debug.Log(file + "不存在，使用默认图片");
+                texture2D = defaultTexture != null ? defaultTexture : CreateDefaultTexture();
+            }
+
+            texture2Ds.Add(texture2D);
+
+            DateTime? dtime = ExcelReader.TryParseExcelDate(row[1]);
+            string row2 = row[2].ToString();
+            textsInfo.Add(row2);
+
+            if (dtime.HasValue)
+            {
+                textsDate.Add(dtime.Value);
+            }
+            else
+            {
+                Debug.Log("日期解析失败: " + row[1].ToString());
+                // 如果日期解析失败，使用当前日期作为默认值
+                textsDate.Add(DateTime.Now);
             }
         }
 
@@ -92,6 +108,27 @@ public class MajorEvents : MonoBehaviour
         Texture2D texture = new Texture2D(2, 2);
         texture.LoadImage(fileData);
         return texture;
+    }
+
+    /// <summary>
+    /// 创建一个默认的纯色纹理
+    /// </summary>
+    /// <returns></returns>
+    private Texture2D CreateDefaultTexture()
+    {
+        Texture2D defaultTex = new Texture2D(512, 512);
+        Color[] colors = new Color[512 * 512];
+
+        // 创建一个灰色的默认纹理
+        Color defaultColor = new Color(0.5f, 0.5f, 0.5f, 1f);
+        for (int i = 0; i < colors.Length; i++)
+        {
+            colors[i] = defaultColor;
+        }
+
+        defaultTex.SetPixels(colors);
+        defaultTex.Apply();
+        return defaultTex;
     }
 
     // 持续检查播放列表项目是否发生变化的协程
