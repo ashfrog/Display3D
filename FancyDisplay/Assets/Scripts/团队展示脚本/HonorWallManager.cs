@@ -30,6 +30,9 @@ public class HonorWallManager : MonoBehaviour
     public MediaPlayer mediaPlayerPrefab;
     public Camera mainCamera;
 
+    [SerializeField]
+    AudioSource audioSource;
+
     // 核心状态
     private DataSet dataSet;
     private Vector3 initialCameraPos;
@@ -41,6 +44,7 @@ public class HonorWallManager : MonoBehaviour
     private void Start()
     {
         Initialize();
+        audioSource.Play();
     }
 
     private void Initialize()
@@ -120,6 +124,7 @@ public class HonorWallManager : MonoBehaviour
             ResetForNewSheet();
             int nextIndex = (currentSheetIndex + 1) % dataSet.Tables.Count;
             StartSheet(nextIndex);
+            audioSource.Play();
         });
     }
 
