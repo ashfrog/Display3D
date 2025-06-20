@@ -64,8 +64,6 @@ public class HonorWallManager : MonoBehaviour
     {
         // 平滑更新摄像机位置
         Vector3 currentPos = mainCamera.transform.position;
-        //float newX = Mathf.Lerp(currentPos.x, targetPosition.x, Time.deltaTime * scrollSpeed); //允许移动不用加lerp
-        //float newZ = Mathf.Lerp(currentPos.z, targetPosition.z, Time.deltaTime * scrollSpeed); // 修改为左后方
 
         float newX = targetPosition.x;
         float newZ = targetPosition.z;
@@ -87,15 +85,6 @@ public class HonorWallManager : MonoBehaviour
         {
             NextSheet(curSheetIndex);
         }
-        ////判定当前展示项index
-        //int index = Mathf.FloorToInt(targetPosition.x / spacing);
-        //Debug.Log($"当前展示项index: {index}");
-        ////当前项index改变则移除第一项
-        //if (index > 5 && lastindex != index)
-        //{
-        //    lastindex = index;
-        //    Destroy(displayContainer.GetChild(0).gameObject);
-        //}
     }
 
     private void NextSheet(int CurSheetIndex)
@@ -133,37 +122,6 @@ public class HonorWallManager : MonoBehaviour
             NextSheet(curSheetIndex);
         }
     }
-
-    //public void InitializeDisplays(int sheetindex)
-    //{
-    //    if (dataSet == null || dataSet.Tables.Count == 0)
-    //    {
-    //        Debug.LogError("没有找到Excel数据");
-    //        return;
-    //    }
-
-    //    DataTable table = dataSet.Tables[sheetindex];
-    //    Debug.Log($"处理工作表: {table.TableName}");
-    //    CreateDisplayTitleBox(table.TableName);
-    //    // 遍历所有行
-    //    for (int j = 0; j < table.Rows.Count; j++)
-    //    {
-    //        DataRow row = table.Rows[j];
-
-    //        CreateDisplayBox(j, row);
-
-    //        //// 示例：打印每一行的数据
-    //        //string rowData = "";
-    //        //for (int k = 0; k < table.Columns.Count; k++)
-    //        //{
-    //        //    rowData += $"{table.Columns[k].ColumnName}: {row[k]}, ";
-    //        //}
-    //        //Debug.Log(rowData);
-
-    //        // 在这里处理你的数据
-    //        // 例如: 创建游戏对象、更新UI等
-    //    }
-    //}
 
     private void CreateDisplayBox(int rowindex, DataRow rowdata)
     {
