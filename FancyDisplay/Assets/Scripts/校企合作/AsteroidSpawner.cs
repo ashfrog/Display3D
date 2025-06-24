@@ -21,8 +21,11 @@ public class AsteroidSpawner : MonoBehaviour
     [Header("Spawn Frequency")]
     public float spawnInterval = 2f; // 生成周期（秒）
 
-    private float timer;
+    [Header("Initial Setup")]
+    public bool spawnInitialAsteroids = true; // 是否在开始时生成初始陨石
+    public float initialSpawnRangeZ = 500f;   // 初始生成的Z轴范围
 
+    private float timer;
 
     DataSet dataSet;
     DataTable dataTable;
@@ -32,7 +35,6 @@ public class AsteroidSpawner : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
     int generateIndex;
-
 
     private void Start()
     {
@@ -58,7 +60,14 @@ public class AsteroidSpawner : MonoBehaviour
                 Debug.Log(e.Message);
             }
         }
+
+        // 在开始时生成一批初始陨石，分布在不同的Z轴位置
+        if (spawnInitialAsteroids)
+        {
+            SpawnInitialAsteroids();
+        }
     }
+
     private Texture2D LoadTexture(string filePath)
     {
         byte[] fileData = System.IO.File.ReadAllBytes(filePath);
@@ -77,7 +86,36 @@ public class AsteroidSpawner : MonoBehaviour
         }
     }
 
-    int c = 0;
+    // 生成初始陨石，分布在从相机到spawnZ之间的空间
+    void SpawnInitialAsteroids()
+    {
+        int initialCount = asteroidCount * 6; // 生成更多初始陨石来填充空间
+
+        for (int i = 0; i < initialCount; i++)
+        {
+            // 随机生成 x,y 坐标
+            float randomX = Random.Range(-spawnArea.x / 2f, spawnArea.x / 2f);
+            float randomY = Random.Range(-spawnArea.y / 2f, spawnArea.y / 2f);
+
+            // 在从近处到远处的范围内随机分布Z坐标
+            float randomZ = Random.Range(50f, spawnZ); // 从50开始到spawnZ
+            Vector3 spawnPos = new Vector3(randomX, randomY, randomZ);
+
+            // 创建陨石
+            DisplayBox asteroid = Instantiate(displayBox, spawnPos, Quaternion.identity);
+            if (generateIndex >= texture2Ds.Count)
+            {
+                generateIndex = 0;
+            }
+            //展示图片
+            asteroid.SetImg(texture2Ds[generateIndex], true);
+            generateIndex++;
+
+            // 随机给陨石设置一个速度
+            float speed = Random.Range(minSpeed, maxSpeed);
+            asteroid.AddComponent<AsteroidMover>().SetSpeed(speed);
+        }
+    }
 
     void SpawnAsteroids()
     {

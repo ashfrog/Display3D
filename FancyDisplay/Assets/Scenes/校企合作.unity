@@ -1135,6 +1135,8 @@ MonoBehaviour:
   minSpeed: 40
   maxSpeed: 40
   spawnInterval: 1
+  spawnInitialAsteroids: 1
+  initialSpawnRangeZ: 500
   texture2Ds: []
   audioSource: {fileID: 1412773312}
 --- !u!1 &466269423 stripped

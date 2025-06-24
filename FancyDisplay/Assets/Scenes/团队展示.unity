@@ -2601,7 +2601,7 @@ MonoBehaviour:
   animationDuration: 6
   animationDelay: 0
   slideDistance: 16
-  animationEase: 2
+  animationEase: 4
   displayPrefab: {fileID: 919132149020124343}
   displayTitlePrefab: {fileID: 1022317636}
   displayContainer: {fileID: 1264637618}

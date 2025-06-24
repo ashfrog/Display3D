@@ -1534,7 +1534,7 @@ MonoBehaviour:
       loop: 0
       startMode: 0
       progressMode: 1
-      progressTimeSeconds: 0.2
+      progressTimeSeconds: 4
       isOverrideTransition: 0
       overrideTransition: 0
       overrideTransitionDuration: 0
@@ -1549,14 +1549,14 @@ MonoBehaviour:
       loop: 0
       startMode: 0
       progressMode: 1
-      progressTimeSeconds: 0.2
+      progressTimeSeconds: 4
       isOverrideTransition: 0
       overrideTransition: 0
       overrideTransitionDuration: 0
       overrideTransitionEasing: 1
   _pausePreviousOnTransition: 0
   _defaultTransition: 1
-  _defaultTransitionDuration: 0.2
+  _defaultTransitionDuration: 2
   _defaultTransitionEasing: 1
   _playlistAudioVolume: 1
   _playlistAudioMuted: 0
