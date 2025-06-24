@@ -292,7 +292,7 @@ public class HonorWallManager : MonoBehaviour
 
         // 立即设置到起始状态，避免闪烁
         display.transform.localPosition = startPos;
-        display.transform.localScale = Vector3.one * 0.8f;
+        //display.transform.localScale = Vector3.one * 0.8f;
         canvasGroup.alpha = 0f;
 
         // 调试信息
