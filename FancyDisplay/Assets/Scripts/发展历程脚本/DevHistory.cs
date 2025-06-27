@@ -54,38 +54,59 @@ public class DevHistory : MonoBehaviour
     [SerializeField]
     Vector3 prefabV3;
 
+    /// <summary>
+    /// 标记每个条目是否有对应的图片
+    /// </summary>
+    private List<bool> hasImage = new List<bool>();
+
     private void Start()
     {
         displayBoxPrefab.gameObject.SetActive(false);
         dataSet = ExcelReader.ReadExcel("发展历程.xlsx");
         dataTable = dataSet.Tables[0];
+
         foreach (DataRow row in dataTable.Rows)
         {
             string file = Path.Combine(Application.streamingAssetsPath, ExcelReader.dataFolder, row[0].ToString());
-            if (FileUtils.IsImgFile(file))
+            Texture2D texture2D = null;
+            bool imageExists = false;
+
+            // 尝试加载图片
+            if (FileUtils.IsImgFile(file) && File.Exists(file))
             {
-                Texture2D texture2D = LoadTexture(file);
-                texture2Ds.Add(texture2D);
-                DateTime? dtime = ExcelReader.TryParseExcelDate(row[1]);
-                string row2 = row[2].ToString();
-                textsInfo.Add(row2);
-                if (dtime.HasValue)
+                texture2D = LoadTexture(file);
+                if (texture2D != null)
                 {
-                    textsDate.Add(dtime.Value);
-                }
-                else
-                {
-                    Debug.Log("日期解析失败: " + row[1].ToString());
+                    imageExists = true;
                 }
             }
             else
             {
-                Debug.Log(file + "不存在");
+                Debug.LogWarning($"图片文件不存在: {file}，将隐藏图片框");
+            }
+
+            // 添加到列表中
+            texture2Ds.Add(texture2D);
+            hasImage.Add(imageExists);
+
+            // 处理文本内容
+            string row1 = row[1].ToString();
+            string row2 = row[2].ToString();
+
+            if (row1.EndsWith("年"))
+            {
+                row1 = row1.Replace("年", "");
+                // 用富文本让年份日期变蓝色，后面加上换行
+                string coloredRow1 = $"<color=#2587BA><size=6>{row1}</size></color>";
+                coloredRow1 += "年";
+                coloredRow1 += "\n";
+                textsInfo.Add(coloredRow1 + row2);
+            }
+            else
+            {
+                textsInfo.Add(row2);
             }
         }
-
-        // 开始检查视频变化的协程
-        // StartCoroutine(CheckPlaylistItemChange());
     }
 
     float curt = 3f;
@@ -113,8 +134,25 @@ public class DevHistory : MonoBehaviour
             audioSource.Play();
             DisplayBox displayBox = Instantiate(displayBoxPrefab, prefabV3, Quaternion.identity);
             displayBox.gameObject.SetActive(true);
-            displayBox.SetImg(texture2Ds[index], true);
+
+            // 检查当前条目是否有图片
+            if (hasImage[index])
+            {
+                // 有图片，正常显示
+                displayBox.SetImg(texture2Ds[index], true);
+            }
+            else
+            {
+                // 没有图片，隐藏图片框
+                displayBox.SetImg(null, false);
+                // 或者如果DisplayBox有专门的隐藏图片方法，可以调用：
+                // displayBox.HideImage();
+            }
+
+            // 设置文本内容（无论图片是否存在都会显示）
+            string text = textsInfo[index];
             displayBox.SetText(0, textsInfo[index]);
+
             index++;
 
             // 检查是否到达数组末尾
@@ -128,65 +166,17 @@ public class DevHistory : MonoBehaviour
 
     private Texture2D LoadTexture(string filePath)
     {
-        byte[] fileData = System.IO.File.ReadAllBytes(filePath);
-        Texture2D texture = new Texture2D(2, 2);
-        texture.LoadImage(fileData);
-        return texture;
-    }
-
-    // 持续检查播放列表项目是否发生变化的协程
-    private IEnumerator CheckPlaylistItemChange()
-    {
-        while (true)
+        try
         {
-            if (playlistMediaPlayer != null && playlistMediaPlayer.Playlist != null)
-            {
-                int playingItemIndex = playlistMediaPlayer.PlaylistIndex;
-
-                // 如果播放项目发生变化
-                if (playingItemIndex != currentPlayingItemIndex)
-                {
-                    currentPlayingItemIndex = playingItemIndex;
-                    // 更新到下一个证书
-                    AdvanceCertificate();
-                }
-            }
-
-            // 等待一小段时间再检查
-            yield return new WaitForSeconds(0.1f);
+            byte[] fileData = System.IO.File.ReadAllBytes(filePath);
+            Texture2D texture = new Texture2D(2, 2);
+            texture.LoadImage(fileData);
+            return texture;
         }
-    }
-
-    private void AdvanceCertificate()
-    {
-        //// 更新显示
-        //SetBoxDisplay(index);
-        //index++;
-        //// 限制index范围
-        //if (index >= texture2Ds.Count)
-        //{
-        //    index = 0;
-        //}
-    }
-
-    private void SetBoxDisplay(int curindex)
-    {
-        if (curindex < 0 || curindex >= texture2Ds.Count)
+        catch (Exception e)
         {
-            return;
+            Debug.LogError($"加载图片失败: {filePath}, 错误: {e.Message}");
+            return null;
         }
-        meshRenderer.material.SetTexture("_EmissionMap", texture2Ds[curindex]);
-        int year = textsDate[curindex].Year;
-        int month = textsDate[curindex].Month;
-        int day = textsDate[curindex].Day;
-        float size = tmpText.fontSize;
-        float bigsize = size * 3f;
-        float normalsize = size * 2.6f;
-        float minsize = size * 1.6f;
-        tmpText.text = $"<size={bigsize}>{year}</size><size={normalsize}>年</size>" +
-            $"<size={minsize}>{month}</size><size={minsize}>月</size>" +
-            $"<size={minsize}>{day}</size><size={minsize}>日</size>" +
-            $"<br>{textsInfo[curindex]}";
-        textFlyInEffect.StartFlyInEffect();
     }
 }

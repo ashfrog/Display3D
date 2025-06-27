@@ -84,32 +84,48 @@ public class DisplayBox : MonoBehaviour
         Renderer renderer = frontRenderer;
         if (renderer != null)
         {
-            // 动态生成新的材质
-            renderer.material = new Material(renderer.material);
-
-            frontRenderer = renderer;
-
-            if (keepAspectRatio && texture != null)
+            if (texture == null)
             {
-                renderer.material.color = new Color(1, 1, 1, 0);
-                if (frontRenderer != null)
-                {
-                    SetlocalScale(texture);
-                }
+                // 当图片为null时，隐藏renderer
+                renderer.gameObject.SetActive(false);
             }
-
-            // 指定新的贴图给材质
-            if (texture != null)
+            else
             {
+                // 有图片时，确保renderer是激活的
+                renderer.gameObject.SetActive(true);
+
+                // 动态生成新的材质
+                renderer.material = new Material(renderer.material);
+                frontRenderer = renderer;
+
+                if (keepAspectRatio)
+                {
+                    renderer.material.color = new Color(1, 1, 1, 0);
+                    if (frontRenderer != null)
+                    {
+                        SetlocalScale(texture);
+                    }
+                }
+
+                // 指定新的贴图给材质
                 renderer.material.mainTexture = texture;
             }
         }
+
         if (rawImage != null)
         {
-            //rawImage.texture = texture;
-            rawImage.gameObject.SetActive(true);
-            rawImage.texture = texture;
-            rawImage.color = new Color(1, 1, 1, 1);
+            if (texture == null)
+            {
+                // 当图片为null时，隐藏rawImage
+                rawImage.gameObject.SetActive(false);
+            }
+            else
+            {
+                // 有图片时，显示rawImage
+                rawImage.gameObject.SetActive(true);
+                rawImage.texture = texture;
+                rawImage.color = new Color(1, 1, 1, 1);
+            }
         }
     }
 
