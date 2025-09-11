@@ -75,6 +75,8 @@ public class MajorEvents : MonoBehaviour
     // 跟踪当前正在播放的媒体项
     private int currentPlayingItemIndex = -1;
 
+    public bool en;
+
     private void Start()
     {
         LoadDataFromExcel();
@@ -339,10 +341,25 @@ public class MajorEvents : MonoBehaviour
         float bigsize = size * 3f;
         float normalsize = size * 2.6f;
         float minsize = size * 1.6f;
-        tmpText.text = $"<size={bigsize}>{year}</size><size={normalsize}>年</size>" +
-            $"<size={minsize}>{month}</size><size={minsize}>月</size>" +
-            $"<size={minsize}>{day}</size><size={minsize}>日</size>" +
-            $"<br>{textsInfo[curindex]}";
+
+        if (!en)
+        {
+            tmpText.text = $"<size={bigsize}>{year}</size><size={normalsize}>年</size>" +
+                $"<size={minsize}>{month}</size><size={minsize}>月</size>" +
+                $"<size={minsize}>{day}</size><size={minsize}>日</size>" +
+                $"<br>{textsInfo[curindex]}";
+        }
+        else
+        {
+            // 获取英文月份
+            string monthName = System.Globalization.CultureInfo.GetCultureInfo("en-US").DateTimeFormat.GetMonthName(month);
+            // 英文日期格式：Month Day, Year
+            tmpText.text = $"<size={minsize}>{monthName}</size> " +
+               $"<size={minsize}>{day}, </size>" +
+               $"<size={normalsize}>{year}</size>" +
+               $"<br>{textsInfo[curindex]}";
+        }
+
         textFlyInEffect.StartFlyInEffect();
     }
 

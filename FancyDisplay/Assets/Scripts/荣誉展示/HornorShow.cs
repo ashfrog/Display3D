@@ -59,6 +59,8 @@ public class HornorShow : MonoBehaviour
 
     [SerializeField]
     AudioSource audioSource;
+
+    public bool en;
     // 跟踪当前正在播放的媒体项
     private int currentPlayingItemIndex = -1;
 
@@ -148,7 +150,15 @@ public class HornorShow : MonoBehaviour
             return;
         }
         displayBox.SetImg(texture2Ds_0[curindex], true); //表第0个项的 证书文件
-        tmpTexts[0].SetText($"{textsDate_1[curindex].Year}年"); //表第1个项的 年份
+        if (!en)
+        {
+
+            tmpTexts[0].SetText($"{textsDate_1[curindex].Year}年"); //表第1个项的 年份
+        }
+        else
+        {
+            tmpTexts[0].SetText($"{textsDate_1[curindex].Year}"); //表第1个项的 年份
+        }
         tmpTexts[2].SetText(textsInfo_2[curindex]); //表第二项的 荣获国家认定
         tmpTexts[3].SetText(textsInfo_3[curindex]); //表第三项的 企业技术中心
 

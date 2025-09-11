@@ -59,6 +59,8 @@ public class DevHistory : MonoBehaviour
     /// </summary>
     private List<bool> hasImage = new List<bool>();
 
+    public bool en;
+
     private void Start()
     {
         displayBoxPrefab.gameObject.SetActive(false);
@@ -95,12 +97,23 @@ public class DevHistory : MonoBehaviour
 
             if (row1.EndsWith("年"))
             {
-                row1 = row1.Replace("年", "");
-                // 用富文本让年份日期变蓝色，后面加上换行
-                string coloredRow1 = $"<color=#2587BA><size=6>{row1}</size></color>";
-                coloredRow1 += "年";
-                coloredRow1 += "\n";
-                textsInfo.Add(coloredRow1 + row2);
+                if (!en)
+                {
+                    row1 = row1.Replace("年", "");
+                    // 用富文本让年份日期变蓝色，后面加上换行
+                    string coloredRow1 = $"<color=#2587BA><size=6>{row1}</size></color>";
+                    coloredRow1 += "年";
+                    coloredRow1 += "\n";
+                    textsInfo.Add(coloredRow1 + row2);
+                }
+                else
+                {
+                    row1 = row1.Replace("年", "");
+                    // 用富文本让年份日期变蓝色，后面加上换行
+                    string coloredRow1 = "In " + $"<color=#2587BA><size=6>{row1}</size></color>";
+                    coloredRow1 += "\n";
+                    textsInfo.Add(coloredRow1 + row2);
+                }
             }
             else
             {
