@@ -77,6 +77,8 @@ public class MajorEvents : MonoBehaviour
 
     public bool en;
 
+    public LimitTMPLinesExpandWidth limitTMPLinesExpandWidth;
+
     private void Start()
     {
         LoadDataFromExcel();
@@ -348,6 +350,7 @@ public class MajorEvents : MonoBehaviour
                 $"<size={minsize}>{month}</size><size={minsize}>月</size>" +
                 $"<size={minsize}>{day}</size><size={minsize}>日</size>" +
                 $"<br>{textsInfo[curindex]}";
+
         }
         else
         {
@@ -358,6 +361,11 @@ public class MajorEvents : MonoBehaviour
                $"<size={minsize}>{day}, </size>" +
                $"<size={normalsize}>{year}</size>" +
                $"<br>{textsInfo[curindex]}";
+        }
+
+        if (limitTMPLinesExpandWidth != null)
+        {
+            limitTMPLinesExpandWidth.SetTextWithLineLimit(tmpText.text);
         }
 
         textFlyInEffect.StartFlyInEffect();

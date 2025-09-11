@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 65049891}
   - component: {fileID: 65049893}
   - component: {fileID: 65049892}
+  - component: {fileID: 65049895}
   - component: {fileID: 65049894}
   m_Layer: 0
   m_Name: Text (TMP)2020
@@ -602,18 +603,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65049890}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.03}
+  m_LocalPosition: {x: 0, y: 0, z: -0.030000515}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 75971225}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.29, y: -0.27}
-  m_SizeDelta: {x: 3.4484, y: 0.9876}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 49.49906, y: 49.23625}
+  m_SizeDelta: {x: 3.4333992, y: 2.5059013}
+  m_Pivot: {x: 0.271828, y: 0}
 --- !u!114 &65049892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -774,6 +775,18 @@ MonoBehaviour:
   maxSimultaneousCharacters: 10
   useExecutionDelay: 0
   executionDelay: 1
+--- !u!114 &65049895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65049890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0314889ca19e6245b8e643a6eec49ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &75971222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2059,6 +2072,7 @@ MonoBehaviour:
   cacheSize: 60
   preloadDistance: 1
   en: 1
+  limitTMPLinesExpandWidth: {fileID: 65049895}
 --- !u!4 &731341354
 Transform:
   m_ObjectHideFlags: 0
