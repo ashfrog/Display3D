@@ -13,6 +13,7 @@ public class LimitTMPLinesExpandWidth : MonoBehaviour
 
     float startWidth;
 
+    void Awake()
     {
 
         tmp = GetComponent<TMP_Text>();
