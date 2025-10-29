@@ -20,3 +20,9 @@ FancyDisplay/UserSettings/Layouts/default-2021.dwlt
 */obj
 */logs
 /FancyDisplay/项目程序发布Release
+/ScreenTouch2_HDRP/Temp
+/ScreenTouch2_HDRP/R
+*.mp4
+/ScreenTouch2_HDRP/Assets/StreamingAssets/**/*.meta
+/ScreenTouch2_HDRP/UserSettings/Layouts
+/**/*.fbx
