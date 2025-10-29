@@ -16,8 +16,8 @@ public class SmoothTargetManipulator : MonoBehaviour
     public float smoothTime = 0.08f;
 
     // 屏幕区域支持
-    public int screenWidth = 1920;
-    public bool leftEnable;
+    public int display1Width = 1920;
+    public bool isDisplay1 = true;
 
     // 父节点旋转（pitch，x轴），目标本体旋转（yaw，y轴）
     private float desiredPitch;      // x轴旋转
@@ -51,10 +51,10 @@ public class SmoothTargetManipulator : MonoBehaviour
 
     private bool IsPointerInActiveRegion(Vector2 screenPos)
     {
-        if (leftEnable)
-            return screenPos.x <= (float)screenWidth;
+        if (isDisplay1)
+            return screenPos.x <= (float)display1Width;
         else
-            return screenPos.x > (float)screenWidth;
+            return screenPos.x > (float)display1Width;
     }
 
     void Update()
@@ -63,10 +63,10 @@ public class SmoothTargetManipulator : MonoBehaviour
         if (Input.touchSupported && Input.touchCount > 0)
         {
             Touch[] touches;
-            if (leftEnable)
-                touches = Input.touches.Where(t => t.position.x <= (float)screenWidth).ToArray();
+            if (isDisplay1)
+                touches = Input.touches.Where(t => t.position.x <= (float)display1Width).ToArray();
             else
-                touches = Input.touches.Where(t => t.position.x > (float)screenWidth).ToArray();
+                touches = Input.touches.Where(t => t.position.x > (float)display1Width).ToArray();
 
             if (touches.Length == 1)
             {

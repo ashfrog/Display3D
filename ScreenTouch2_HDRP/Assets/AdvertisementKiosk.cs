@@ -10,6 +10,7 @@ using System.IO;
 /// </summary>
 public class AdvertisementKiosk : MonoBehaviour
 {
+    public bool hideCursor;
     private const float checkInterval = 3f; // 每3秒检查一次
     private IntPtr hWnd;
 
@@ -119,12 +120,16 @@ public class AdvertisementKiosk : MonoBehaviour
         // 设置屏幕常亮
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
 
-        // 隐藏鼠标
+        if (hideCursor)
+        {
+            // 隐藏鼠标
 #if UNITY_EDITOR
-        Cursor.visible = true;
+            Cursor.visible = true;
 #else
         Cursor.visible = false;
 #endif
+        }
+
         Application.runInBackground = true;
         //多屏
         for (int i = 0; i < Display.displays.Length; i++)
