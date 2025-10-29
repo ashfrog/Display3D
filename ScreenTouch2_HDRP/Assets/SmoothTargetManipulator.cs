@@ -2,13 +2,13 @@ using System.Linq;
 using UnityEngine;
 
 /// <summary>
-/// 让物体旋转、缩放的手势和鼠标体验与 SmoothOrbitManipulator.cs 完全一致。
-/// 建议结构：本脚本挂在一个空父物体（如 TargetGroup）上，target 指向需要操作的子物体。
+/// 让物体旋转、缩放的手势和鼠标
+/// 结构：本脚本挂在target的父物体上，target是被控物体的子物体。
 /// 父物体控制 pitch(x轴)，子物体控制 yaw(y轴)，缩放作用于 target。
 /// </summary>
 public class SmoothTargetManipulator : MonoBehaviour
 {
-    public Transform target;                // 目标物体，建议是被控物体的子物体
+    public Transform target;                // 展示物体
     public float minScale = 0.2f;
     public float maxScale = 3.0f;
     public float zoomSpeed = 0.5f;

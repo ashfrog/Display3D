@@ -1,6 +1,10 @@
 using System.Linq;
 using UnityEngine;
 
+/// <summary>
+/// 环绕相机
+/// 结构：本脚本挂在camera的父物体上，target是被控物体的子物体。
+/// </summary>
 public class SmoothOrbitManipulator : MonoBehaviour
 {
     public Transform target;                // 环绕中心
