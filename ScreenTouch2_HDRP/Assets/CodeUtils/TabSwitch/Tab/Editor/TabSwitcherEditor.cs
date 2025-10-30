@@ -3,13 +3,14 @@ using UnityEngine;
 using UnityEditorInternal;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.UI;
 
 [CustomEditor(typeof(TabSwitcher))]
 public class TabSwitcherEditor : Editor
 {
     SerializedProperty allTabTypesProp;
     SerializedProperty tabPageGroupsProp;
-    SerializedProperty tabTogglesProp;
+    SerializedProperty tabSelectablesProp;
     SerializedProperty currentTabIndexProp;
     SerializedProperty initTabPagesProp;
     ReorderableList reorderableList;
@@ -37,11 +38,11 @@ public class TabSwitcherEditor : Editor
         {
             allTabTypesProp = serializedObject.FindProperty("allTabTypes");
             tabPageGroupsProp = serializedObject.FindProperty("tabPageGroups");
-            tabTogglesProp = serializedObject.FindProperty("tabToggles");
+            tabSelectablesProp = serializedObject.FindProperty("tabSelectables");
             currentTabIndexProp = serializedObject.FindProperty("currentTabIndex");
             initTabPagesProp = serializedObject.FindProperty("initTabPages");
 
-            if (allTabTypesProp == null || tabPageGroupsProp == null || tabTogglesProp == null)
+            if (allTabTypesProp == null || tabPageGroupsProp == null || tabSelectablesProp == null)
             {
                 Debug.LogError("TabSwitcherEditor: 无法找到必要的序列化属性，请检查 TabSwitcher 脚本");
                 return;
@@ -176,7 +177,7 @@ public class TabSwitcherEditor : Editor
 
         EditorGUILayout.Space(10);
 
-        DrawTabTogglesField();
+        DrawTabSelectablesField();
 
         EditorGUILayout.Space(5);
 
@@ -209,7 +210,7 @@ public class TabSwitcherEditor : Editor
             {
                 EditorGUILayout.HelpBox("添加Tab页面组的方法：\n" +
                                       "• 点击上方列表的 '+' 按钮手动添加\n" +
-                                      "• 直接拖入多个Toggle到Tab Toggles数组中自动创建\n" +
+                                      "• 直接拖入多个Toggle或Button到Tab Selectables数组中自动创建\n" +
                                       "• 拖拽多个GameObject到上方拖拽区域自动创建", MessageType.Info);
             }
             else
@@ -342,12 +343,12 @@ public class TabSwitcherEditor : Editor
         return false;
     }
 
-    private void DrawTabTogglesField()
+    private void DrawTabSelectablesField()
     {
-        if (tabTogglesProp == null) return;
+        if (tabSelectablesProp == null) return;
 
         EditorGUI.BeginChangeCheck();
-        EditorGUILayout.PropertyField(tabTogglesProp, new GUIContent("Tab Toggles数组"), true);
+        EditorGUILayout.PropertyField(tabSelectablesProp, new GUIContent("Tab Selectables数组 (Toggle/Button)"), true);
 
         if (EditorGUI.EndChangeCheck())
         {
@@ -358,14 +359,14 @@ public class TabSwitcherEditor : Editor
 
     private void CheckAndCreateTabPageGroups()
     {
-        if (tabTogglesProp == null || tabPageGroupsProp == null) return;
+        if (tabSelectablesProp == null || tabPageGroupsProp == null) return;
 
-        int tabToggleCount = tabTogglesProp.arraySize;
+        int tabSelectableCount = tabSelectablesProp.arraySize;
         int tabPageGroupCount = tabPageGroupsProp.arraySize;
 
-        if (tabToggleCount > tabPageGroupCount)
+        if (tabSelectableCount > tabPageGroupCount)
         {
-            for (int i = tabPageGroupCount; i < tabToggleCount; i++)
+            for (int i = tabPageGroupCount; i < tabSelectableCount; i++)
             {
                 tabPageGroupsProp.InsertArrayElementAtIndex(tabPageGroupsProp.arraySize);
                 var newGroup = tabPageGroupsProp.GetArrayElementAtIndex(tabPageGroupsProp.arraySize - 1);
@@ -374,23 +375,23 @@ public class TabSwitcherEditor : Editor
                 var pagesProp = newGroup.FindPropertyRelative("pages");
                 pagesProp.ClearArray();
 
-                var toggleProp = tabTogglesProp.GetArrayElementAtIndex(i);
-                if (toggleProp.objectReferenceValue != null)
+                var selectableProp = tabSelectablesProp.GetArrayElementAtIndex(i);
+                if (selectableProp.objectReferenceValue != null)
                 {
-                    var toggle = toggleProp.objectReferenceValue as UnityEngine.UI.Toggle;
-                    if (toggle != null)
+                    var selectable = selectableProp.objectReferenceValue as Selectable;
+                    if (selectable != null)
                     {
                         pagesProp.InsertArrayElementAtIndex(0);
-                        pagesProp.GetArrayElementAtIndex(0).objectReferenceValue = toggle.gameObject;
+                        pagesProp.GetArrayElementAtIndex(0).objectReferenceValue = selectable.gameObject;
 
-                        Debug.Log($"自动创建Tab页面组 '{tabTypeName}'，并将Toggle '{toggle.name}' 添加为第一个页面");
+                        Debug.Log($"自动创建Tab页面组 '{tabTypeName}'，并将Selectable '{selectable.name}' 添加为第一个页面");
                     }
                 }
             }
         }
-        else if (tabToggleCount < tabPageGroupCount)
+        else if (tabSelectableCount < tabPageGroupCount)
         {
-            Debug.LogWarning($"Tab Toggles数量({tabToggleCount})少于页面组数量({tabPageGroupCount})，请手动调整页面组");
+            Debug.LogWarning($"Tab Selectables数量({tabSelectableCount})少于页面组数量({tabPageGroupCount})，请手动调整页面组");
         }
     }
 
@@ -451,5 +452,4 @@ public class TabSwitcherEditor : Editor
         EditorGUIUtility.systemCopyBuffer = result;
         Debug.Log($"已拷贝 {tabTypes.Count} 个Tab类型名: {result}");
     }
-
 }

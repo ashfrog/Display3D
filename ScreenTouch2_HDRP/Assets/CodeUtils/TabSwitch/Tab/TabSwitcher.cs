@@ -16,7 +16,8 @@ public class TabPageGroup
 
 public class TabSwitcher : MonoBehaviour
 {
-    public Toggle[] tabToggles; // 改为Toggle数组
+    [Tooltip("可拖入Toggle或Button作为Tab")]
+    public Selectable[] tabSelectables; // 允许Toggle或Button
     public int currentTabIndex = -1;
 
     [Header("Tab类型名（类似enum，可增删）")]
@@ -32,17 +33,27 @@ public class TabSwitcher : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 0; i < tabToggles.Length; i++)
+        for (int i = 0; i < tabSelectables.Length; i++)
         {
             int index = i;
-            tabToggles[i].onValueChanged.AddListener((isOn) =>
+            if (tabSelectables[i] is Toggle toggle)
             {
-                if (_suppressToggleCallback) return; // 防止递归
-                if (isOn)
+                toggle.onValueChanged.AddListener((isOn) =>
+                {
+                    if (_suppressToggleCallback) return;
+                    if (isOn)
+                    {
+                        SwitchTab(index);
+                    }
+                });
+            }
+            else if (tabSelectables[i] is Button button)
+            {
+                button.onClick.AddListener(() =>
                 {
                     SwitchTab(index);
-                }
-            });
+                });
+            }
         }
         if (initTabPages)
         {
@@ -50,10 +61,14 @@ public class TabSwitcher : MonoBehaviour
         }
         UpdateTabPages();
         // 设置Toggle选中状态（如果有有效的currentTabIndex）
-        if (currentTabIndex >= 0 && currentTabIndex < tabToggles.Length)
+        if (currentTabIndex >= 0 && currentTabIndex < tabSelectables.Length)
         {
             _suppressToggleCallback = true;
-            tabToggles[currentTabIndex].isOn = true;
+            for (int i = 0; i < tabSelectables.Length; i++)
+            {
+                if (tabSelectables[i] is Toggle toggle)
+                    toggle.isOn = (i == currentTabIndex);
+            }
             _suppressToggleCallback = false;
         }
     }
@@ -66,10 +81,11 @@ public class TabSwitcher : MonoBehaviour
         currentTabIndex = index;
         // 只让当前index对应的Toggle为On，其余为Off
         _suppressToggleCallback = true;
-        for (int i = 0; i < tabToggles.Length; i++)
+        for (int i = 0; i < tabSelectables.Length; i++)
         {
-            if (tabToggles[i] != null)
-                tabToggles[i].isOn = (i == index);
+            if (tabSelectables[i] is Toggle toggle)
+                toggle.isOn = (i == index);
+            // Button一般不需要设置选中高亮，如需处理可扩展
         }
         _suppressToggleCallback = false;
         UpdateTabPages();

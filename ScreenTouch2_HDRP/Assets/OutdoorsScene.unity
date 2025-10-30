@@ -999,7 +999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1805c72cc985853419c9cfe19b5c6ce5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabToggles:
+  tabSelectables:
   - {fileID: 59526682}
   - {fileID: 692145780}
   - {fileID: 541533849}
