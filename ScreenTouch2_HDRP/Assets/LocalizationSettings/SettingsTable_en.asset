@@ -22,6 +22,26 @@ MonoBehaviour:
     m_Localized: Game Title
     m_Metadata:
       m_Items: []
+  - m_Id: 306272996618240
+    m_Localized: Upholstery Cover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306352784863232
+    m_Localized: Foam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306394828566528
+    m_Localized: Frame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306435764973568
+    m_Localized: Comfort System
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306487539462144
+    m_Localized: ECU
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
