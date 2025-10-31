@@ -43,11 +43,33 @@ public class StairUnfoldController : MonoBehaviour
         List<Vector3> startPositions = new List<Vector3>();
         List<Vector3> endPositions = new List<Vector3>();
 
+        // 先计算目标展开位置
+        List<Vector3> unfoldPositions = new List<Vector3>();
+        if (toUnfold)
+        {
+            for (int i = 0; i < children.Count; i++)
+            {
+                unfoldPositions.Add(originalPositions[i] + unfoldDirection * unfoldOffset * i);
+            }
+            // 计算中心点
+            Vector3 center = Vector3.zero;
+            for (int i = 0; i < unfoldPositions.Count; i++)
+            {
+                center += unfoldPositions[i];
+            }
+            center /= unfoldPositions.Count;
+            // 目标位置减去中心点
+            for (int i = 0; i < unfoldPositions.Count; i++)
+            {
+                unfoldPositions[i] -= center;
+            }
+        }
+
         for (int i = 0; i < children.Count; i++)
         {
             startPositions.Add(children[i].localPosition);
             if (toUnfold)
-                endPositions.Add(originalPositions[i] + unfoldDirection * unfoldOffset * i);
+                endPositions.Add(unfoldPositions[i]);
             else
                 endPositions.Add(originalPositions[i]);
         }
