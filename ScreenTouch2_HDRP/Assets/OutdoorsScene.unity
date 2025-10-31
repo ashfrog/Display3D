@@ -15636,9 +15636,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabSelectables: []
-  currentTabIndex: -1
-  allTabTypes: []
-  tabPageGroups: []
+  currentTabIndex: 0
+  allTabTypes:
+  - "\u5C4F\u4FDD"
+  - "\u9996\u9875"
+  - "\u62C6\u5F00"
+  tabPageGroups:
+  - pages:
+    - {fileID: 100431965}
+    tabType: "\u5C4F\u4FDD"
+  - pages:
+    - {fileID: 1151793221}
+    tabType: "\u9996\u9875"
+  - pages:
+    - {fileID: 1256248737}
+    tabType: "\u62C6\u5F00"
   initTabPages: 0
 --- !u!1 &1885684089
 GameObject:
