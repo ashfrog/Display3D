@@ -50,6 +50,18 @@ MonoBehaviour:
     m_Localized: Exploded View
     m_Metadata:
       m_Items: []
+  - m_Id: 759507809136640
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761801929846784
+    m_Localized: Assemble
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761865809096704
+    m_Localized: 'Disassemble '
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -66,6 +66,7 @@
     <Compile Include="Assets\CodeUtils\TabSwitch\Tab\TabTypeManager.cs" />
     <Compile Include="Assets\SetLanguageDropdown.cs" />
     <Compile Include="Assets\SetLanguageToggle.cs" />
+    <Compile Include="Assets\SetCamera.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\ToggleButtonWithImage.cs" />
     <Compile Include="Assets\ToggleGroupLabelStyler.cs" />
     <Compile Include="Assets\SmoothOrbitManipulator.cs" />
