@@ -68,6 +68,8 @@
     <Compile Include="Assets\SetLanguageDropdown.cs" />
     <Compile Include="Assets\SetLanguageToggle.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\ToggleButtonWithImage.cs" />
+    <Compile Include="Assets\CodeUtils\LitVCR.cs" />
+    <Compile Include="Assets\CodeUtils\FileUtils.cs" />
     <Compile Include="Assets\ToggleGroupLabelStyler.cs" />
     <Compile Include="Assets\SmoothOrbitManipulator.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\ToggleButtonGroup.cs" />
