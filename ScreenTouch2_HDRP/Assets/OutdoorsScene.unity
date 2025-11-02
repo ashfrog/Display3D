@@ -687,6 +687,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AniSwitch, Assembly-CSharp
+        m_MethodName: Assemble
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &43092643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,7 +2840,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27ea19ef26157a042abf22d8830c5a2b,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 923673946}
+      addedObject: {fileID: 923673948}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27ea19ef26157a042abf22d8830c5a2b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 923673949}
   m_SourcePrefab: {fileID: 100100000, guid: 27ea19ef26157a042abf22d8830c5a2b, type: 3}
 --- !u!4 &198474028 stripped
 Transform:
@@ -10744,7 +10760,20 @@ MonoBehaviour:
   animationDuration: 1
   useSphere: 1
   planeNormal: {x: 0, y: 1, z: 0}
---- !u!95 &923673946
+--- !u!114 &923673948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923673943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147b91ff9c9a5574189724470ad9bdaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 923673949}
+--- !u!95 &923673949
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -18630,7 +18659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1907420778
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -20690,6 +20719,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AniSwitch, Assembly-CSharp
+        m_MethodName: Assemble
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u62C6\u5F00\u52A8\u753B"
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2096270768
