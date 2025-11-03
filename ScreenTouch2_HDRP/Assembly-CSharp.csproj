@@ -85,6 +85,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\AVProVideo\Licenses\Hap-3rdParty.txt" />
     <None Include="Assets\Shader\CirclePlaneEdgeFade.shader" />
+    <None Include="Assets\Shader\ColorCorrected.shader" />
     <None Include="Assets\AVProVideo\Licenses\GdclMpeg4-License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
@@ -453,6 +454,10 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.2.1\Runtime\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Coffee.SoftMaskForUGUI.R">
+      <HintPath>Packages\SoftMaskForUGUI-3.4.1\Runtime\Coffee.SoftMaskForUGUI.R.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
@@ -1145,6 +1150,10 @@
       <Project>{AF8D6B82-FCD6-AB72-D6CA-74B4401B761D}</Project>
       <Name>Unity.RenderPipelines.HighDefinition.Config.Runtime</Name>
     </ProjectReference>
+    <ProjectReference Include="Coffee.SoftMaskForUGUI.csproj">
+      <Project>{8B8399F3-941C-7464-B53E-17B6D4450547}</Project>
+      <Name>Coffee.SoftMaskForUGUI</Name>
+    </ProjectReference>
     <ProjectReference Include="AVProVideo.Demos.csproj">
       <Project>{AD6DCEC7-10AA-8B47-E7EA-41D9166E65BB}</Project>
       <Name>AVProVideo.Demos</Name>
@@ -1164,6 +1173,10 @@
     <ProjectReference Include="AVProVideo.Extensions.Timeline.csproj">
       <Project>{415BEB9F-8280-52CE-34CA-C393130C6C3F}</Project>
       <Name>AVProVideo.Extensions.Timeline</Name>
+    </ProjectReference>
+    <ProjectReference Include="Coffee.SoftMaskForUGUI.Editor.csproj">
+      <Project>{553D1CBC-E276-9E3B-5658-66C6594B1C1C}</Project>
+      <Name>Coffee.SoftMaskForUGUI.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="AVProVideo.Extensions.UnityUI.csproj">
       <Project>{243A1F21-CE77-3B5C-4F9A-4DA2F992A8B8}</Project>
