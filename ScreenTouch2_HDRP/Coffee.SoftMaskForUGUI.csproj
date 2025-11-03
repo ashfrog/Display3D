@@ -79,8 +79,8 @@
     <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\Internal\Utilities\ObjectRepository.cs" />
     <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\Internal\Utilities\FastAction.cs" />
     <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\Internal\Utilities\ShaderSampleImporter.cs" />
-    <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\MaskingShape\MaskingShapeContainer.cs" />
     <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\RectTransformFitter.cs" />
+    <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\MaskingShape\MaskingShapeContainer.cs" />
     <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\Internal\Extensions\Vector3Extensions.cs" />
     <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\Internal\Utilities\TransformSensitivity.cs" />
     <Compile Include="Packages\SoftMaskForUGUI-3.4.1\Runtime\Internal\Extensions\SpriteExtensions.cs" />
@@ -453,6 +453,10 @@
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Coffee.SoftMaskForUGUI.R">
+      <HintPath>Packages\SoftMaskForUGUI-3.4.1\Runtime\Coffee.SoftMaskForUGUI.R.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="ReportGeneratorMerged">
       <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.2.6\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
       <Private>False</Private>
@@ -487,10 +491,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.TextureAssets">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Coffee.SoftMaskForUGUI.R">
-      <HintPath>Packages\SoftMaskForUGUI-3.4.1\Runtime\Coffee.SoftMaskForUGUI.R.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">
