@@ -63,7 +63,6 @@
     <Compile Include="Assets\CameraViewportAnimator.cs" />
     <Compile Include="Assets\AdvertisementKiosk.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
-    <Compile Include="Assets\StairUnfoldController.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\Tab\TabTypeManager.cs" />
     <Compile Include="Assets\AniSwitch.cs" />
     <Compile Include="Assets\SetLanguageDropdown.cs" />
@@ -75,7 +74,6 @@
     <Compile Include="Assets\SmoothOrbitManipulator.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\ToggleButtonGroup.cs" />
     <Compile Include="Assets\CodeUtils\Loom\Loom.cs" />
-    <Compile Include="Assets\ExplodeController.cs" />
     <Compile Include="Assets\SmoothTargetManipulator.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\Tab\TabSwitcher.cs" />
   </ItemGroup>
