@@ -4,7 +4,7 @@
 
 using UnityEngine;
 
-#if UNITY_FEATURE_UGUI
+
 
 using RenderHeads.Media.AVProVideo;
 using System.IO;
@@ -13,6 +13,7 @@ using System;
 using UnityEngine.UI;
 using System.Collections;
 using System.Linq;
+using RenderHeads.Media.AVProVideo.Demos;
 
 //-----------------------------------------------------------------------------
 // Copyright 2015-2018 RenderHeads Ltd.  All rights reserverd.
@@ -28,7 +29,7 @@ using System.Linq;
 /// </summary>
 public class LitVCR : MonoBehaviour
 {
-
+    public MediaPlayerUI _mediaPlayerUI;
     public DisplayUGUI _mediaDisplay;
     public List<DisplayUGUI> _mediaDisplay_binds;
     public MediaPlayer _mediaPlayer;
@@ -402,6 +403,11 @@ public class LitVCR : MonoBehaviour
 
     private void Update()
     {
+        if (PlayingPlayer != null && _mediaPlayerUI != null && _mediaPlayerUI._mediaPlayer != PlayingPlayer)
+        {
+            _mediaPlayerUI._mediaPlayer = PlayingPlayer;
+        }
+
         if (GetProgress() >= 1) //防止在windows平台有些设备上 FinishedPlaying事件在播放完成的时候未收到
         {
             curt += Time.deltaTime;
@@ -581,6 +587,7 @@ public class LitVCR : MonoBehaviour
             }
         }
         ReloadFileList(Path.Combine(Application.streamingAssetsPath, videoFolder));
+        SetLoopMode(LoopMode.none);
     }
 
     private Texture2D lastTextureRef;
@@ -641,7 +648,7 @@ public class LitVCR : MonoBehaviour
 
     public String GetLoopMode()
     {
-        return PlayerPrefs.GetString(LOOPMODE + this.transform.gameObject.name, LoopMode.all.ToString());
+        return PlayerPrefs.GetString(LOOPMODE + this.transform.gameObject.name, LoopMode.none.ToString());
     }
 
     /// <summary>
@@ -1043,4 +1050,3 @@ public class LitVCR : MonoBehaviour
     #endregion 兼容图片
 }
 
-#endif
