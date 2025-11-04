@@ -52,10 +52,11 @@ public class SmoothOrbitManipulator : MonoBehaviour
 
     void Start()
     {
-        Vector3 toTarget = transform.position - target.position;
-        distance = desiredDistance = toTarget.magnitude;
-        Vector3 angles = Quaternion.LookRotation(toTarget).eulerAngles;
-        orbitAngles = desiredOrbitAngles = new Vector2(angles.y, angles.x);
+        //Vector3 toTarget = transform.position - target.position;
+        distance = desiredDistance;
+        // 直接使用相机父物体当前的世界旋转（transform.rotation），基于环绕中心target
+        Vector3 worldAngles = transform.rotation.eulerAngles;
+        orbitAngles = desiredOrbitAngles = new Vector2(worldAngles.y, worldAngles.x);
     }
 
     // 判断给定屏幕坐标是否在激活区域内
