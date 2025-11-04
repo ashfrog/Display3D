@@ -13,17 +13,49 @@ public class ToggleGroupTMPLabelStyler : MonoBehaviour
 
     private ToggleGroup toggleGroup;
     private List<Toggle> toggles = new List<Toggle>();
+    private bool initializing = true;
 
     void Awake()
     {
         toggleGroup = GetComponent<ToggleGroup>();
+        if (toggleGroup != null)
+            toggleGroup.allowSwitchOff = true;
+
         toggles.AddRange(GetComponentsInChildren<Toggle>());
 
+        // 全部置为未选中
+        foreach (var toggle in toggles)
+            toggle.isOn = false;
+
+        // 添加监听器
         foreach (var toggle in toggles)
         {
-            toggle.onValueChanged.AddListener((_) => UpdateAllToggleLabels());
+            toggle.onValueChanged.AddListener((value) => OnToggleValueChanged(toggle, value));
         }
 
+        initializing = false;
+        UpdateAllToggleLabels();
+    }
+
+    void OnToggleValueChanged(Toggle toggled, bool value)
+    {
+        // 初始化阶段不处理
+        if (initializing) return;
+        if (!value)
+        {
+            // 检查是否所有 Toggle 都未选中（只允许初始出现这种情况）
+            bool anyOn = false;
+            foreach (var t in toggles)
+            {
+                if (t.isOn) { anyOn = true; break; }
+            }
+            // 如果本次操作后所有toggle都未选中（点自己的取消），强制设回选中
+            if (!anyOn)
+            {
+                toggled.isOn = true; // 重新选中自己
+                return;
+            }
+        }
         UpdateAllToggleLabels();
     }
 
