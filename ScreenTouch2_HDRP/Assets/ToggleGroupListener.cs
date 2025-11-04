@@ -2,7 +2,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
 using System.Collections.Generic;
-
+/// <summary>
+/// 根据选中模块展示设置相机位置旋转缩放
+/// </summary>
 public class ToggleGroupListener : MonoBehaviour
 {
     [Header("ToggleGroup,切换相机target")]
@@ -16,6 +18,8 @@ public class ToggleGroupListener : MonoBehaviour
     public Transform target;
 
     public SmoothOrbitManipulator smoothOrbitManipulator;
+
+    public SmoothCameraSwitcher smoothCameraSwitcher;
 
     void Awake()
     {
@@ -50,10 +54,12 @@ public class ToggleGroupListener : MonoBehaviour
             case "ECU":
                 smoothOrbitManipulator.target = targets[0];
                 aniSwitch.Close();
+                smoothCameraSwitcher.SetToStatueIndex(2);//第三个位置缩放数据为看ECU
                 break;
             default:
                 SetOrbitCameraDefaultTarget();
                 aniSwitch.Close();
+                smoothCameraSwitcher.SetToStatueIndex(0);//默认的那个位置缩放数据
                 break;
         }
     }
