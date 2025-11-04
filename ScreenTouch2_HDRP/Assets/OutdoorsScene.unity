@@ -11778,11 +11778,12 @@ MonoBehaviour:
   maxDistance: 5
   zoomSpeed: 1
   rotationSpeed: 0.2
-  smoothTime: 0.1
+  smoothTime: 0.2
   screenWidth: 1920
   leftEnable: 1
   desiredDistance: 0
   desiredOrbitAngles: {x: 0, y: 0}
+  desiredPanOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &980097484
 Transform:
   m_ObjectHideFlags: 0
@@ -11828,10 +11829,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothOrbitManipulator: {fileID: 980097483}
-  openDistance: 2
+  openDistance: 4
   openOrbitAngles: {x: 0, y: 0}
+  openPanOffset: {x: 0, y: -2, z: 0}
   closeDistance: 0
   closeOrbitAngles: {x: 0, y: 0}
+  closePanOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1016900613
 GameObject:
   m_ObjectHideFlags: 0
@@ -17597,6 +17600,7 @@ MonoBehaviour:
   leftEnable: 0
   desiredDistance: 0
   desiredOrbitAngles: {x: 0, y: 0}
+  desiredPanOffset: {x: 0, y: 0, z: 0}
 --- !u!4 &1739931297
 Transform:
   m_ObjectHideFlags: 0

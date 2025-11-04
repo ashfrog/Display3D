@@ -14,6 +14,7 @@ public class SmoothOrbitManipulator : MonoBehaviour
     public float maxDistance = 10.0f;
     public float zoomSpeed = 0.5f;
     public float rotationSpeed = 0.2f;
+    [Header("平滑时间")]
     public float smoothTime = 0.08f;        // 平滑时间
 
     // 用于指定哪个屏幕区域生效（基于 x 坐标 cutoff）
@@ -21,10 +22,18 @@ public class SmoothOrbitManipulator : MonoBehaviour
     // 当 leftEnable == false 时，只有 position.x > screenWidth 的输入会生效（右侧区域）
     public int screenWidth = 1920;
     public bool leftEnable;
-    [Header("指定位置")]
+    [Header("指定缩放位置")]
     public float desiredDistance;
     [Header("指定角度")]
     public Vector2 desiredOrbitAngles;     // 目标角度
+
+
+    [Header("中心点偏移")]
+    public Vector3 desiredPanOffset = Vector3.zero;
+
+    private Vector3 panOffset = Vector3.zero;
+    private Vector3 currentPanOffset = Vector3.zero;
+
     private float smoothDistanceVel;
     private Vector2 orbitAngles;            // 当前角度
 
@@ -211,6 +220,22 @@ public class SmoothOrbitManipulator : MonoBehaviour
             }
         }
 
+        float autoSmoothTime = smoothTime; //旋转平滑时间
+        const float MaxAngleDelta = 90f; // 超过多少度就直接跳过去，避免“乱转”
+        if (Mathf.Abs(Mathf.DeltaAngle(orbitAngles.x, desiredOrbitAngles.x)) > MaxAngleDelta)
+        {
+            autoSmoothTime = 0.05f;
+            //orbitAngles.x = desiredOrbitAngles.x;
+        }
+
+        if (Mathf.Abs(Mathf.DeltaAngle(orbitAngles.y, desiredOrbitAngles.y)) > MaxAngleDelta)
+        {
+            autoSmoothTime = 0.05f;
+            //orbitAngles.y = desiredOrbitAngles.y;
+        }
+
+        orbitAngles.x = Mathf.SmoothDampAngle(orbitAngles.x, desiredOrbitAngles.x, ref smoothOrbitVel.x, autoSmoothTime);
+        orbitAngles.y = Mathf.SmoothDampAngle(orbitAngles.y, desiredOrbitAngles.y, ref smoothOrbitVel.y, autoSmoothTime);
         // 平滑插值角度和距离
         orbitAngles.x = Mathf.SmoothDampAngle(orbitAngles.x, desiredOrbitAngles.x, ref smoothOrbitVel.x, smoothTime);
         orbitAngles.y = Mathf.SmoothDampAngle(orbitAngles.y, desiredOrbitAngles.y, ref smoothOrbitVel.y, smoothTime);
@@ -219,7 +244,9 @@ public class SmoothOrbitManipulator : MonoBehaviour
         // 计算新位置
         Quaternion rot = Quaternion.Euler(orbitAngles.y, orbitAngles.x, 0);
         Vector3 offset = rot * new Vector3(0, 0, -distance);
-        transform.position = target.position + offset;
+
+        currentPanOffset = Vector3.SmoothDamp(currentPanOffset, desiredPanOffset, ref panOffset, smoothTime);
+        transform.position = target.position + offset + currentPanOffset;
         transform.rotation = rot;
     }
 }
