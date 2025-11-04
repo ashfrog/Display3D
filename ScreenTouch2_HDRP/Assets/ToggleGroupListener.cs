@@ -17,8 +17,6 @@ public class ToggleGroupListener : MonoBehaviour
 
     public Transform target;
 
-    public SmoothOrbitManipulator smoothOrbitManipulator;
-
     public SmoothCameraSwitcher smoothCameraSwitcher;
 
     void Awake()
@@ -35,11 +33,6 @@ public class ToggleGroupListener : MonoBehaviour
         }
     }
 
-    public void SetOrbitCameraDefaultTarget()
-    {
-        smoothOrbitManipulator.target = target;
-    }
-
     /// <summary>
     /// 当任意Toggle变化（被选中时）触发
     /// </summary>
@@ -52,12 +45,10 @@ public class ToggleGroupListener : MonoBehaviour
         switch (changedToggle.name)
         {
             case "ECU":
-                smoothOrbitManipulator.target = targets[0];
                 aniSwitch.Close();
                 smoothCameraSwitcher.SetToStatueIndex(2);//第三个位置缩放数据为看ECU
                 break;
             default:
-                SetOrbitCameraDefaultTarget();
                 aniSwitch.Close();
                 smoothCameraSwitcher.SetToStatueIndex(0);//默认的那个位置缩放数据
                 break;

@@ -878,7 +878,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43092643}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &43092646
 Camera:
   m_ObjectHideFlags: 0
@@ -2841,8 +2841,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4552443528604405408, guid: 27ea19ef26157a042abf22d8830c5a2b,
         type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552443528604405408, guid: 27ea19ef26157a042abf22d8830c5a2b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4552443528604405408, guid: 27ea19ef26157a042abf22d8830c5a2b,
+        type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.05462008
+      value: -0.03
       objectReference: {fileID: 0}
     - target: {fileID: 6151206321283219259, guid: 27ea19ef26157a042abf22d8830c5a2b,
         type: 3}
@@ -7935,7 +7945,6 @@ MonoBehaviour:
   targets:
   - {fileID: 1439501453}
   target: {fileID: 198474028}
-  smoothOrbitManipulator: {fileID: 980097483}
   smoothCameraSwitcher: {fileID: 980097486}
 --- !u!1 &659142776
 GameObject:
@@ -11837,9 +11846,9 @@ MonoBehaviour:
   - distance: 4
     orbitAngles: {x: 0, y: 0}
     panOffset: {x: 0, y: -2, z: 0}
-  - distance: 0
-    orbitAngles: {x: 0, y: 0}
-    panOffset: {x: 0, y: 0, z: 0}
+  - distance: -2
+    orbitAngles: {x: 360, y: 38}
+    panOffset: {x: 0, y: -2, z: 0}
 --- !u!1 &1016900613
 GameObject:
   m_ObjectHideFlags: 0
