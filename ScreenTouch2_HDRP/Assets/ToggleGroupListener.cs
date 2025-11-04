@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class ToggleGroupListener : MonoBehaviour
 {
-    [Header("挂载 ToggleGroup 组件,切换相机target视角")]
+    [Header("ToggleGroup,切换相机target")]
     public ToggleGroup toggleGroup;
 
     [SerializeField]
