@@ -7936,6 +7936,7 @@ MonoBehaviour:
   - {fileID: 1439501453}
   target: {fileID: 198474028}
   smoothOrbitManipulator: {fileID: 980097483}
+  smoothCameraSwitcher: {fileID: 980097486}
 --- !u!1 &659142776
 GameObject:
   m_ObjectHideFlags: 0
