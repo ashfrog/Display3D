@@ -1,8 +1,12 @@
 using UnityEngine;
 
+/// <summary>
+/// 3D画面只显示在屏幕左侧的一部分区域，平滑切换相机视口宽度
+/// </summary>
 public class CameraViewportAnimator : MonoBehaviour
 {
     [SerializeField] private Camera targetCamera;
+    [Header("3D画面左右占比")]
     [SerializeField] private float width_expand = 0.7f;
     private float defaultWidth = 1f;
     [SerializeField] private float transitionDuration = 0.5f;

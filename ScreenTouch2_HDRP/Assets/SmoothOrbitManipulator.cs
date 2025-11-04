@@ -7,6 +7,7 @@ using UnityEngine;
 /// </summary>
 public class SmoothOrbitManipulator : MonoBehaviour
 {
+    [Header("环绕中心")]
     public Transform target;                // 环绕中心
     public float distance = 5.0f;           // 初始距离
     public float minDistance = 1.0f;
@@ -20,11 +21,13 @@ public class SmoothOrbitManipulator : MonoBehaviour
     // 当 leftEnable == false 时，只有 position.x > screenWidth 的输入会生效（右侧区域）
     public int screenWidth = 1920;
     public bool leftEnable;
-
-    private float desiredDistance;
+    [Header("指定位置")]
+    public float desiredDistance;
+    [Header("指定角度")]
+    public Vector2 desiredOrbitAngles;     // 目标角度
     private float smoothDistanceVel;
     private Vector2 orbitAngles;            // 当前角度
-    private Vector2 desiredOrbitAngles;     // 目标角度
+
     private Vector2 smoothOrbitVel;
 
     private Vector3 lastTouchPos0, lastTouchPos1;
