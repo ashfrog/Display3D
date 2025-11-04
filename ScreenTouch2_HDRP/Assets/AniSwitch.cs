@@ -11,8 +11,18 @@ public class AniSwitch : MonoBehaviour
 
     void Start()
     {
-        _animator = GetComponent<Animator>();
         // 初始化状态（确保参数与默认状态一致）
+        _animator.SetBool("IsOpen", _isOpen);
+    }
+
+    public void Open()
+    {
+        _isOpen = true;
+        _animator.SetBool("IsOpen", _isOpen);
+    }
+    public void Close()
+    {
+        _isOpen = false;
         _animator.SetBool("IsOpen", _isOpen);
     }
 

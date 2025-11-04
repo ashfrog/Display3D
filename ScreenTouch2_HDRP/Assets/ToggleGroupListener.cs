@@ -8,6 +8,8 @@ public class ToggleGroupListener : MonoBehaviour
     [Header("ToggleGroup,切换相机target")]
     public ToggleGroup toggleGroup;
 
+    [Header("看模块的时候组合位置")]
+    public AniSwitch aniSwitch;
     [SerializeField]
     public Transform[] targets;
 
@@ -47,9 +49,11 @@ public class ToggleGroupListener : MonoBehaviour
         {
             case "ECU":
                 smoothOrbitManipulator.target = targets[0];
+                aniSwitch.Close();
                 break;
             default:
                 SetOrbitCameraDefaultTarget();
+                aniSwitch.Close();
                 break;
         }
     }

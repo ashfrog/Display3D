@@ -699,6 +699,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 980097486}
+        m_TargetAssemblyTypeName: SmoothCameraSwitcher, Assembly-CSharp
+        m_MethodName: ClosePosRot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 54311274}
+        m_TargetAssemblyTypeName: AniSwitch, Assembly-CSharp
+        m_MethodName: Close
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &43092643
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,8 +1097,9 @@ GameObject:
   - component: {fileID: 54311271}
   - component: {fileID: 54311272}
   - component: {fileID: 54311273}
+  - component: {fileID: 54311274}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: ObjectPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1191,6 +1216,19 @@ MonoBehaviour:
     - {fileID: 254354182}
     tabType: ECU
   initTabPages: 0
+--- !u!114 &54311274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 54311270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147b91ff9c9a5574189724470ad9bdaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 923673949}
 --- !u!1 &59526677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,10 +2923,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27ea19ef26157a042abf22d8830c5a2b,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 923673948}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 27ea19ef26157a042abf22d8830c5a2b,
         type: 3}
       insertIndex: -1
@@ -7897,6 +7931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleGroup: {fileID: 658466871}
+  aniSwitch: {fileID: 54311274}
   targets:
   - {fileID: 1439501453}
   target: {fileID: 198474028}
@@ -10916,19 +10951,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 198474027}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &923673948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923673943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 147b91ff9c9a5574189724470ad9bdaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 923673949}
 --- !u!95 &923673949
 Animator:
   serializedVersion: 5
@@ -11792,7 +11814,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1998274737}
   width_expand: 0.7
-  transitionDuration: 0.5
+  transitionDuration: 0.2
 --- !u!114 &980097486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18390,7 +18412,7 @@ GameObject:
   - component: {fileID: 1829968204}
   - component: {fileID: 1829968203}
   m_Layer: 5
-  m_Name: "\u53F3\u4FA7Toggle"
+  m_Name: "Toggle\u6A21\u5757\u9009\u62E9"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21263,6 +21285,30 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u62C6\u5F00\u52A8\u753B"
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 980097486}
+        m_TargetAssemblyTypeName: SmoothCameraSwitcher, Assembly-CSharp
+        m_MethodName: OpenPosRot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 54311274}
+        m_TargetAssemblyTypeName: AniSwitch, Assembly-CSharp
+        m_MethodName: Open
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2096270768
