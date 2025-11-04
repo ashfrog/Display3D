@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AniSwitch : MonoBehaviour
 {
+    [Header("拆开动画")]
     [SerializeField]
     private Animator _animator;
     private bool _isOpen = false;

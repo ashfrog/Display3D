@@ -1,42 +1,54 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 平滑切换相机Y位置 切换展开和还原的2个位置和角度
+/// 设置相机缩放旋转偏移位置 通过参数
 /// </summary>
 public class SmoothCameraSwitcher : MonoBehaviour
 {
     [SerializeField]
     SmoothOrbitManipulator smoothOrbitManipulator;
 
-    [Header("拆开状态位置")]
-    public float openDistance;
-    [Header("拆开状态角度")]
-    public Vector2 openOrbitAngles;
-    [Header("拆开位置偏移")]
-    public Vector3 openPanOffset = Vector3.zero;
+    [System.Serializable]
+    public struct DesiredStatue
+    {
+        [Header("状态位置")]
+        public float distance;
+        [Header("状态角度")]
+        public Vector2 orbitAngles;
+        [Header("位置偏移")]
+        public Vector3 panOffset;
+    }
 
-    [Header("组装状态位置")]
-    public float closeDistance;
-    [Header("组装状态角度")]
-    public Vector2 closeOrbitAngles;
+    public List<DesiredStatue> desiredStatues;
 
-    [Header("组装位置偏移")]
-    public Vector3 closePanOffset = Vector3.zero;
 
-    // 测试接口：你可以这样在别的脚本/Inspector调用
     [ContextMenu("Open")]
     public void OpenPosRot()
     {
-        smoothOrbitManipulator.desiredDistance = openDistance;
-        smoothOrbitManipulator.desiredOrbitAngles = openOrbitAngles;
-        smoothOrbitManipulator.desiredPanOffset = openPanOffset;
+        SetToStatueIndex(1);
     }
-
     [ContextMenu("Close")]
     public void ClosePosRot()
     {
-        smoothOrbitManipulator.desiredDistance = closeDistance;
-        smoothOrbitManipulator.desiredOrbitAngles = closeOrbitAngles;
-        smoothOrbitManipulator.desiredPanOffset = closePanOffset;
+        SetToStatueIndex(0);
+    }
+
+    private void ResetStatue(DesiredStatue desiredStatue)
+    {
+        smoothOrbitManipulator.desiredDistance = desiredStatue.distance;
+        smoothOrbitManipulator.desiredOrbitAngles = desiredStatue.orbitAngles;
+        smoothOrbitManipulator.desiredPanOffset = desiredStatue.panOffset;
+    }
+
+    public void SetToStatueIndex(int index)
+    {
+        if (index < 0 || index >= desiredStatues.Count)
+        {
+            Debug.LogError("索引超出范围");
+            return;
+        }
+        DesiredStatue desiredStatue = desiredStatues[index];
+        ResetStatue(desiredStatue);
     }
 }
