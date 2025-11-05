@@ -81,7 +81,7 @@ public class SetLanguageDropdown : MonoBehaviour
         if (targetFont != null)
         {
             // 你可以用FindObjectsOfType批量设置所有TextMeshProUGUI
-            foreach (var tmp in FindObjectsOfType<TextMeshProUGUI>())
+            foreach (var tmp in FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None))
             {
                 tmp.font = targetFont;
             }

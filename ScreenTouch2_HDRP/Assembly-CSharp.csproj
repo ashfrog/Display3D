@@ -79,6 +79,7 @@
     <Compile Include="Assets\SmoothOrbitManipulator.cs" />
     <Compile Include="Assets\ToggleGroupListener.cs" />
     <Compile Include="Assets\CodeUtils\Loom\Loom.cs" />
+    <Compile Include="Assets\LRLayerSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

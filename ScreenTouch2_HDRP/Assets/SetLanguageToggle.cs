@@ -80,7 +80,7 @@ public class SetLanguageSingleToggle : MonoBehaviour
 
         if (targetFont != null)
         {
-            foreach (var tmp in FindObjectsOfType<TextMeshProUGUI>())
+            foreach (var tmp in FindObjectsByType<TextMeshProUGUI>(FindObjectsSortMode.None))
             {
                 tmp.font = targetFont;
             }
