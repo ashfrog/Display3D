@@ -46,7 +46,11 @@ public class ToggleGroupListener : MonoBehaviour
         {
             case "ECU":
                 aniSwitch.Close();
-                smoothCameraSwitcher.SetToStatueIndex(2);//第三个位置缩放数据为看ECU
+                smoothCameraSwitcher.SetToStatueIndex(2);//位置缩放数据
+                break;
+            case "舒适系统":
+                aniSwitch.Open3();
+                smoothCameraSwitcher.SetToStatueIndex(0);
                 break;
             default:
                 aniSwitch.Close();
