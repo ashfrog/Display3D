@@ -69,6 +69,7 @@
     <Compile Include="Assets\SmoothTargetManipulator.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\Tab\TabSwitcher.cs" />
     <Compile Include="Assets\CameraViewportAnimator.cs" />
+    <Compile Include="Assets\Ins.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\Tab\TabTypeManager.cs" />
     <Compile Include="Assets\AniSwitch.cs" />
