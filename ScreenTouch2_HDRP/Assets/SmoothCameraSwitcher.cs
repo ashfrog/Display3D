@@ -22,6 +22,8 @@ public class SmoothCameraSwitcher : MonoBehaviour
 
     public List<DesiredStatue> desiredStatues;
 
+    public int curIndex;
+
 
     [ContextMenu("Open")]
     public void OpenPosRot()
@@ -50,5 +52,6 @@ public class SmoothCameraSwitcher : MonoBehaviour
         }
         DesiredStatue desiredStatue = desiredStatues[index];
         ResetStatue(desiredStatue);
+        curIndex = index;
     }
 }

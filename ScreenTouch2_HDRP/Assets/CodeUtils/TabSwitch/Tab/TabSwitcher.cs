@@ -80,15 +80,15 @@ public class TabSwitcher : MonoBehaviour
             return; // 避免重复切换
 
         currentTabIndex = index;
-        // 只让当前index对应的Toggle为On，其余为Off
-        _suppressToggleCallback = true;
-        for (int i = 0; i < tabSelectables.Length; i++)
-        {
-            if (tabSelectables[i] is Toggle toggle)
-                toggle.isOn = (i == index);
-            // Button一般不需要设置选中高亮，如需处理可扩展
-        }
-        _suppressToggleCallback = false;
+        //// 只让当前index对应的Toggle为On，其余为Off
+        //_suppressToggleCallback = true;
+        //for (int i = 0; i < tabSelectables.Length; i++)
+        //{
+        //    if (tabSelectables[i] is Toggle toggle)
+        //        toggle.isOn = (i == index);
+        //    // Button一般不需要设置选中高亮，如需处理可扩展
+        //}
+        //_suppressToggleCallback = false;
         UpdateTabPages();
     }
 

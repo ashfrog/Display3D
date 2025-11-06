@@ -39,6 +39,11 @@ public class ToggleGroupListener : MonoBehaviour
 
     void Awake()
     {
+
+    }
+
+    private void Start()
+    {
         if (toggleGroup == null)
         {
             toggleGroup = GetComponent<ToggleGroup>();

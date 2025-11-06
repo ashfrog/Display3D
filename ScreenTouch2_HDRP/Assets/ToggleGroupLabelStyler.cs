@@ -15,7 +15,7 @@ public class ToggleGroupTMPLabelStyler : MonoBehaviour
     private List<Toggle> toggles = new List<Toggle>();
     private bool initializing = true;
 
-    void Awake()
+    void Start()
     {
         toggleGroup = GetComponent<ToggleGroup>();
         if (toggleGroup != null)
