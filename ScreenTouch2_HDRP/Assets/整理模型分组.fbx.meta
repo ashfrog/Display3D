@@ -17,6 +17,16 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Material #11576
+    second: {fileID: 2100000, guid: 88a1680bc6c0fd94687ca70aebc1ed42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material #3
+    second: {fileID: 2100000, guid: 4266ec5268dab994c92e31c5641f1003, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: "\u53D1\u70ED\u4E1D"
     second: {fileID: 2100000, guid: 9a8428199c00ff5469254db35498292e, type: 2}
   - first:
@@ -156,8 +166,6 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: 
-    rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
