@@ -26,6 +26,17 @@ public class ToggleGroupListener : MonoBehaviour
 
     public SmoothCameraSwitcher smoothCameraSwitcher;
 
+
+    enum AniStatue
+    {
+        默认 = 0,
+        拆开 = 1,
+        面套 = 2,
+        舒适系统 = 3,
+        泡沫 = 4,
+        零重力展示 = 5
+    }
+
     void Awake()
     {
         if (toggleGroup == null)
@@ -52,14 +63,21 @@ public class ToggleGroupListener : MonoBehaviour
         switch (changedToggle.name)
         {
             case "面套":
+                smoothCameraSwitcher.SetToStatueIndex(0);
+                aniSwitch.SetAniStatue((int)AniStatue.面套);
                 break;
             case "泡沫":
+                smoothCameraSwitcher.SetToStatueIndex(0);
+                aniSwitch.SetAniStatue((int)AniStatue.泡沫);
                 break;
             case "骨架":
+                smoothCameraSwitcher.SetToStatueIndex(0);
+                aniSwitch.SetAniStatue((int)AniStatue.零重力展示);
                 break;
             case "舒适系统":
-                aniSwitch.Open3();
+                aniSwitch.SetAniStatue(3);
                 smoothCameraSwitcher.SetToStatueIndex(0);
+                aniSwitch.SetAniStatue((int)AniStatue.舒适系统);
                 break;
             case "ECU":
                 aniSwitch.Close();

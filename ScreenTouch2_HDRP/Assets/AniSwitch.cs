@@ -29,9 +29,9 @@ public class AniSwitch : MonoBehaviour
         _animator.SetInteger("Statue", State);
     }
 
-    public void Open3()
+    public void SetAniStatue(int statue)
     {
-        State = 3;
+        State = statue;
         _animator.SetInteger("Statue", State);
     }
 }
