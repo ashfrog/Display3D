@@ -9,23 +9,29 @@ public class AniSwitch : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
+    public int State;
+
     void Start()
     {
         // 初始化状态（确保参数与默认状态一致）
-        _animator.SetInteger("Statue", 0);
+        State = 0;
+        _animator.SetInteger("Statue", State);
     }
 
     public void Open()
     {
-        _animator.SetInteger("Statue", 1);
+        State = 1;
+        _animator.SetInteger("Statue", State);
     }
     public void Close()
     {
-        _animator.SetInteger("Statue", 2);
+        State = 0;
+        _animator.SetInteger("Statue", State);
     }
 
     public void Open3()
     {
-        _animator.SetInteger("Statue", 3);
+        State = 3;
+        _animator.SetInteger("Statue", State);
     }
 }
