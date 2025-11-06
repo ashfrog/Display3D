@@ -16,7 +16,7 @@ public class TabPageGroup
 
 public class TabSwitcher : MonoBehaviour
 {
-    [Tooltip("可拖入Toggle或Button作为Tab")]
+    [Tooltip("可拖入Toggle或Button作为Tab按钮 根据编号绑定页面")]
     public Selectable[] tabSelectables; // 允许Toggle或Button
     public int currentTabIndex = -1;
 
@@ -75,6 +75,7 @@ public class TabSwitcher : MonoBehaviour
 
     public void SwitchTab(int index)
     {
+        Debug.Log(name + index);
         if (index == currentTabIndex)
             return; // 避免重复切换
 
@@ -91,11 +92,11 @@ public class TabSwitcher : MonoBehaviour
         UpdateTabPages();
     }
 
-    public void SwitchTab(Enum label)
-    {
-        SwitchTab(label.ToString());
-        Debug.Log("切换页面:" + label.ToString());
-    }
+    //public void SwitchTab(Enum label)
+    //{
+    //    SwitchTab(label.ToString());
+    //    Debug.Log("切换页面:" + label.ToString());
+    //}
 
     public void Hide()
     {
@@ -105,12 +106,14 @@ public class TabSwitcher : MonoBehaviour
     /// <summary>
     /// 通过Tab类型名切换
     /// </summary>
-    public void SwitchTab(string tabTypeName)
+    public void SwitchTab2(string tabTypeName)
     {
+
         for (int i = 0; i < tabPageGroups.Count; i++)
         {
             if (tabPageGroups[i].tabType == tabTypeName)
             {
+                Debug.Log(tabTypeName + " " + "i");
                 SwitchTab(i);
                 return;
             }

@@ -8,10 +8,17 @@ using System.Collections.Generic;
 public class ToggleGroupListener : MonoBehaviour
 {
     [Header("ToggleGroup,切换相机target")]
-    public ToggleGroup toggleGroup;
+    [SerializeField]
+    private ToggleGroup toggleGroup;
 
     [Header("看模块的时候组合位置")]
-    public AniSwitch aniSwitch;
+    [SerializeField]
+    private AniSwitch aniSwitch;
+
+    [Header("模型TabSwitcher")]
+    [SerializeField]
+    private TabSwitcher objTabSwitcher;
+
     [SerializeField]
     public Transform[] targets;
 
@@ -40,22 +47,29 @@ public class ToggleGroupListener : MonoBehaviour
     {
         if (!isOn) return; // 只关心被选中
         Debug.Log($"被选中的Toggle: {changedToggle.name}");
-
+        //objTabSwitcher.SwitchTab(changedToggle.name);
         // 你可以在这里根据不同toggle做出不同逻辑分支
         switch (changedToggle.name)
         {
-            case "ECU":
-                aniSwitch.Close();
-                smoothCameraSwitcher.SetToStatueIndex(2);//位置缩放数据
+            case "面套":
+                break;
+            case "泡沫":
+                break;
+            case "骨架":
                 break;
             case "舒适系统":
                 aniSwitch.Open3();
                 smoothCameraSwitcher.SetToStatueIndex(0);
                 break;
+            case "ECU":
+                aniSwitch.Close();
+                smoothCameraSwitcher.SetToStatueIndex(2);//相机位置缩放数据
+                break;
             default:
                 aniSwitch.Close();
-                smoothCameraSwitcher.SetToStatueIndex(0);//默认的那个位置缩放数据
+                smoothCameraSwitcher.SetToStatueIndex(0);//相机位置缩放数据
                 break;
+
         }
     }
 }

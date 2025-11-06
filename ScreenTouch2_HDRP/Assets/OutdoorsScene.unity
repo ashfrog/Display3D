@@ -1039,30 +1039,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 54311273}
-        m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
-        m_MethodName: SwitchTab
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\u9ED8\u8BA4"
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1873938938}
-        m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
-        m_MethodName: SwitchTab
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "\u9996\u9875Panel"
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 980097485}
         m_TargetAssemblyTypeName: CameraViewportAnimator, Assembly-CSharp
         m_MethodName: SwitchWidth
@@ -1097,6 +1073,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1873938938}
+        m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
+        m_MethodName: SwitchTab2
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u9996\u9875Panel"
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &36043740
@@ -1852,12 +1840,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tabSelectables:
-  - {fileID: 2096270767}
+  - {fileID: 35317239}
   - {fileID: 692145780}
   - {fileID: 541533849}
   - {fileID: 1735663797}
   - {fileID: 1217150507}
   - {fileID: 59526682}
+  - {fileID: 2096270767}
   currentTabIndex: 0
   allTabTypes:
   - "\u9ED8\u8BA4"
@@ -8349,6 +8338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toggleGroup: {fileID: 658466871}
   aniSwitch: {fileID: 54311274}
+  objTabSwitcher: {fileID: 54311273}
   targets:
   - {fileID: 0}
   target: {fileID: 198474028}
@@ -16640,6 +16630,46 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1462345392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462345393}
+  - component: {fileID: 1462345395}
+  m_Layer: 0
+  m_Name: AudioListener
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1462345393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462345392}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &1462345395
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462345392}
+  m_Enabled: 1
 --- !u!1 &1477622307 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7933381225015875466, guid: 27ea19ef26157a042abf22d8830c5a2b,
@@ -21242,7 +21272,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 54311273}
         m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
-        m_MethodName: SwitchTab
+        m_MethodName: SwitchTab2
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21254,7 +21284,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1873938938}
         m_TargetAssemblyTypeName: TabSwitcher, Assembly-CSharp
-        m_MethodName: SwitchTab
+        m_MethodName: SwitchTab2
         m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22355,6 +22385,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1462345393}
   - {fileID: 432432461}
   - {fileID: 2013410475}
   - {fileID: 1425810278}

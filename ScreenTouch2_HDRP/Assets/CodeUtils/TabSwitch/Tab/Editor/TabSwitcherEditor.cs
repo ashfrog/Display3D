@@ -348,7 +348,7 @@ public class TabSwitcherEditor : Editor
         if (tabSelectablesProp == null) return;
 
         EditorGUI.BeginChangeCheck();
-        EditorGUILayout.PropertyField(tabSelectablesProp, new GUIContent("Tab Selectables数组 (Toggle/Button)"), true);
+        EditorGUILayout.PropertyField(tabSelectablesProp, new GUIContent("Tab Selectables数组 (Toggle/Button) 作为Tab按钮"), true);
 
         if (EditorGUI.EndChangeCheck())
         {
