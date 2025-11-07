@@ -1799,14 +1799,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54311270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.9659258, z: 0, w: 0.2588191}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 198474028}
   m_Father: {fileID: 973290133}
-  m_LocalEulerAnglesHint: {x: 0, y: 150, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &54311272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12878,7 +12878,7 @@ Transform:
   m_GameObject: {fileID: 980097482}
   serializedVersion: 2
   m_LocalRotation: {x: 0.00000012443957, y: 0.00000007794322, z: -9.69922e-15, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12913,20 +12913,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothOrbitManipulator: {fileID: 980097483}
+  curIndex: 0
   desiredStatues:
   - distance: 0
     orbitAngles: {x: 0, y: 0}
-    panOffset: {x: 0, y: 0, z: 0}
+    panOffset: {x: 0, y: 2, z: 0}
     target: {fileID: 198474028}
   - distance: 0
     orbitAngles: {x: 0, y: 0}
-    panOffset: {x: 0, y: 0, z: 0}
+    panOffset: {x: 0, y: 2, z: 0}
     target: {fileID: 198474028}
   - distance: 0
     orbitAngles: {x: 360, y: 38}
     panOffset: {x: 0, y: 0, z: 0}
     target: {fileID: 559033412}
-  curIndex: 0
 --- !u!1 &989303843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1484040589002895216, guid: 27ea19ef26157a042abf22d8830c5a2b,
@@ -20520,7 +20520,7 @@ Transform:
   m_GameObject: {fileID: 1998274734}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: -6}
+  m_LocalPosition: {x: 0, y: 0, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

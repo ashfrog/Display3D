@@ -22,9 +22,16 @@ public class SmoothCameraSwitcher : MonoBehaviour
         public Transform target;
     }
 
+    [Header("当前 DesiredStatues Index")]
+    [SerializeField]
+    private int curIndex;
     public List<DesiredStatue> desiredStatues;
 
-    public int curIndex;
+    private void Start()
+    {
+        Debug.Log("根据DesiredStatue配置初始化相机位置");
+        SetToStatueIndex(0);
+    }
 
 
     [ContextMenu("Open")]
