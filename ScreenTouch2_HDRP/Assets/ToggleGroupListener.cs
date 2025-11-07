@@ -70,6 +70,18 @@ public class ToggleGroupListener : MonoBehaviour
         }
     }
 
+    public void OnExpandFrame(Toggle toggle)
+    {
+        if (toggle.isOn)
+        {
+            aniSwitch.SetAniStatue((int)AniStatue.骨架展开);
+        }
+        else
+        {
+            aniSwitch.SetAniStatue((int)AniStatue.骨架);
+        }
+    }
+
     /// <summary>
     /// 当任意Toggle变化（被选中时）触发
     /// </summary>

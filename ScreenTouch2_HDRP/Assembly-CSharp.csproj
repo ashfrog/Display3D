@@ -66,6 +66,7 @@
     <Compile Include="Assets\SetLanguageDropdown.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\ToggleButtonWithImage.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\ToggleButtonGroup.cs" />
+    <Compile Include="Assets\EnableInit.cs" />
     <Compile Include="Assets\SmoothTargetManipulator.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\Tab\TabSwitcher.cs" />
     <Compile Include="Assets\CameraViewportAnimator.cs" />
