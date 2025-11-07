@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Value: 0
   m_DenoiserRadiusSS:
     m_OverrideState: 1
-    m_Value: 0.38
+    m_Value: 0.381
   m_SecondDenoiserPassSS:
     m_OverrideState: 1
     m_Value: 1
@@ -207,7 +207,7 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 29
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 2
@@ -358,8 +358,8 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: 0
   intensity:
-    m_OverrideState: 0
-    m_Value: 1.52
+    m_OverrideState: 1
+    m_Value: 1.68
   directLightingStrength:
     m_OverrideState: 0
     m_Value: 0
@@ -487,7 +487,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 1.4931104
+    m_Value: 2.0001526
   compensation:
     m_OverrideState: 0
     m_Value: 0
