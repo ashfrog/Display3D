@@ -12919,11 +12919,11 @@ MonoBehaviour:
     orbitAngles: {x: 0, y: 0}
     panOffset: {x: 0, y: 2, z: 0}
     target: {fileID: 198474028}
-  - distance: 0
+  - distance: 4
     orbitAngles: {x: 0, y: 0}
     panOffset: {x: 0, y: 2, z: 0}
     target: {fileID: 198474028}
-  - distance: 4
+  - distance: 0
     orbitAngles: {x: 360, y: 38}
     panOffset: {x: 0, y: 0, z: 0}
     target: {fileID: 559033412}
