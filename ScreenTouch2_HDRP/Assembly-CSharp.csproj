@@ -117,6 +117,7 @@
     <None Include="Assets\AVProVideo\Docs\Documentation.txt" />
     <None Include="Assets\AVProVideo\Licenses\ExoPlayer-License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
   </ItemGroup>
   <ItemGroup>
