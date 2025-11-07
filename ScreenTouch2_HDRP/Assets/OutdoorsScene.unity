@@ -1087,18 +1087,6 @@ MonoBehaviour:
           m_StringArgument: "\u9996\u9875Panel"
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 658466873}
-        m_TargetAssemblyTypeName: ToggleGroupListener, Assembly-CSharp
-        m_MethodName: UnselectAllToggles
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &36043740
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,14 +1799,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54311270}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0.9659258, z: 0, w: 0.2588191}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 198474028}
   m_Father: {fileID: 973290133}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 150, z: 0}
 --- !u!114 &54311272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5420,7 +5408,7 @@ GameObject:
   - component: {fileID: 405122472}
   - component: {fileID: 405122471}
   m_Layer: 5
-  m_Name: "\u89C6\u9891\u64AD\u653E"
+  m_Name: "\u89C6\u9891\u64AD\u653EUI"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8334,7 +8322,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 1
+  m_AllowSwitchOff: 0
 --- !u!114 &658466872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12803,7 +12791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 980097482}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0.00000012443957, y: 0.00000007794322, z: -9.69922e-15, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17136,7 +17124,7 @@ GameObject:
   - component: {fileID: 1568020712}
   - component: {fileID: 1568020711}
   m_Layer: 5
-  m_Name: "\u89C6\u9891\u64AD\u653E\u6846\u80CC\u666F"
+  m_Name: "\u89C6\u9891\u64AD\u653E\u6846\u80CC\u666FPanel"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17154,8 +17142,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1500880746}
   - {fileID: 1699295411}
+  - {fileID: 1500880746}
   m_Father: {fileID: 405122470}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

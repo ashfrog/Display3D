@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
-using System.Linq;
 using System.Collections.Generic;
+
 /// <summary>
 /// 根据选中模块展示设置相机位置旋转缩放
 /// </summary>
@@ -29,33 +29,44 @@ public class ToggleGroupListener : MonoBehaviour
 
     public SmoothCameraSwitcher smoothCameraSwitcher;
 
-
     enum AniStatue
     {
         默认 = 0,
         拆开 = 1,
-        面套 = 2,
-        舒适系统 = 3,
-        泡沫 = 4,
-        零重力展示 = 5
+        面套 = 10,
+        泡沫 = 20,
+        骨架 = 30,
+        骨架展开 = 31,
+        舒适系统 = 40,
+        ECU = 50,
     }
 
     void Awake()
     {
-
+        // 不做操作，推荐逻辑交由TMPLabelStyler处理
     }
 
-    private void Start()
+    void Start()
     {
         if (toggleGroup == null)
         {
             toggleGroup = GetComponent<ToggleGroup>();
         }
 
-        // 获取 ToggleGroup 下的所有 Toggle 并添加监听
+        // 可以不在这里绑定Toggle的事件，由TMPLabelStyler统一处理
+        // 如果有特殊逻辑需要，依然可自定义监听
         foreach (var toggle in toggleGroup.GetComponentsInChildren<Toggle>(true))
         {
             toggle.onValueChanged.AddListener((isOn) => OnToggleValueChanged(toggle, isOn));
+        }
+    }
+
+    void OnEnable()
+    {
+        // 进入页面都取消全选
+        if (toggleGroupTMPLabelStyler != null)
+        {
+            toggleGroupTMPLabelStyler.ForceUnselectAll();
         }
     }
 
@@ -67,7 +78,6 @@ public class ToggleGroupListener : MonoBehaviour
         if (!isOn) return; // 只关心被选中
         Debug.Log($"被选中的Toggle: {changedToggle.name}");
         //objTabSwitcher.SwitchTab(changedToggle.name);
-        // 你可以在这里根据不同toggle做出不同逻辑分支
         switch (changedToggle.name)
         {
             case "面套":
@@ -80,7 +90,7 @@ public class ToggleGroupListener : MonoBehaviour
                 break;
             case "骨架":
                 smoothCameraSwitcher.SetToStatueIndex(0);
-                aniSwitch.SetAniStatue((int)AniStatue.零重力展示);
+                aniSwitch.SetAniStatue((int)AniStatue.骨架);
                 break;
             case "舒适系统":
                 aniSwitch.SetAniStatue(3);
@@ -90,26 +100,26 @@ public class ToggleGroupListener : MonoBehaviour
             case "ECU":
                 aniSwitch.Close();
                 smoothCameraSwitcher.SetToStatueIndex(2);//相机位置缩放数据
+                aniSwitch.SetAniStatue((int)AniStatue.ECU);
                 break;
             default:
                 aniSwitch.Close();
                 smoothCameraSwitcher.SetToStatueIndex(0);//相机位置缩放数据
                 break;
-
         }
     }
+
     /// <summary>
-    /// 取消所有Toggle的选中（关闭所有选中状态）
+    /// 对外暴露——全部取消Toggle选中（如外部按钮等调用），一律交给TMPLabelStyler处理
     /// </summary>
     public void UnselectAllToggles()
     {
-        foreach (var toggle in toggleGroup.GetComponentsInChildren<Toggle>(true))
+        if (toggleGroupTMPLabelStyler != null)
         {
-            toggle.isOn = false;
+            toggleGroupTMPLabelStyler.ForceUnselectAll();
+            aniSwitch.Close();
+            smoothCameraSwitcher.SetToStatueIndex(0);
+            Debug.Log("已取消所有Toggle的选中状态。");
         }
-        toggleGroupTMPLabelStyler.UpdateAllToggleLabels();
-        aniSwitch.Close();
-        smoothCameraSwitcher.SetToStatueIndex(0);
-        Debug.Log("已取消所有Toggle的选中状态。");
     }
 }
