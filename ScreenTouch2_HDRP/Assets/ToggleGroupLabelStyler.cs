@@ -18,24 +18,18 @@ public class ToggleGroupTMPLabelStyler : MonoBehaviour
     private ToggleGroup toggleGroup;
     private List<Toggle> toggles = new List<Toggle>();
 
-    void Awake()
+    void Start()
     {
         // 获取 ToggleGroup
         toggleGroup = GetComponent<ToggleGroup>();
         toggles.Clear();
         toggles.AddRange(GetComponentsInChildren<Toggle>(true));
-
-    }
-
-    void Start()
-    {
         foreach (var toggle in toggles)
         {
             // 移除之前的监听，防止重复绑定
             toggle.onValueChanged.RemoveListener(OnAnyToggleValueChanged);
             toggle.onValueChanged.AddListener(OnAnyToggleValueChanged);
         }
-
         UpdateAllToggleLabels();
     }
 
