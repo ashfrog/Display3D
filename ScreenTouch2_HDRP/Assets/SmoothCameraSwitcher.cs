@@ -18,6 +18,8 @@ public class SmoothCameraSwitcher : MonoBehaviour
         public Vector2 orbitAngles;
         [Header("位置偏移")]
         public Vector3 panOffset;
+        [Header("目标点")]
+        public Transform target;
     }
 
     public List<DesiredStatue> desiredStatues;
@@ -41,6 +43,7 @@ public class SmoothCameraSwitcher : MonoBehaviour
         smoothOrbitManipulator.desiredDistance = desiredStatue.distance;
         smoothOrbitManipulator.desiredOrbitAngles = desiredStatue.orbitAngles;
         smoothOrbitManipulator.desiredPanOffset = desiredStatue.panOffset;
+        smoothOrbitManipulator.target = desiredStatue.target;
     }
 
     public void SetToStatueIndex(int index)

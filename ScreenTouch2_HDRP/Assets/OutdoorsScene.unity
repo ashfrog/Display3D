@@ -7724,6 +7724,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 198474027}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &559033412 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4552443528604405408, guid: 27ea19ef26157a042abf22d8830c5a2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 198474027}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &587316684
 GameObject:
   m_ObjectHideFlags: 0
@@ -12911,12 +12917,15 @@ MonoBehaviour:
   - distance: 0
     orbitAngles: {x: 0, y: 0}
     panOffset: {x: 0, y: 0, z: 0}
-  - distance: 4
+    target: {fileID: 198474028}
+  - distance: 0
     orbitAngles: {x: 0, y: 0}
-    panOffset: {x: 0, y: -2, z: 0}
-  - distance: -2
+    panOffset: {x: 0, y: 0, z: 0}
+    target: {fileID: 198474028}
+  - distance: 0
     orbitAngles: {x: 360, y: 38}
-    panOffset: {x: 0, y: -2, z: 0}
+    panOffset: {x: 0, y: 0, z: 0}
+    target: {fileID: 559033412}
   curIndex: 0
 --- !u!1 &989303843 stripped
 GameObject:
@@ -17426,10 +17435,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1117969019}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
+  m_SizeDelta: {x: -40, y: -40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567738162
 MonoBehaviour:
@@ -17451,7 +17460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 1fcd7440aebcd1c4b95910e1cadc4c1e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
