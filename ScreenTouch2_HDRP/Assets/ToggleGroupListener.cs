@@ -11,6 +11,9 @@ public class ToggleGroupListener : MonoBehaviour
     [SerializeField]
     private ToggleGroup toggleGroup;
 
+    [SerializeField]
+    private ToggleGroupTMPLabelStyler toggleGroupTMPLabelStyler;
+
     [Header("看模块的时候组合位置")]
     [SerializeField]
     private AniSwitch aniSwitch;
@@ -94,5 +97,19 @@ public class ToggleGroupListener : MonoBehaviour
                 break;
 
         }
+    }
+    /// <summary>
+    /// 取消所有Toggle的选中（关闭所有选中状态）
+    /// </summary>
+    public void UnselectAllToggles()
+    {
+        foreach (var toggle in toggleGroup.GetComponentsInChildren<Toggle>(true))
+        {
+            toggle.isOn = false;
+        }
+        toggleGroupTMPLabelStyler.UpdateAllToggleLabels();
+        aniSwitch.Close();
+        smoothCameraSwitcher.SetToStatueIndex(0);
+        Debug.Log("已取消所有Toggle的选中状态。");
     }
 }

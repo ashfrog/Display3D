@@ -1087,6 +1087,18 @@ MonoBehaviour:
           m_StringArgument: "\u9996\u9875Panel"
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 658466873}
+        m_TargetAssemblyTypeName: ToggleGroupListener, Assembly-CSharp
+        m_MethodName: UnselectAllToggles
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &36043740
 GameObject:
   m_ObjectHideFlags: 0
@@ -8322,7 +8334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 0
+  m_AllowSwitchOff: 1
 --- !u!114 &658466872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8352,6 +8364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toggleGroup: {fileID: 658466871}
+  toggleGroupTMPLabelStyler: {fileID: 658466872}
   aniSwitch: {fileID: 54311274}
   objTabSwitcher: {fileID: 54311273}
   targets:
@@ -12836,6 +12849,7 @@ MonoBehaviour:
   - distance: -2
     orbitAngles: {x: 360, y: 38}
     panOffset: {x: 0, y: -2, z: 0}
+  curIndex: 0
 --- !u!1 &989303843 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1484040589002895216, guid: 27ea19ef26157a042abf22d8830c5a2b,
