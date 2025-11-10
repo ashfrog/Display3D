@@ -64,6 +64,7 @@
     <Compile Include="Assets\AdvertisementKiosk.cs" />
     <Compile Include="Assets\SmoothCameraSwitcher.cs" />
     <Compile Include="Assets\SetLanguageDropdown.cs" />
+    <Compile Include="Assets\MoveUI.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\ToggleButtonWithImage.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\ToggleButtonGroup.cs" />
     <Compile Include="Assets\EnableInit.cs" />
