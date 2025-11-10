@@ -27,8 +27,28 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: "U\u578BDIFF"
+    second: {fileID: 2100000, guid: d4a059bacaf1ca940af732453e3c1aa1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: "\u53D1\u70ED\u4E1D"
     second: {fileID: 2100000, guid: 9a8428199c00ff5469254db35498292e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u5750\u57ABDIFF"
+    second: {fileID: 2100000, guid: 6aa3eac9434b7c845b714dceec1f8c51, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u5750\u57AB\u5305\u56F4DIFF"
+    second: {fileID: 2100000, guid: 70b636a75eb4a764ea0035d8c5bea8d2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u5934\u6795DIFF"
+    second: {fileID: 2100000, guid: ecba1cbc2d0b55341990a69a68ad5b45, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -87,6 +107,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: "\u9760\u80CCDIFF"
+    second: {fileID: 2100000, guid: f76a65ce05d1ef74d928c42765549baa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: "\u9EC4\u8272\u6CE1\u6CAB"
     second: {fileID: 2100000, guid: 0856f2722b0f6b34bb0b42bfcf70081b, type: 2}
   - first:
@@ -123,22 +148,67 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 19632461
-    second: {fileID: 2800000, guid: 9d77f55580a81da4f97dd0db249a234f, type: 3}
+    second: {fileID: 2800000, guid: de6b3f38bad3a5c40aea3469a0a3c74d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 5543218
-    second: {fileID: 2800000, guid: 2aefca9a8aa00194594da7010cef22ce, type: 3}
+    second: {fileID: 2800000, guid: 1ef8916666437d3438baed648e0ea955, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: 6724250
-    second: {fileID: 2800000, guid: 6deb38db53db8d040a98563267362c25, type: 3}
+    second: {fileID: 2800000, guid: e9ebadaecdc9e094abc9203244efe325, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Leather_c_NM_hires_raw
+    second: {fileID: 2800000, guid: b66471b667b717641b2812eb5b31f34e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "U\u578BDIFF"
+    second: {fileID: 2800000, guid: 8591a1005a35e9b4fb412c22b7eab700, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "U\u578BDIFF_NRM"
+    second: {fileID: 2800000, guid: b5bec70bc99a97540ace92c81380cc41, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u5750\u57ABDIFF"
+    second: {fileID: 2800000, guid: c8ae180417a2eae40b60097121218f74, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u5750\u57ABDIFF_NRM"
+    second: {fileID: 2800000, guid: e9bfecfa97d59bc44a5dfa3593b0037d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u5750\u57AB\u5305\u56F4DIFF"
+    second: {fileID: 2800000, guid: af72891aaf52a4e4886ba15b6291cf54, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u5750\u57AB\u5305\u56F4DIFF_NRM"
+    second: {fileID: 2800000, guid: 6f2d6038cde76db43a53094eb36df116, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u5934\u6795DIFF"
+    second: {fileID: 2800000, guid: 95d58ac6c5e845d4bb59312f6d1a5de6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u5934\u6795DIFF_NRM"
+    second: {fileID: 2800000, guid: f1658b147c18fd84391c4c17d6ce7187, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: "\u5FAE\u4FE1\u56FE\u7247_20251023160434_318_236"
-    second: {fileID: 2800000, guid: 905f56e11b0e5534591c2dc774800bb0, type: 3}
+    second: {fileID: 2800000, guid: 73df8985b9e367f48b2959ec2fb47f5d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
@@ -153,12 +223,22 @@ ModelImporter:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: "\u6CE1\u6CAB\u51F9\u51F8"
-    second: {fileID: 2800000, guid: e8c82121f6f21dd48ad5c15b1ac14764, type: 3}
+    second: {fileID: 2800000, guid: 362f25eb29015e94ba364b6767224119, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u9760\u80CCDIFF"
+    second: {fileID: 2800000, guid: df7f350f83379124e909c0737a181348, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: "\u9760\u80CCDIFF_NRM"
+    second: {fileID: 2800000, guid: 101bb73b5eb2cb241a6c12b2c2a6b5ad, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
