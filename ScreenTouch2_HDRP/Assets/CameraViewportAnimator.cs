@@ -6,8 +6,8 @@ using UnityEngine;
 public class CameraViewportAnimator : MonoBehaviour
 {
     [SerializeField] private Camera targetCamera;
-    [Header("3D画面左右占比")]
-    [SerializeField] private float width_expand = 0.7f;
+    [Header("3D camera width")]
+    [SerializeField] private float width_expand = 0.83f;
     private float defaultWidth = 1f;
     [SerializeField] private float transitionDuration = 0.5f;
 
@@ -30,7 +30,13 @@ public class CameraViewportAnimator : MonoBehaviour
         if (transitionCoroutine != null)
             StopCoroutine(transitionCoroutine);
 
-        transitionCoroutine = StartCoroutine(AnimateViewportWidth(targetWidth, transitionDuration));
+        float duration = transitionDuration;
+        if (!expand)
+        {
+            duration = 0f;
+        }
+
+        transitionCoroutine = StartCoroutine(AnimateViewportWidth(targetWidth, duration));
     }
 
     private System.Collections.IEnumerator AnimateViewportWidth(float toWidth, float duration)

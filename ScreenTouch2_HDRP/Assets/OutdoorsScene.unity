@@ -12939,7 +12939,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 1998274737}
   width_expand: 0.829
-  transitionDuration: 0.2
+  transitionDuration: 0.6
 --- !u!114 &980097486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19395,7 +19395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   x: 330
-  moveTime: 1
+  moveTime: 0.5
 --- !u!1 &1844208047
 GameObject:
   m_ObjectHideFlags: 0
