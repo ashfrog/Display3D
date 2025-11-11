@@ -12200,6 +12200,9 @@ MonoBehaviour:
   desiredOrbitAngles: {x: 0, y: 0}
   angleYClamp: {x: -10, y: 80}
   desiredPanOffset: {x: 0, y: 0, z: 0}
+  softOvershoot: 10
+  rubberStrength: 20
+  springReturnTime: 0.06
 --- !u!4 &980097484
 Transform:
   m_ObjectHideFlags: 0
