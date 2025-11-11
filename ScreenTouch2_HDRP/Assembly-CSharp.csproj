@@ -94,6 +94,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\AVProVideo\Licenses\Hap-3rdParty.txt" />
     <None Include="Assets\Shader\CirclePlaneEdgeFade.shader" />
+    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\Shader\ColorCorrected.shader" />
     <None Include="Assets\AVProVideo\Licenses\GdclMpeg4-License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
