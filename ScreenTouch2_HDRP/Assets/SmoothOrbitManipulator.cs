@@ -26,6 +26,8 @@ public class SmoothOrbitManipulator : MonoBehaviour
     public float desiredDistance;
     [Header("指定角度")]
     public Vector2 desiredOrbitAngles;     // 目标角度
+    [Header("限制上下旋转角度")]
+    public Vector2 angleYClamp = new Vector2(-80, 80);
 
 
     [Header("中心点偏移")]
@@ -91,7 +93,7 @@ public class SmoothOrbitManipulator : MonoBehaviour
                     Vector2 delta = touches[0].deltaPosition;
                     desiredOrbitAngles.x += delta.x * rotationSpeed;
                     desiredOrbitAngles.y -= delta.y * rotationSpeed;
-                    desiredOrbitAngles.y = Mathf.Clamp(desiredOrbitAngles.y, -80, 80);
+                    desiredOrbitAngles.y = Mathf.Clamp(desiredOrbitAngles.y, angleYClamp.x, angleYClamp.y);
                 }
 
                 // 当触摸点从多点减为单点时，停止捏合状态
@@ -124,7 +126,7 @@ public class SmoothOrbitManipulator : MonoBehaviour
                     Vector2 curDir = (curTouchPos1 - curTouchPos0).normalized;
                     float angle = Vector2.SignedAngle(prevDir, curDir);
                     desiredOrbitAngles.x += angle;
-                    desiredOrbitAngles.y = Mathf.Clamp(desiredOrbitAngles.y, -80, 80);
+                    desiredOrbitAngles.y = Mathf.Clamp(desiredOrbitAngles.y, angleYClamp.x, angleYClamp.y);
 
                     lastTouchPos0 = curTouchPos0;
                     lastTouchPos1 = curTouchPos1;
@@ -173,7 +175,7 @@ public class SmoothOrbitManipulator : MonoBehaviour
                     Vector3 delta = (Vector3)Input.mousePosition - lastMousePos;
                     desiredOrbitAngles.x += delta.x * rotationSpeed;
                     desiredOrbitAngles.y -= delta.y * rotationSpeed;
-                    desiredOrbitAngles.y = Mathf.Clamp(desiredOrbitAngles.y, -80, 80);
+                    desiredOrbitAngles.y = Mathf.Clamp(desiredOrbitAngles.y, angleYClamp.x, angleYClamp.y);
                     lastMousePos = Input.mousePosition;
                 }
             }
