@@ -23,16 +23,24 @@ public class PageLanguageController : MonoBehaviour
     Locale zhLocale;
     Locale enLocale;
 
-    string PrefKey => $"selected_locale_{pageId}";
+    private string PrefKey;
+
+    private static int insCount = 0; //区分同名页面实例
 
     void Awake()
     {
         if (pageRoot == null) pageRoot = transform;
-        if (string.IsNullOrEmpty(pageId))
+
+        var sceneName = gameObject.scene.IsValid() ? gameObject.scene.name : "NoScene";
+
+        pageId = $"{sceneName}/{gameObject.name}";
+
+        if (insCount >= 1)
         {
-            var sceneName = gameObject.scene.IsValid() ? gameObject.scene.name : "NoScene";
-            pageId = $"{sceneName}/{gameObject.name}";
+            pageId += $"_{insCount}";
         }
+        PrefKey = $"selected_locale_{pageId}";
+        ++insCount;
     }
 
     void Start()
