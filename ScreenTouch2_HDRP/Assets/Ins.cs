@@ -1,3 +1,4 @@
+using RenderHeads.Media.AVProVideo;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,5 +28,8 @@ public class Ins : MonoBehaviour
 
     public SmoothOrbitManipulator SmoothOrbitManipulator;
 
-
+    /// <summary>
+    /// balance 左右声道设置
+    /// </summary>
+    public LitVCR litVCR;
 }

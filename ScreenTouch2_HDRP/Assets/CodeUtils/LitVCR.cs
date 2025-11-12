@@ -48,14 +48,18 @@ public class LitVCR : MonoBehaviour
 
     private string VOLUMN_KEY;//音量设置key
 
+    private string BALANCE_KEY;
+
     private const string LOOPMODE = "loopmode";//循环模式key
 
     private const string SCREENSAVER = "screensaver";//屏保key
 
     [SerializeField]
-    private string VolumnKey;
+    private string VCRKEY;
 
     private double imgCurTime = 0;//图片当前时间 算图片进度用
+
+    private static int vcrIdAutoEnc = 0;
 
     /// <summary>
     /// 标题绑定文件/文件夹名
@@ -107,6 +111,8 @@ public class LitVCR : MonoBehaviour
     public string persistentDataPath;
 
     public float imgSeconds = 5;
+
+    private float balance = 0;
 
     public enum LoopMode
     {
@@ -163,6 +169,22 @@ public class LitVCR : MonoBehaviour
         }
     }
 
+    public void SetBalance(float balance)
+    {
+        PlayerPrefs.SetFloat(BALANCE_KEY, balance);
+        if (PlayingPlayer && PlayingPlayer.Control != null)
+        {
+            PlayingPlayer.Control.SetBalance(balance);
+            PlayingPlayer.AudioBalance = balance;
+        }
+        if (LoadingPlayer && LoadingPlayer.Control != null)
+        {
+            LoadingPlayer.Control.SetBalance(balance);
+            LoadingPlayer.AudioBalance = balance;
+        }
+        this.balance = balance;
+    }
+
     public void VolumnDown()
     {
         if (GetVolumn() > 0f)
@@ -182,6 +204,11 @@ public class LitVCR : MonoBehaviour
     public float GetVolumn()
     {
         return PlayerPrefs.GetFloat(VOLUMN_KEY, 1f);
+    }
+
+    public float GetBalance()
+    {
+        return PlayerPrefs.GetFloat(BALANCE_KEY, 0f);
     }
 
     public void PlayPrevious()
@@ -569,10 +596,14 @@ public class LitVCR : MonoBehaviour
     {
     }
 
+
     private void OnEnable()
     {
         _loadingPlayer = _mediaPlayerB;
-        VOLUMN_KEY = "VOLUMN_KEY" + VolumnKey;
+
+        VOLUMN_KEY = "VOLUMN_KEY" + VCRKEY + vcrIdAutoEnc;
+        BALANCE_KEY = "BALANCE_Key" + VCRKEY + vcrIdAutoEnc;
+        vcrIdAutoEnc++;
     }
 
     private void Start()
@@ -588,6 +619,8 @@ public class LitVCR : MonoBehaviour
         }
         ReloadFileList(Path.Combine(Application.streamingAssetsPath, videoFolder));
         SetLoopMode(LoopMode.none);
+
+
     }
 
     private Texture2D lastTextureRef;
@@ -783,6 +816,7 @@ public class LitVCR : MonoBehaviour
                 isImmediateExecute = true;//立即跳过SwitchPlay中的等待
                 Debug.Log(DateTime.Now.ToString() + " FirstFrameReady");
                 SetVolumn(GetVolumn());
+                SetBalance(GetBalance());
                 break;
 
             case MediaPlayerEvent.EventType.FinishedPlaying:

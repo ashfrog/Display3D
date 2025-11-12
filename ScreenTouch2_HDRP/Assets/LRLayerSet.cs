@@ -1,3 +1,5 @@
+using Palmmedia.ReportGenerator.Core;
+using System.Collections;
 using UnityEngine;
 
 /// <summary>
@@ -22,6 +24,9 @@ public class LRLayerSet : MonoBehaviour
         rightIns.UICamera_Top.targetDisplay = rightIns.UICamera.targetDisplay;
         rightIns.mainCamera.targetDisplay = rightDisplay;
         rightIns.mainCamera.cullingMask = rightLayerMask;
+
+        defaultIns.litVCR.SetBalance(-1);
+        rightIns.litVCR.SetBalance(1);
     }
 
     /// <summary>
