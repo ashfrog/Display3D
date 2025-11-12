@@ -47,7 +47,7 @@ MonoBehaviour:
     m_Value: 0
   m_DenoiserRadiusSS:
     m_OverrideState: 1
-    m_Value: 0.381
+    m_Value: 0.438
   m_SecondDenoiserPassSS:
     m_OverrideState: 1
     m_Value: 1
@@ -207,7 +207,7 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 29
+    m_Value: 33
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 2
@@ -219,10 +219,10 @@ MonoBehaviour:
     m_Value: 18.35
   upperHemisphereLuxValue:
     m_OverrideState: 1
-    m_Value: 2.5415459
+    m_Value: 2.5415308
   upperHemisphereLuxColor:
     m_OverrideState: 1
-    m_Value: {x: 0.35379174, y: 0.4009353, z: 0.5}
+    m_Value: {x: 0.35378733, y: 0.40093294, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 0
     m_Value: 20000
