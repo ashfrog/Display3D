@@ -24,6 +24,8 @@ public class Ins : MonoBehaviour
     /// </summary>
     public GameObject objChair;
 
+    public GameObject objLogo;
+
     public List<Canvas> uiCanvas;
 
     public SmoothOrbitManipulator SmoothOrbitManipulator;

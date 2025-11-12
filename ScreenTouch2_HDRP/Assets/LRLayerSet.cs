@@ -18,6 +18,7 @@ public class LRLayerSet : MonoBehaviour
         rightIns = Instantiate(defaultIns);
         rightIns.SmoothOrbitManipulator.leftEnable = false;
         SetLayerRecursively(rightIns.objChair, rightLayer);
+        SetLayerRecursively(rightIns.objLogo, rightLayer);
         rightIns.UICamera.targetDisplay = rightDisplay;
         rightIns.UICamera_Top.targetDisplay = rightIns.UICamera.targetDisplay;
         rightIns.mainCamera.targetDisplay = rightDisplay;
