@@ -1,5 +1,3 @@
-using Palmmedia.ReportGenerator.Core;
-using System.Collections;
 using UnityEngine;
 
 /// <summary>
