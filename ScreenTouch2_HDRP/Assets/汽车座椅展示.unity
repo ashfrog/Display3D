@@ -8406,8 +8406,11 @@ MonoBehaviour:
     - {fileID: 1785535671}
     - {fileID: 1785535670}
     - {fileID: 1785535669}
-    - {fileID: 0}
     - {fileID: 1785535667}
+    - {fileID: 1785535667}
+    - {fileID: 1124405607}
+    - {fileID: 750330358}
+    - {fileID: 498934454}
     tabType: "\u9ED8\u8BA4"
   - pages:
     - {fileID: 1785535672}
@@ -8457,8 +8460,10 @@ MonoBehaviour:
     - {fileID: 1785535671}
     - {fileID: 1785535670}
     - {fileID: 1785535669}
-    - {fileID: 0}
     - {fileID: 1785535667}
+    - {fileID: 1124405607}
+    - {fileID: 750330358}
+    - {fileID: 498934454}
     tabType: "\u5C55\u5F00"
   initTabPages: 0
 --- !u!114 &811856957
