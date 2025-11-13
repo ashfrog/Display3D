@@ -14,6 +14,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Linq;
 using RenderHeads.Media.AVProVideo.Demos;
+using TMPro;
 
 //-----------------------------------------------------------------------------
 // Copyright 2015-2018 RenderHeads Ltd.  All rights reserverd.
@@ -38,7 +39,7 @@ public class LitVCR : MonoBehaviour
 
     private MediaPlayer _loadingPlayer;
 
-    public List<Text> titleBinds;
+    public List<TMP_Text> titleBinds;
 
     public string filterSectionNo;
 
@@ -817,6 +818,13 @@ public class LitVCR : MonoBehaviour
                 Debug.Log(DateTime.Now.ToString() + " FirstFrameReady");
                 SetVolumn(GetVolumn());
                 SetBalance(GetBalance());
+                if (titleBindFileName)
+                {
+                    foreach (var t in titleBinds)
+                    {
+                        t.text = Path.GetFileNameWithoutExtension(videoPaths[videoindex]);
+                    }
+                }
                 break;
 
             case MediaPlayerEvent.EventType.FinishedPlaying:
