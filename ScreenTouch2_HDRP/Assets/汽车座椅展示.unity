@@ -5273,7 +5273,7 @@ MonoBehaviour:
   invertFaceCulling: 0
   probeLayerMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   hasPersistentHistory: 0
   screenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
   screenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
@@ -5410,7 +5410,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!1 &575335079
@@ -6735,7 +6735,7 @@ Canvas:
   m_GameObject: {fileID: 660887193}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 558869995}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -10332,7 +10332,6 @@ MonoBehaviour:
   m_Script: {fileID: 1642155417}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &1045504575
 Transform:
   m_ObjectHideFlags: 19
@@ -16861,7 +16860,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1558123607}
   - component: {fileID: 1558123609}
-  - component: {fileID: 1558123608}
   m_Layer: 5
   m_Name: "Toggle \u8BED\u8A00\u5207\u6362"
   m_TagString: Untagged
@@ -16890,21 +16888,6 @@ RectTransform:
   m_AnchoredPosition: {x: -163, y: -172}
   m_SizeDelta: {x: 246, y: 68}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1558123608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1558123606}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a3722807bda09a408b033c383cda991, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  languageToggle: {fileID: 1558123609}
-  englishFont: {fileID: 0}
-  chineseFont: {fileID: 0}
 --- !u!114 &1558123609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22311,7 +22294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.15294118, b: 0.23529412, a: 1}
+  m_Color: {r: 0, g: 0.32500005, b: 0.5, a: 0.83137256}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22319,8 +22302,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 18
+    m_Font: {fileID: 12800000, guid: 0c0bbff1076aca940b874f4e05b246af, type: 3}
+    m_FontSize: 16
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
