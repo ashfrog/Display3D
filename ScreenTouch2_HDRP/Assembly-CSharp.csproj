@@ -70,6 +70,7 @@
     <Compile Include="Assets\PageLanguageController.cs" />
     <Compile Include="Assets\CodeUtils\ConfigManager\SettingsManager.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\Tab\TabTypeManager.cs" />
+    <Compile Include="Assets\CodeUtils\SkipUnityLogo.cs" />
     <Compile Include="Assets\AniSwitch.cs" />
     <Compile Include="Assets\SetLanguageDropdown.cs" />
     <Compile Include="Assets\MoveUI.cs" />

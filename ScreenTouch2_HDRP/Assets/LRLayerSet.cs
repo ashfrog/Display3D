@@ -15,6 +15,7 @@ public class LRLayerSet : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        defaultIns.litVCR.SetBalance(0);
         if (Settings.ini.Game.DoubleScreen)
         {
             rightIns = Instantiate(defaultIns);
