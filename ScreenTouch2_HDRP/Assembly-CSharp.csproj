@@ -71,6 +71,7 @@
     <Compile Include="Assets\EnableInit.cs" />
     <Compile Include="Assets\SmoothTargetManipulator.cs" />
     <Compile Include="Assets\CodeUtils\TabSwitch\Tab\TabSwitcher.cs" />
+    <Compile Include="Assets\CodeUtils\DualScreenManager.cs" />
     <Compile Include="Assets\CameraViewportAnimator.cs" />
     <Compile Include="Assets\Ins.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
@@ -91,6 +92,7 @@
     <None Include="Assets\AVProVideo\Licenses\LibSamplerate-License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\AVProVideo\Licenses\Hap-License.txt" />
+    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\AVProVideo\Licenses\Hap-3rdParty.txt" />
     <None Include="Assets\Shader\CirclePlaneEdgeFade.shader" />

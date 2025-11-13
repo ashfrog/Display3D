@@ -1,5 +1,6 @@
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// 环绕相机
@@ -69,6 +70,8 @@ public class SmoothOrbitManipulator : MonoBehaviour
     private float softClampVelY = 0f;       // 回弹用速度缓存（SmoothDamp）
     private bool isYInputActive = false;    // 本帧是否对上下角度产生了主动输入（用于判断是否要回弹）
 
+    public Text posText;
+
     void Start()
     {
         distance = desiredDistance;
@@ -129,6 +132,7 @@ public class SmoothOrbitManipulator : MonoBehaviour
         // 触控 —— 已根据 leftEnable & screenWidth 过滤
         if (Input.touchSupported && Input.touchCount > 0)
         {
+            posText.text = Input.touches[0].position.x.ToString();
             Touch[] touches;
             if (leftEnable)
             {
