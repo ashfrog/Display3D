@@ -70,7 +70,7 @@ public class SmoothOrbitManipulator : MonoBehaviour
     private float softClampVelY = 0f;       // 回弹用速度缓存（SmoothDamp）
     private bool isYInputActive = false;    // 本帧是否对上下角度产生了主动输入（用于判断是否要回弹）
 
-    public Text posText;
+    //public Text posText;
 
     void Start()
     {
@@ -132,7 +132,7 @@ public class SmoothOrbitManipulator : MonoBehaviour
         // 触控 —— 已根据 leftEnable & screenWidth 过滤
         if (Input.touchSupported && Input.touchCount > 0)
         {
-            posText.text = Input.touches[0].position.x.ToString();
+            //posText.text = Input.touches[0].position.x.ToString(); //unity2022能叠加坐标 unity6二屏从0开始算
             Touch[] touches;
             if (leftEnable)
             {
