@@ -15,17 +15,21 @@ public class LRLayerSet : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        rightIns = Instantiate(defaultIns);
-        rightIns.SmoothOrbitManipulator.leftEnable = false;
-        SetLayerRecursively(rightIns.objChair, rightLayer);
-        SetLayerRecursively(rightIns.objLogo, rightLayer);
-        rightIns.UICamera.targetDisplay = rightDisplay;
-        rightIns.UICamera_Top.targetDisplay = rightIns.UICamera.targetDisplay;
-        rightIns.mainCamera.targetDisplay = rightDisplay;
-        rightIns.mainCamera.cullingMask = rightLayerMask;
+        if (Settings.ini.Game.DoubleScreen)
+        {
+            rightIns = Instantiate(defaultIns);
+            rightIns.SmoothOrbitManipulator.leftEnable = false;
+            SetLayerRecursively(rightIns.objChair, rightLayer);
+            SetLayerRecursively(rightIns.objLogo, rightLayer);
+            rightIns.UICamera.targetDisplay = rightDisplay;
+            rightIns.UICamera_Top.targetDisplay = rightIns.UICamera.targetDisplay;
+            rightIns.mainCamera.targetDisplay = rightDisplay;
+            rightIns.mainCamera.cullingMask = rightLayerMask;
 
-        defaultIns.litVCR.SetBalance(-1);
-        rightIns.litVCR.SetBalance(1);
+            defaultIns.litVCR.SetBalance(-1);
+            rightIns.litVCR.SetBalance(1);
+        }
+
     }
 
     /// <summary>

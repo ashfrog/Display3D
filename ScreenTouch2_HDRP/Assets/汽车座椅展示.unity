@@ -3315,7 +3315,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 55.800003, y: 0}
+  m_AnchoredPosition: {x: 113, y: 0}
   m_SizeDelta: {x: 17, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &390622498
@@ -5118,7 +5118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1785535663}
   distance: 0
-  minDistance: -5
+  minDistance: -3.33
   maxDistance: 5
   zoomSpeed: 1
   rotationSpeed: 0.2
@@ -5132,7 +5132,6 @@ MonoBehaviour:
   softOvershoot: 10
   rubberStrength: 20
   springReturnTime: 0.06
-  posText: {fileID: 1850579614}
 --- !u!4 &549146327
 Transform:
   m_ObjectHideFlags: 0
@@ -10416,6 +10415,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 212567445898215800, guid: ee66324c266c8a14188bd2305b42d658,
         type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 212567445898215800, guid: ee66324c266c8a14188bd2305b42d658,
+        type: 3}
       propertyPath: m_Group
       value: 
       objectReference: {fileID: 2064959480}
@@ -11297,7 +11301,7 @@ MonoBehaviour:
   _autoPlayOnStart: 1
   _loop: 0
   _audioVolume: 1
-  _audioBalance: -1
+  _audioBalance: 0
   _audioMuted: 0
   _playbackRate: 1
   _useResampler: 0
@@ -17934,7 +17938,7 @@ MonoBehaviour:
   _autoPlayOnStart: 1
   _loop: 0
   _audioVolume: 1
-  _audioBalance: -1
+  _audioBalance: 0
   _audioMuted: 0
   _playbackRate: 1
   _useResampler: 0
@@ -18563,7 +18567,7 @@ PrefabInstance:
     - target: {fileID: -3727768229517400377, guid: 27ea19ef26157a042abf22d8830c5a2b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3698954575419291885, guid: 27ea19ef26157a042abf22d8830c5a2b,
         type: 3}
