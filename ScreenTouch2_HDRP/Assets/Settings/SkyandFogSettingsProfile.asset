@@ -351,7 +351,7 @@ MonoBehaviour:
     m_Value: 0
   radius:
     m_OverrideState: 1
-    m_Value: 1.58
+    m_Value: 0.49
   spatialBilateralAggressiveness:
     m_OverrideState: 0
     m_Value: 0.15
