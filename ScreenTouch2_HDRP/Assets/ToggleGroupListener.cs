@@ -101,17 +101,17 @@ public class ToggleGroupListener : MonoBehaviour
                 aniSwitch.SetAniStatue((int)AniStatue.泡沫);
                 break;
             case "骨架":
-                smoothCameraSwitcher.SetToStatueIndex(0);
+                smoothCameraSwitcher.SetToStatueByKey("骨架");
                 aniSwitch.SetAniStatue((int)AniStatue.骨架);
                 break;
             case "舒适系统":
                 aniSwitch.SetAniStatue(3);
-                smoothCameraSwitcher.SetToStatueIndex(0);
+                smoothCameraSwitcher.SetToStatueByKey("舒适系统");
                 aniSwitch.SetAniStatue((int)AniStatue.舒适系统);
                 break;
             case "ECU":
                 aniSwitch.Close();
-                smoothCameraSwitcher.SetToStatueIndex(2);//相机位置缩放数据
+                smoothCameraSwitcher.SetToStatueByKey("ECU");//相机位置缩放数据
                 aniSwitch.SetAniStatue((int)AniStatue.ECU);
                 break;
             default:
