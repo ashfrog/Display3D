@@ -23,7 +23,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 306272996618240
-    m_Localized: Cover
+    m_Localized: Upholstery Cover
     m_Metadata:
       m_Items: []
   - m_Id: 306352784863232
@@ -35,7 +35,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 306435764973568
-    m_Localized: Comfort
+    m_Localized: Comfort System
     m_Metadata:
       m_Items: []
   - m_Id: 306487539462144
