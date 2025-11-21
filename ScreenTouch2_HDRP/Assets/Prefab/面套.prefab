@@ -35,7 +35,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 113, y: -3}
+  m_AnchoredPosition: {x: 80, y: 0}
   m_SizeDelta: {x: 25, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3167382132204126109
@@ -282,8 +282,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -46.041, y: 0}
-  m_SizeDelta: {x: -150.857, y: 0}
+  m_AnchoredPosition: {x: -48.653, y: 1.9899979}
+  m_SizeDelta: {x: -156.08, y: -3.981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8666413939080288085
 CanvasRenderer:
@@ -341,13 +341,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 4
+  m_fontStyle: 1
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -399,7 +399,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:76bee747817c33d4a9b01b7258f3ac7c
     m_TableEntryReference:
-      m_KeyId: 306272996618240
+      m_KeyId: 306487539462144
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
