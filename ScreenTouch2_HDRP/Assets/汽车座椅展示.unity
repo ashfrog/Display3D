@@ -22480,7 +22480,7 @@ MonoBehaviour:
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 32
   volumeAnchorOverride: {fileID: 0}
   antialiasing: 3
   SMAAQuality: 2
