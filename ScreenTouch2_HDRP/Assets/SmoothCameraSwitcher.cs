@@ -12,6 +12,8 @@ public class SmoothCameraSwitcher : MonoBehaviour
     [System.Serializable]
     public struct DesiredStatue
     {
+        [Header("索引")]
+        public string nameKey;
         [Header("状态位置")]
         public float distance;
         [Header("状态角度")]
@@ -52,7 +54,18 @@ public class SmoothCameraSwitcher : MonoBehaviour
         smoothOrbitManipulator.desiredPanOffset = desiredStatue.panOffset;
         smoothOrbitManipulator.target = desiredStatue.target;
     }
-
+    public void SetToStatueByKey(string key)
+    {
+        for (int i = 0; i < desiredStatues.Count; i++)
+        {
+            if (string.Equals(key, desiredStatues[i].nameKey, System.StringComparison.OrdinalIgnoreCase))
+            {
+                curIndex = i;
+            }
+        }
+        DesiredStatue desiredStatue = desiredStatues[curIndex];
+        ResetStatue(desiredStatue);
+    }
     public void SetToStatueIndex(int index)
     {
         if (index < 0 || index >= desiredStatues.Count)
