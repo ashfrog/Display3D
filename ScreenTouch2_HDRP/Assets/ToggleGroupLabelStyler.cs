@@ -15,6 +15,9 @@ public class ToggleGroupTMPLabelStyler : MonoBehaviour
     public FontStyles normalStyle = FontStyles.Normal;
     public FontStyles selectedStyle = FontStyles.Bold;
 
+    public int normalFontSize = 30;
+    public int selectedFontSize = 35;
+
     private ToggleGroup toggleGroup;
     private List<Toggle> toggles = new List<Toggle>();
 
@@ -63,11 +66,13 @@ public class ToggleGroupTMPLabelStyler : MonoBehaviour
                 {
                     label.color = selectedColor;
                     label.fontStyle = selectedStyle;
+                    label.fontSize = selectedFontSize;
                 }
                 else
                 {
                     label.color = normalColor;
                     label.fontStyle = normalStyle;
+                    label.fontSize = normalFontSize;
                 }
             }
         }
