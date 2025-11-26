@@ -10542,7 +10542,6 @@ MonoBehaviour:
   m_Script: {fileID: 1642155417}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &1045504575
 Transform:
   m_ObjectHideFlags: 19
@@ -10798,6 +10797,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0.10900879
+      objectReference: {fileID: 0}
+    - target: {fileID: 7646915037128285151, guid: ee66324c266c8a14188bd2305b42d658,
+        type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 306272996618240
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19387,6 +19391,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6077116111904056522, guid: 27ea19ef26157a042abf22d8830c5a2b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b0a215b8fab34b74a8b46b0ccb82da1f, type: 2}
     - target: {fileID: 6151206321283219259, guid: 27ea19ef26157a042abf22d8830c5a2b,
         type: 3}
       propertyPath: m_LocalPosition.y
