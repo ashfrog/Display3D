@@ -98,6 +98,7 @@
     <None Include="Assets\AVProVideo\Licenses\LibSamplerate-License.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\AVProVideo\Licenses\Hap-License.txt" />
+    <None Include="Assets\AddressableAssetsData\link.xml" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\AVProVideo\Licenses\Hap-3rdParty.txt" />
     <None Include="Assets\Shader\CirclePlaneEdgeFade.shader" />

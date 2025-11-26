@@ -1290,6 +1290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35bb2f3708dd0394cb564ca3557a37fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftEnable: 1
   _mediaPlayer: {fileID: 1115137656}
   _keyVolumeDelta: 0.05
   _jumpDeltaTime: 5
@@ -10541,6 +10542,7 @@ MonoBehaviour:
   m_Script: {fileID: 1642155417}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Entries: []
 --- !u!4 &1045504575
 Transform:
   m_ObjectHideFlags: 19
@@ -17809,6 +17811,7 @@ MonoBehaviour:
   - {fileID: 164820035}
   SmoothOrbitManipulator: {fileID: 549146326}
   litVCR: {fileID: 1697117248}
+  mediaPlayerUI: {fileID: 164820031}
 --- !u!4 &1697117247
 Transform:
   m_ObjectHideFlags: 0

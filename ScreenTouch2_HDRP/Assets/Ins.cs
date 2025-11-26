@@ -1,4 +1,5 @@
 using RenderHeads.Media.AVProVideo;
+using RenderHeads.Media.AVProVideo.Demos;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -34,4 +35,6 @@ public class Ins : MonoBehaviour
     /// balance 左右声道设置
     /// </summary>
     public LitVCR litVCR;
+
+    public MediaPlayerUI mediaPlayerUI;
 }
