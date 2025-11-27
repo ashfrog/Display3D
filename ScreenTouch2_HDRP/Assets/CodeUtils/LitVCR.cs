@@ -404,8 +404,8 @@ public class LitVCR : MonoBehaviour
                 PlayingPlayer.Loop = false;
                 LoadingPlayer.Loop = false;
             }
-            LoadingPlayer.OpenMedia(MediaPathType.AbsolutePathOrURL, videopath);
-            //LoadingPlayer.Play();
+            LoadingPlayer.OpenMedia(MediaPathType.AbsolutePathOrURL, videopath, true);
+
 
             currentPlayingVideo = videopath;
         }
@@ -825,10 +825,14 @@ public class LitVCR : MonoBehaviour
                         t.text = Path.GetFileNameWithoutExtension(videoPaths[videoindex]);
                     }
                 }
+
+                StartCoroutine(AutoPlay());
+
                 break;
 
             case MediaPlayerEvent.EventType.FinishedPlaying:
-                CheckPlayNext();
+                //CheckPlayNext();
+                _mediaPlayerUI.transform.parent.gameObject.SetActive(false);//视频播放结束隐藏播放页面
                 break;
 
             //case MediaPlayerEvent.EventType.PlayNext:
@@ -837,6 +841,15 @@ public class LitVCR : MonoBehaviour
 
             case MediaPlayerEvent.EventType.PlaylistFinished:
                 break;
+        }
+    }
+
+    IEnumerator AutoPlay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (!_mediaPlayerUI._mediaPlayer.Control.IsPlaying())
+        {
+            _mediaPlayerUI.TogglePlayPause();
         }
     }
 
@@ -895,6 +908,8 @@ public class LitVCR : MonoBehaviour
 
         LoadingPlayer.Control.Stop();//解除后台文件占用
         LoadingPlayer.CloseMedia();
+
+        PlayingPlayer.Control.Play();
         //SetVolumn(GetVolumn());
     }
 
