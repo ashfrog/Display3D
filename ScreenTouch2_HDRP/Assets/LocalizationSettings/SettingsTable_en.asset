@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: SettingsTable_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 76bee747817c33d4a9b01b7258f3ac7c, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 169448501248
+    m_Localized: Game Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306272996618240
+    m_Localized: Cover
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306352784863232
+    m_Localized: Foam
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306394828566528
+    m_Localized: Frame
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306435764973568
+    m_Localized: Comfort
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306487539462144
+    m_Localized: ECU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 406650186559488
+    m_Localized: Language/English
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413349828030464
+    m_Localized: Exploded View
+    m_Metadata:
+      m_Items: []
+  - m_Id: 759507809136640
+    m_Localized: Return
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761801929846784
+    m_Localized: Assemble
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761865809096704
+    m_Localized: 'Disassemble '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1142546796048384
+    m_Localized: Details
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4389080463503360
+    m_Localized: Expand
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

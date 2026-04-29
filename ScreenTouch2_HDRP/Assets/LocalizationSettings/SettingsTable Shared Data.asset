@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: SettingsTable Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: SettingsTable
+  m_TableCollectionNameGuidString: 76bee747817c33d4a9b01b7258f3ac7c
+  m_Entries:
+  - m_Id: 169448501248
+    m_Key: GameTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306272996618240
+    m_Key: "\u9762\u5957"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306352784863232
+    m_Key: "\u6CE1\u6CAB"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306394828566528
+    m_Key: "\u9AA8\u67B6"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306435764973568
+    m_Key: "\u8212\u9002\u7CFB\u7EDF"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 306487539462144
+    m_Key: ECU
+    m_Metadata:
+      m_Items: []
+  - m_Id: 406650186559488
+    m_Key: "\u8BED\u8A00\u9009\u62E9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 413349828030464
+    m_Key: "\u4EA7\u54C1\u5206\u89E3\u56FE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 759507809136640
+    m_Key: "\u8FD4\u56DE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761801929846784
+    m_Key: "\u62C6\u5F00"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 761865809096704
+    m_Key: "\u7EC4\u5408"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1142546796048384
+    m_Key: "\u67E5\u770B\u8BE6\u60C5"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4389080463503360
+    m_Key: "\u5C55\u5F00"
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5230672145272799256
+  references:
+    version: 2
+    RefIds:
+    - rid: 5230672145272799256
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables,
+        asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1761719138005
